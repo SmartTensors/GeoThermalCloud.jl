@@ -1,0 +1,20 @@
+Signal A (S1) (k-means clustering)
+Normal stress
+Coulomb shear stress
+Faulting
+Fault density
+Lithology
+
+Signal B (S2) (k-means clustering)
+Dilation
+Fault intersection density
+Inverse distance from contacts
+Inverse distance from faults
+Unit thickness
+
+Signal C (S3) (k-means clustering)
+Fault dilation tendency
+Fault slip tendency
+Fault curvature
+Temperature
+

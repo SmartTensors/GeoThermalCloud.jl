@@ -1,0 +1,22 @@
+Signal A (k-means clustering; remapped)
+faults
+td
+ts
+curve
+modeltemp
+faultdense
+goodlith
+
+Signal B (k-means clustering; remapped)
+normal
+coulomb
+dilation
+
+Signal C (k-means clustering; remapped)
+faultintdense
+
+Signal D (k-means clustering; remapped)
+distfromcontacts
+distfromfaults
+unitthickness
+

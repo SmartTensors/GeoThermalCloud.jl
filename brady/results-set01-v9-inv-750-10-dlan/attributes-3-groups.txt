@@ -1,0 +1,17 @@
+Signal A (S3)
+Coulomb shear stress        	1.0
+Normal stress               	0.961
+Dilation                    	0.728
+Inverse distance from faults	0.694
+
+Signal B (S1)
+Fault dilation tendency     	1.0
+Fault curvature             	0.891
+Fault slip tendency         	0.706
+Temperature                 	0.239
+
+Signal C (S2)
+Fault density               	1.0
+Faulting                    	0.588
+Fault intersection density  	0.547
+

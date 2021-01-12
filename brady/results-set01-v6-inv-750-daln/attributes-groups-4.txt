@@ -1,0 +1,19 @@
+Signal A (k-means clustering; remapped)
+Normal stress
+Coulomb shear stress
+
+Signal B (k-means clustering; remapped)
+Fault dilation tendency
+Fault slip tendency
+Fault curvature
+Temperature
+Fault intersection density
+
+Signal C (k-means clustering; remapped)
+Inverse distance from faults
+
+Signal D (k-means clustering; remapped)
+Dilation
+Faulting
+Fault density
+
