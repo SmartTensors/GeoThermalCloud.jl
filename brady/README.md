@@ -1,1 +1,1 @@
-# Data and codes for Brady work
+# Data and codes for Brady geothermal field
