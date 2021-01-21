@@ -1,0 +1,30 @@
+<html>
+<head>
+     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+     <script>
+    gd = (function() {
+  var WIDTH_IN_PERCENT_OF_PARENT = 100;
+  var HEIGHT_IN_PERCENT_OF_PARENT = 100;
+  var gd = Plotly.d3.select('body')
+    .append('div').attr("id", "23ecdabf-e9ce-4247-8b24-f9ffcb776b3e")
+    .style({
+      width: WIDTH_IN_PERCENT_OF_PARENT + '%',
+      'margin-left': (100 - WIDTH_IN_PERCENT_OF_PARENT) / 2 + '%',
+      height: HEIGHT_IN_PERCENT_OF_PARENT + 'vh',
+      'margin-top': (100 - HEIGHT_IN_PERCENT_OF_PARENT) / 2 + 'vh'
+    })
+    .node();
+  var plot_json = {"layout":{"hovermode":"closest","margin":{"l":50,"b":50,"r":50,"t":60},"title":"Clusters: 8","yaxis":{"scaleanchor":"x","scaleratio":1}},"frames":[],"data":[{"marker":{"color":"red","size":6},"mode":"markers","y":[-107.5605437,-107.5725187,-107.2690376,-109.0422131,-108.5091049,-108.574546,-108.0292645,-107.9867174,-108.1387645],"type":"scatter","name":"A 9","x":[33.28479029,32.95994845,32.80351607,32.83089057,32.84699667,32.88119541,32.55301934,32.55403823,32.64048324]},{"marker":{"color":"blue","size":6},"mode":"markers","y":[-107.132374,-108.9664032,-108.9445631,-107.0830558,-108.8320045,-108.7067822,-108.7744213],"type":"scatter","name":"B 7","x":[35.06007978,34.90582063,34.90653255,34.84456635,34.83805433,34.48149077,34.53348434]},{"marker":{"color":"green","size":6},"mode":"markers","y":[-108.3236553,-108.5081617,-107.5905579,-108.2455859,-108.2241539,-108.5980719,-108.620893],"type":"scatter","name":"C 7","x":[34.15003574,33.89254513,33.57268338,33.23272251,33.23328042,32.93459903,32.9699912]},{"marker":{"color":"orange","size":6},"mode":"markers","y":[-109.0185221,-108.4763133,-108.4010589,-108.3611214,-107.8440603,-107.6953191],"type":"scatter","name":"D 6","x":[33.71474239,33.10029397,32.81392736,32.88712043,32.75570562,32.77702868]},{"marker":{"color":"magenta","size":6},"mode":"markers","y":[-106.8975047,-106.9208891,-107.5737009,-106.7036745,-107.6109744,-108.8424302],"type":"scatter","name":"E 6","x":[33.40490196,32.50270608,32.25659024,32.27132749,32.07547507,32.15224481]},{"marker":{"color":"cyan","size":6},"mode":"markers","y":[-106.9792122,-107.0224495,-106.8708971,-107.0340698],"type":"scatter","name":"F 4","x":[32.24927086,32.2846619,32.1426885,31.8515527]},{"marker":{"color":"brown","size":6},"mode":"markers","y":[-106.9785008,-106.7815119,-106.9551655],"type":"scatter","name":"G 3","x":[34.12501194,34.03785708,34.05325124]},{"marker":{"color":"pink","size":6},"mode":"markers","y":[-107.255928,-107.2968987],"type":"scatter","name":"H 2","x":[33.12838501,33.05549771]}]};
+  Plotly.newPlot(gd, plot_json);
+  window.onresize = function() {
+    Plotly.Plots.resize(gd);
+  };
+  return gd;
+})();
+
+ </script>
+
+</body>
+</html>

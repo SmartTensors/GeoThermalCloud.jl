@@ -1,0 +1,52 @@
+Signal A(S2) (k-means clustering)
+Freiborn spr
+Gila spr 1
+Gila spr 2
+Turkey spr
+Riverside well
+Spring
+Cliff spr
+Ash spr
+Mangas spr
+Spring Can
+Allen spr
+Mimbres spr
+Garton well
+Kennecott well
+Apache well
+
+Signal B(S1) (k-means clustering)
+Victoria well
+Derry spr
+Goat spr
+Faywood spr
+Radium spr
+Well 4
+Carne well
+Los Alturas
+Well 2
+Well 3
+Well 5
+Lightning Dock
+Fed H1 well
+
+Signal C(S4) (k-means clustering)
+Alamos spr
+Sacred spr
+Rainbow spr
+Laguna Pbl
+Dent well
+Jerry well
+Pueblo well
+Well 1
+Aragon spr
+Ojo Caliente
+
+Signal D(S3) (k-means clustering)
+Ojitos spr
+Ojo Canas
+Socorro Can
+Warm spr
+T or C spr
+B.Iorio well
+

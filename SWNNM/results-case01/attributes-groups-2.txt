@@ -1,0 +1,22 @@
+Signal A (k-means clustering; remapped)
+Boron Concentration
+Magnetic Intensity
+Volcanic Dike Density
+Drainage Density
+Seismicity
+State Map Fault Density
+Springs Density
+Lithium Concentration
+Precipitation
+Hydraulic Gradient
+Crustal Thickness
+
+Signal B (k-means clustering; remapped)
+Gravity Anomaly
+Fault Intersection Density
+Quaternary Fault Density
+Volcanic Vent Density
+Silica Geothermometer
+Heat flow
+Depth to Basement
+
