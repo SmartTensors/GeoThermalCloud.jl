@@ -10,9 +10,9 @@
 
 ## NMFk is hosted on Los Alamos National Laboratory github account, so it may require proxies. Please implement the following commands for proxies:
 
-ENV["ftp_proxy"] =  "http://proxyout.lanl.gov:8080"
-ENV["rsync_proxy"] = "http://proxyout.lanl.gov:8080"
-ENV["http_proxy"] = "http://proxyout.lanl.gov:8080"
-ENV["https_proxy"] = "http://proxyout.lanl.gov:8080"
+ENV["ftp_proxy"] =  "http://proxyout.lanl.gov:8080"  
+ENV["rsync_proxy"] = "http://proxyout.lanl.gov:8080"  
+ENV["http_proxy"] = "http://proxyout.lanl.gov:8080"  
+ENV["https_proxy"] = "http://proxyout.lanl.gov:8080"  
 ENV["no_proxy"] = ".lanl.gov"
 
