@@ -1,29 +1,56 @@
 import DelimitedFiles
+import NMFk
 
-attributes_short = ["wellid", "md", "x", "y", "z", "inclination", "azimuth", "casing", "fluids", "use", "use2", "production", "faults", "distfromfault", "distfromcontact", "td", "ts", "curve", "temp", "ints", "lithgoodbad", "lithname", "liththickness", "goodliththickness", "faultsingoodlith", "confidence", "Dilation", "Coulomb", "Normal"]
+attributes_short = ["ID", "D", "azimuth", "incline", "x", "y", "z", "casing", "fluids", "use", "production", "use2", "lt750mstatus", "normal", "coulomb", "dilation", "faults", "td", "ts", "curve", "modeltemp", "faultdense", "faultintdense", "inv_distcontacts", "inv_distfaults", "unitthickness", "goodlith", "confidence"]
+attributes_long = ["ID", "Depth", "Azimuth", "Inclination", "X", "Y", "Z", "Casing", "Fluids", "use", "Production", "use2", "Status", "Normal stress", "Coulomb shear stress", "Dilation", "Faulting", "Fault dilation tendency", "Fault slip tendency", "Fault curvature", "Temperature", "Fault density", "Fault intersection density", "Inverse distance from contacts", "Inverse distance from faults", "Unit thickness", "Lithology", "Confidence"]
+ai = indexin(attributes_process, attributes_short)
+pr = indexin(["production"], attributes_short)
+attributes_process_long = attributes_long[ai]
 
-d, h = DelimitedFiles.readdlm("data/AllBradyWellsData.txt", ','; header=true)
+d, h = DelimitedFiles.readdlm("data/AllBradyWells_LANL_ML_9.txt", ','; header=true)
+
+global wellname = ""
+for i = 1:size(d, 1)
+	if d[i, 1] != ""
+		global wellname = d[i, 1]
+	else
+		d[i, 1] = wellname
+	end
+end
+
+d[d[:,24] .== "", 24] .= 0
 
 attributes_col = vec(permutedims(h))
+attributes = attributes_col[ai]
 
-for i=1:29; display([h[:,i]; minimum(d[:,i]); maximum(d[:,i])]); end
-for i=1:29; display([h[:,i]; unique(sort(d[:,i]))]); end
+for i=1:length(attributes_col); @info attributes_col[i], i; display([minimum(d[:,i]); maximum(d[:,i])]); end
+for i=1:length(attributes_col); @info attributes_col[i], i; display(unique(sort(d[:,i]))); end
 
 locations = unique(sort(d[:,1]))
 ii = convert.(Int64, round.(d[:,2]))
 zi = unique(sort(ii))
-ai = indexin(attributes_process, attributes_short)
 
 xcoord = Vector{Float64}(undef, length(locations))
 ycoord = Vector{Float64}(undef, length(locations))
+production = Vector{String}(undef, length(locations))
 for (j, w) in enumerate(locations)
 	iw = d[:, 1] .== w
 	i = findmin(d[iw, 2])[2]
-	xcoord[j] = d[iw, 4][i]
-	ycoord[j] = d[iw, 3][i]
+	xcoord[j] = d[iw, 5][i]
+	ycoord[j] = d[iw, 6][i]
+	production[j] = unique(d[iw, pr])[end]
 end
 
-for i=ai; display([h[:,i]; unique(sort(d[:,i]))]); end
+welltype = Vector{Symbol}(undef, length(locations))
+for (j, w) in enumerate(locations)
+	iw = d[:, 1] .== w
+	welltype[j] = Symbol(unique(d[iw, indexin(["lt750mstatus"], attributes_short)])[1])
+end
+
+for i = ai
+	@info attributes_col[i], i
+	display(unique(sort(convert.(Float64, d[:,i]))))
+end
 
 T = Array{Float64}(undef, length(zi), length(ai), length(locations))
 T .= NaN
