@@ -33,7 +33,7 @@ To install the most recent version of Julia, please follow the instructions here
 
 ## SmartTensors
 
-Machine Learning analyses are performed using our [**SmartTensors**](https://github.com/SmartTensors) machine learning framework.
+Machine Learning analyses are performed using the [**SmartTensors**](https://github.com/SmartTensors) machine learning framework.
 
 More information about [**SmartTensors**](https://github.com/SmartTensors) can be found at [smarttensors.github.io](https://smarttensors.github.io) and [tensors.lanl.gov](http://tensors.lanl.gov).
 

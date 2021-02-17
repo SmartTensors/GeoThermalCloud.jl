@@ -1,7 +1,9 @@
 # GTcloud.jl: GeoThermal Cloud for Machine Learning
 
 <div style="text-align: left; padding-bottom: 30px;">
-    <img src="../logos/geothermalcloud-small.png" alt="geothermalcloud" width=25%  max-width=125px;/>
+	<a href="https://github.com/SmartTensors/GTcloud.jl">
+    	<img src="../logos/geothermalcloud-small.png" alt="geothermalcloud" width=25%  max-width=125px;/>
+	</a>
 </div>
 
 # Brady Geothermal Site, Nevada
@@ -47,7 +49,7 @@ Reports, research papers, and presentations summarizing these machine learning a
 
 ## SmartTensors
 
-Machine Learning analyses are performed using our [**SmartTensors**](https://github.com/SmartTensors) machine learning framework.
+Machine Learning analyses are performed using the [**SmartTensors**](https://github.com/SmartTensors) machine learning framework.
 
 More information about [**SmartTensors**](https://github.com/SmartTensors) can be found at [smarttensors.github.io](https://smarttensors.github.io) and [tensors.lanl.gov](http://tensors.lanl.gov).
 
@@ -103,3 +105,5 @@ Note that the **Brady** repository should be the current working directory.
 ### Jupyter notebook
 
 To execute the machine learning analyses, open the jupyter notebook `notebook/Brady.ipynb`
+
+The jupyter notebook is also saved in `html`, `pdf` and `markdown` formats.
