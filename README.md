@@ -1,6 +1,6 @@
 # GTcloud.jl: GeoThermal Cloud for Machine Learning
 
-<div style="text-align: left; margin-bottom: 30px;">
+<div style="text-align: left; padding-bottom: 30px;">
     <img src="logos/geothermalcloud-small.png" alt="geothermalcloud" width=25%  max-width=125px;/>
 </div>
 
@@ -33,7 +33,7 @@ To install, the most recent version of Julia please follow the instructions here
 
 Machine Learning analyses are performed using our **SmartTensors** machine learning framework.
 
-<div style="text-align: left; margin-bottom: 30px;">
+<div style="text-align: left; padding-bottom: 30px;">
 	<img src="logos/SmartTensorsNewSmaller.png" alt="SmartTensors" width=25%  max-width=125px;/>
 </div>
 
@@ -42,10 +42,10 @@ To install, the most recent version of **SmartTensors** please follow the instru
 - **NMFk**: https://github.com/TensorDecompositions/NMFk.jl
 - **NTFk**: https://github.com/TensorDecompositions/NTFk.jl
 
-<div style="text-align: left; margin-bottom: 30px;">
+<div style="text-align: left; padding-bottom: 30px;">
 	<img src="logos/nmfk-logo.png" alt="nmfk" width=25%  max-width=125px;/>
 </div>
 
-<div style="text-align: left; margin-bottom: 30px;">
+<div style="text-align: left; padding-bottom: 30px;">
 	<img src="logos/ntfk-logo.png" alt="ntfk" width=40%  max-width=125px;/>
 </div>
