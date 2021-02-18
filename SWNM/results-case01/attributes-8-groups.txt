@@ -1,34 +1,34 @@
 Signal A
 Drainage density          	1.0
-Volcanic dike density     	0.734
+Fault intersection density	0.14
 
 Signal B
 Crustal thickness         	1.0
 Magnetic intensity        	0.593
-Boron concentration       	0.577
 
 Signal C
 State map fault density   	0.89
-Silica geothermometer     	0.873
+Volcanic dike density     	0.0
 
 Signal D
 Lithium concentration     	1.0
+Boron concentration       	0.0468
+Seismicity                	0.0
 
 Signal E
 Hydraulic gradient        	1.0
-Precipitation             	0.962
+Silica geothermometer     	0.0
+Depth to basement         	0.0
 
 Signal F
 Gravity anomaly           	1.0
-Depth to basement         	0.699
-Heat flow                 	0.528
 
 Signal G
-Seismicity                	1.0
 Spring density            	0.957
+Heat flow                 	0.308
 
 Signal H
 Quaternary fault density  	1.0
-Fault intersection density	0.575
 Volcanic vent density     	0.443
+Precipitation             	0.0
 

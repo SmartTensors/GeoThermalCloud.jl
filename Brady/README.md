@@ -51,8 +51,6 @@ Reports, research papers, and presentations summarizing these machine learning a
 
 Machine Learning analyses are performed using the [**SmartTensors**](https://github.com/SmartTensors) machine learning framework.
 
-More information about [**SmartTensors**](https://github.com/SmartTensors) can be found at [smarttensors.github.io](https://smarttensors.github.io) and [tensors.lanl.gov](http://tensors.lanl.gov).
-
 <div style="text-align: left; padding-bottom: 30px;">
 	<a href="https://github.com/SmartTensors">
 		<img src="../logos/SmartTensorsNewSmaller.png" alt="SmartTensors" width=25%  max-width=125px;/>
@@ -60,6 +58,9 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 </div>
 
 [**SmartTensors**](https://github.com/SmartTensors) provides tools for Unsupervised and Physics-Informed Machine Learning.
+
+More information about [**SmartTensors**](https://github.com/SmartTensors) can be found at [smarttensors.github.io](https://smarttensors.github.io) and [tensors.lanl.gov](http://tensors.lanl.gov).
+
 
 [**SmartTensors**](https://github.com/SmartTensors) includes a series of modules. Key modules are:
 
@@ -86,7 +87,10 @@ To install required [**SmartTensors**](https://github.com/SmartTensors) modules,
 import Pkg
 Pkg.add("NMFk")
 Pkg.add("DelimitedFiles")
+Pkg.add("JLD")
 Pkg.add("Gadfly")
+Pkg.add("Cairo")
+Pkg.add("Fontconfig")
 Pkg.add("Mads")
 ```
 

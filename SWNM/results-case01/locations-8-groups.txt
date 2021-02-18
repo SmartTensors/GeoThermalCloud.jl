@@ -1,60 +1,60 @@
 Signal A (S2)
-26	1.0
-35	0.951
-29	0.798
-28	0.707
-25	0.663
-22	0.587
-33	0.551
-34	0.454
-18	0.415
-27	0.318
+Ash spr       	1.0
+Apache well   	0.951
+Spring Can    	0.798
+Mangas spr    	0.707
+Derry spr     	0.663
+Spring        	0.587
+Kennecott well	0.551
+Faywood spr   	0.454
+Warm spr      	0.415
+Goat spr      	0.318
 
 Signal B (S5)
-7 	1.0
-6 	0.982
-5 	0.885
-3 	0.884
-2 	0.878
-1 	0.733
-4 	0.692
+Pueblo well   	1.0
+Jerry well    	0.982
+Dent well     	0.885
+Rainbow spr   	0.884
+Sacred spr    	0.878
+Alamos spr    	0.733
+Laguna Pbl    	0.692
 
 Signal C (S8)
-17	1.0
-12	0.997
-16	0.946
-14	0.579
-9 	0.551
-21	0.549
-23	0.545
+Gila spr 2    	1.0
+Aragon spr    	0.997
+Gila spr 1    	0.946
+Ojo Caliente  	0.579
+Well 1        	0.551
+Riverside well	0.549
+Cliff spr     	0.545
 
 Signal D (S3)
-15	0.949
-43	0.824
-36	0.602
-38	0.596
-41	0.532
-39	0.0
+Victoria well 	0.949
+Lightning Dock	0.824
+Radium spr    	0.602
+Carne well    	0.596
+Well 3        	0.532
+Los Alturas   	0.0
 
 Signal E (S7)
-30	1.0
-13	0.78
-31	0.515
-19	0.427
-32	0.359
+Allen spr     	1.0
+Freiborn spr  	0.78
+Mimbres spr   	0.515
+Turkey spr    	0.427
+Garton well   	0.359
 
 Signal F (S4)
-44	0.916
-37	0.773
-40	0.733
-42	0.721
+Fed H1 well   	0.916
+Well 4        	0.773
+Well 2        	0.733
+Well 5        	0.721
 
 Signal G (S6)
-11	1.0
-8 	0.949
-10	0.835
+Socorro Can   	1.0
+Ojitos spr    	0.949
+Ojo Canas     	0.835
 
 Signal H (S1)
-24	0.929
-20	0.905
+B.Iorio well  	0.929
+T or C spr    	0.905
 

@@ -13,13 +13,14 @@
 - simulation scripts
 - jupyter notebooks
 - intermediate results
-- code outputs, and
+- code outputs
 - summary figures
+- readme markdown files
 
-**GTcloud.jl** showcases the machine learning analyses performed for 2 geothermal sites:
+**GTcloud.jl** showcases the machine learning analyses performed for the following geothermal sites:
 
 - **Brady**: geothermal exploration of the Brady geothermal site, Nevada
-- **SWNM**: geothermal exploration of Southwest New Mexico (SWNM) region
+- **SWNM**: geothermal exploration of the Southwest New Mexico (SWNM) region
 
 Reports, research papers, and presentations summarizing these machine learning analyses are also available and will be posted soon.
 
@@ -27,15 +28,11 @@ Reports, research papers, and presentations summarizing these machine learning a
 
 Machine Learning analyses are performed using Julia.
 
-To install the most recent version of Julia, please follow the instructions here:
-
-- Julia: https://julialang.org/downloads/
+To install the most recent version of Julia, please follow the instructions at https://julialang.org/downloads/
 
 ## SmartTensors
 
 Machine Learning analyses are performed using the [**SmartTensors**](https://github.com/SmartTensors) machine learning framework.
-
-More information about [**SmartTensors**](https://github.com/SmartTensors) can be found at [smarttensors.github.io](https://smarttensors.github.io) and [tensors.lanl.gov](http://tensors.lanl.gov).
 
 <div style="text-align: left; padding-bottom: 30px;">
 	<a href="https://github.com/SmartTensors">
@@ -44,6 +41,8 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 </div>
 
 [**SmartTensors**](https://github.com/SmartTensors) provides tools for Unsupervised and Physics-Informed Machine Learning.
+
+More information about [**SmartTensors**](https://github.com/SmartTensors) can be found at [smarttensors.github.io](https://smarttensors.github.io) and [tensors.lanl.gov](http://tensors.lanl.gov).
 
 [**SmartTensors**](https://github.com/SmartTensors) includes a series of modules. Key modules are:
 
@@ -72,5 +71,7 @@ Pkg.add("NMFk")
 Pkg.add("NTFk")
 Pkg.add("DelimitedFiles")
 Pkg.add("Gadfly")
+Pkg.add("Cairo")
+Pkg.add("Fontconfig")
 Pkg.add("Mads")
 ```
