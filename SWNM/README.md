@@ -20,7 +20,7 @@ SWNM is broadly divided into four physiographic provinces:
 
 Our machine learning analyses presented here aim to identify patterns of hydrogeothermal systems in SWNM.
 
-We target to find geothermal processes and attributes associated with the analyzed hydrogeothermal systems, in specific, and pthe analzyed hysiographic provinces, in general.
+We target to find geothermal processes and attributes associated with the analyzed hydrogeothermal systems, in specific, and the analyzed physiographic provinces, in general.
 
 # SWNM Machine Learning Repository
 
