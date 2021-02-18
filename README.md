@@ -28,7 +28,7 @@ Reports, research papers, and presentations summarizing these machine learning a
 
 Machine Learning analyses are performed using Julia.
 
-To install the most recent version of Julia, please follow the instructions at https://julialang.org/downloads/
+To install the most recent version of Julia, follow the instructions at https://julialang.org/downloads/
 
 ## SmartTensors
 
@@ -70,6 +70,8 @@ import Pkg
 Pkg.add("NMFk")
 Pkg.add("NTFk")
 Pkg.add("DelimitedFiles")
+Pkg.add("JLD")
+Pkg.add("JLD2")
 Pkg.add("Gadfly")
 Pkg.add("Cairo")
 Pkg.add("Fontconfig")

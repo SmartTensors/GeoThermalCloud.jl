@@ -87,6 +87,7 @@ import Pkg
 Pkg.add("NMFk")
 Pkg.add("DelimitedFiles")
 Pkg.add("JLD")
+Pkg.add("JLD2")
 Pkg.add("Gadfly")
 Pkg.add("Cairo")
 Pkg.add("Fontconfig")
