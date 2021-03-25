@@ -1,7 +1,4 @@
 Signal A
-Inverse distance from contacts	0.62
-
-Signal B
 Unit thickness                	1.0
 Inverse distance from faults  	0.957
 Fault density                 	0.762
@@ -15,4 +12,7 @@ Fault curvature               	0.539
 Lithology                     	0.488
 Fault slip tendency           	0.414
 Temperature                   	0.132
+
+Signal B
+Inverse distance from contacts	0.62
 

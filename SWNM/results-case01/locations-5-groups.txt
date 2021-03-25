@@ -28,7 +28,14 @@ Radium spr    	0.626
 Well 3        	0.593
 Victoria well 	0.38
 
-Signal C (S3)
+Signal C (S2)
+Freiborn spr  	1.0
+Gila spr 1    	0.78
+Gila spr 2    	0.696
+Aragon spr    	0.695
+Ojo Caliente  	0.36
+
+Signal D (S3)
 Jerry well    	1.0
 Pueblo well   	0.971
 Rainbow spr   	0.943
@@ -38,17 +45,10 @@ Alamos spr    	0.873
 Laguna Pbl    	0.855
 Well 1        	0.738
 
-Signal D (S5)
+Signal E (S5)
 Socorro Can   	1.0
 Ojitos spr    	0.885
 Ojo Canas     	0.708
 T or C spr    	0.411
 B.Iorio well  	0.409
-
-Signal E (S2)
-Freiborn spr  	1.0
-Gila spr 1    	0.78
-Gila spr 2    	0.696
-Aragon spr    	0.695
-Ojo Caliente  	0.36
 
