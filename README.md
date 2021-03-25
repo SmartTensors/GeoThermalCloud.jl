@@ -21,6 +21,7 @@
 
 - **Brady**: geothermal exploration of the Brady geothermal site, Nevada
 - **SWNM**: geothermal exploration of the Southwest New Mexico (SWNM) region
+- **GreatBasin**: geothermal exploration of the Great Basin region
 
 Reports, research papers, and presentations summarizing these machine learning analyses are also available and will be posted soon.
 
