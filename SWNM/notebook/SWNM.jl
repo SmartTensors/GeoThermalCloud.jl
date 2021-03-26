@@ -6,7 +6,7 @@ import Gadfly
 import Fontconfig
 import Mads
 
-cd("../");
+cd("/Users/vvv/Julia/GTcloud-SmartTensors.jl/SWNM/");
 
 d, h = DelimitedFiles.readdlm("data/Pepin_PCA_Input_Data_LANL.csv", ','; header=true);
 
@@ -132,8 +132,12 @@ Xu, nmin, nmax = NMFk.normalizematrix_row!(X);
 W, H, fitquality, robustness, aic = NMFk.execute(Xu, nkrange, 1000; resultdir=resultdir, casefilename="nmfk", load=true)
 W, H, fitquality, robustness, aic = NMFk.load(nkrange, 1000; resultdir=resultdir, casefilename="nmfk");
 
-NMFk.getks(nkrange, robustness[nkrange])
+NMFk.getks(nkrange, robustness[nkrange], 0.5)
 
 NMFk.plot_signal_selecton(nkrange, fitquality, robustness; figuredir=figuredir, xtitle="Number of signatures")
 
 NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, locations; lat=lat, lon=lon, resultdir=resultdir, figuredir=figuredir, Hcasefilename="locations", Wcasefilename="attributes");
+
+Mads.display("results-case01/attributes-5-groups.txt")
+
+Mads.display("results-case01/locations-5-groups.txt")
