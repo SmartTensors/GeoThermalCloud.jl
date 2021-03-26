@@ -36,7 +36,7 @@ Some of the **SWNM** systems are already utilized for commercial and recreationa
 There are alreadt energy-production facilities for both electricity and direct-use heating.
 
 For example, the Basin and Range province has one geothermal based power plant (Lightning dock) of gross ~14 MWe power, five greenhouse based farms, and numerous medium temperature wells and springs.
-There are 14 spas and recreational facilities utilizing the SWNM geothermal resources. 
+There are 14 spas and recreational facilities utilizing the **SWNM** geothermal resources. 
 
 Recent Play Fairway Analysis (PFA) Phase I study of **SWNM** conducted at LANL, revealed more potential geothermal resources.
 
@@ -320,7 +320,7 @@ lat = d[dindex, 2]
 lon = d[dindex, 3];
 ```
 
-### Set up directories tp store results and figures
+### Set up directories to store results and figures
 
 
 ```julia
@@ -1536,11 +1536,7 @@ This grouping is based on analyses of the location matrix `H`:
 
 ![locations-5-labeled-sorted](../figures-case01/locations-5-labeled-sorted.png)
 
-The map [../figures-case01/locations-5-map.html](../figures-case01/locations-5-map.html) provides interacive visualization of the extracted location groups (the html file can be also openned with any browswer). 
-
-<div>
-    <iframe src="../figures-case01/locations-5-map.html" frameborder="0" height="800" width="50%"></iframe>
-</div>
+The map [../figures-case01/locations-5-map.html](../figures-case01/locations-5-map.html) provides interacive visualization of the extracted location groups (the html file can be also openned within any browser).
 
 #### Comparison of the ML solutions against the SWNM physiographic provinces
 
