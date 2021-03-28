@@ -981,7 +981,7 @@ Solutions with a number of signatures less than **3** are underfitting.
 
 Solutions with a number of signatures greater than **3** are overfitting and unacceptable.
 
-The set of acceptable solutions are defined as follows:
+The set of acceptable solutions are defined by the **NMFk** algorithm as follows:
 
 
 ```julia
@@ -1003,7 +1003,7 @@ The acceptable solutions contain 2 and 3 signatures.
 
 #### Number of signatures
 
-Plot representing solution quality (fit) and silhouette width (robustness) for different numbers of signatures `k`:
+Below is a plot representing solution quality (fit) and silhouette width (robustness) for different numbers of signatures `k`:
 
 
 ```julia

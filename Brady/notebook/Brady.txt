@@ -1,0 +1,232 @@
+Geothermal machine learning analysis: Brady site, Nevada
+---
+
+This notebook is a part of the GTcloud.jl: GeoThermal Cloud for Machine Learning.
+
+<div style="text-align: left; padding-bottom: 30px;">
+    <img src="../../logos/geothermalcloud-small.png" alt="geothermalcloud" width=25%  max-width=125px;/>
+</div>
+
+Machine learning analyses are performed using the **SmartTensors** machine learning framework.
+
+<div style="text-align: left; padding-bottom: 30px;">
+	<img src="../../logos/SmartTensorsNewSmaller.png" alt="SmartTensors" width=25%  max-width=125px;/>
+</div>
+
+This notebook demonstrates how the **NMFk** module of **SmartTensors** can be applied to perform unsupervised geothermal machine-learning analyses.
+
+<div style="text-align: left; padding-bottom: 30px;">
+	<img src="../../logos/nmfk-logo.png" alt="nmfk" width=25%  max-width=125px;/>
+</div>
+
+More information on how the ML results are interpreted to provide geothermal insights is discussed in our research paper.
+
+## Import required Julia modules
+
+If **NMFk** is not installed, first execute in the Julia REPL `import Pkg; Pkg.add("NMFk"); Pkg.add("DelimitedFiles"); Pkg.add("JLD"); Pkg.add("Gadfly"); Pkg.add("Cairo"); Pkg.add("Fontconfig"); Pkg.add("Mads")`.
+
+
+## Load and pre-process the dataset
+
+### Setup the working directory containing the Brady site data
+
+### Load the data file
+
+### Populate the missing well names
+
+### Set up missing entries to be equal to zero
+
+### Define names of the data attributes (matrix columns)
+
+Short attribute names are used for coding.
+
+Long attribute names are used for plotting and visualization.
+
+### Define the attributes that will be processed
+
+### Index the attributes that will be processed
+
+### Display information about the processed data (min, max, count):
+
+### Get well locations and production 
+
+### Define well types
+
+### Display information about processed well attributes
+
+### Collect the well data into a 3D tensor 
+
+Tensor indices (dimensions) define depths, attributes, and wells.
+
+### Define the maximum depth 
+
+The maximum depth limits the depth of the data included in the analyses.
+
+The maximum depth is set to 750 m. 
+
+### Normalize tensor slices associated with each attribute
+
+### Define problem setup variables
+
+### Plot well data
+
+A HTML file named [../map/dataset-set00-v9-inv.html](../map/dataset-set00-v9-inv.html) is generated mapping the site data.
+The map provides interactive visualization of the site data (it can also be opened with any browser). 
+
+The map below shows the location of the `Dry`, `Injection` and `Production` wells.
+
+![dataset-set01-v9-inv](../map/dataset-set01-v9-inv.png)
+
+## Perform ML analyses
+
+For the ML analyses, the data tensor can be flattened into a data matrix by using two different approaches:
+
+- Type 1: Merge depth and attribute tensor dimensions; in this way, the focus of the ML analysis is on finding the features associated with the well locations
+- Type 2: Merge depth and location tensor dimensions; in this way, the focus of the ML analysis is on finding the features associated with the well attributes
+
+After that the **NMFk** algorithm will factorize the data matrix `X` into `W` and `H` matrices. For more information, check out the [**NMFk** website](https://github.com/SmartTensors/NMFk.jl)
+
+### Type 1 flattening: Focus on well locations
+
+#### Flatten the tensor into a matrix
+
+Matrix rows merge the depth and attribute dimensions.
+
+Matrix columns represent the well locations.
+
+#### Perform NMFk analyses
+
+Here, the **NMFk** results are loaded from a prior ML run.
+
+As seen from the output above, the **NMFk** analyses identified that the optimal number of geothermal signatures in the dataset **6**.
+
+Solutions with a number of signatures less than **6** are underfitting.
+
+Solutions with a number of signatures greater than **6** are overfitting and unacceptable.
+
+The set of acceptable solutions are defined by the **NMFk** algorithm as follows:
+
+The acceptable solutions contain 2, 5 and 6 signatures.
+
+#### Post-process NMFk results
+
+#### Number of signatures
+
+Below is a plot representing solution quality (fit) and silhouette width (robustness) for different numbers of signatures `k`:
+
+The plot above also demonstrates that the acceptable solutions contain 2, 5 and 6 signatures.
+
+#### Analysis of all the acceptable solutions 
+
+The ML solutions containing an acceptable number of signatures are further analyzed as follows:
+
+The results for a solution with **6** signatures presented above will be further discussed here.
+
+The well attributes are clustered into **6** groups:
+
+
+
+<div style="background-color: gray;">
+  <p>
+    <iframe src="../results-set00-v9-inv-750-1000-daln/attributes-6-groups.txt" frameborder="0" height="400"
+      width="95%"></iframe>
+  </p>
+</div>
+
+This grouping is based on analyses of the attribute matrix `W`:
+
+![attributes-6-labeled-sorted](../figures-set00-v9-inv-750-1000-daln/attributes-6-labeled-sorted.png)
+
+Note that the attribute matrix `W` is automatically modified to account that a range of vertical depths is applied in characterizing the site wells.
+
+The well locations are also clustered into **6** groups:
+
+<div style="background-color: gray;">
+  <p>
+    <iframe src="../results-set00-v9-inv-750-1000-daln/locations-6-groups.txt" frameborder="0" height="400"
+      width="95%"></iframe>
+  </p>
+</div>
+
+This grouping is based on analyses of the location matrix `H`:
+
+![locations-6-labeled-sorted](../figures-set00-v9-inv-750-1000-daln/locations-6-labeled-sorted.png)
+
+The map [../figures-set00-v9-inv-750-1000-daln/locations-6-map.html](../figures-set00-v9-inv-750-1000-daln/locations-6-map.html) provides interactive visualization of the extracted well location groups (the html file can also be opened with any browser). 
+
+<div>
+    <iframe src="../figures-set00-v9-inv-750-1000-daln/locations-6-map.html" frameborder="0" height="400" width="50%"></iframe>
+</div>
+
+More information on how the ML results are interpreted to provide geothermal insights is discussed in our research paper.
+
+### Type 2 flattening: Focus on well attributes
+
+#### Flatten the tensor into a matrix
+
+Matrix rows merge the depth and well locations dimensions.
+
+Matrix columns represent the well attributes.
+
+#### Perform NMFk analyses
+
+Here the **NMFk** results are loaded from a prior ML run.
+
+As seen from the output above, the **NMFk** analyses identified that the optimal number of geothermal signatures in the dataset **3**.
+
+Solutions with a number of signatures less than **3** are underfitting.
+
+Solutions with a number of signatures greater than **3** are overfitting and unacceptable.
+
+The set of acceptable solutions are defined by the **NMFk** algorithm as follows:
+
+The acceptable solutions contain 2 and 3 signatures.
+
+#### Post-process NMFk results
+
+#### Number of signatures
+
+Below is a plot representing solution quality (fit) and silhouette width (robustness) for different numbers of signatures `k`:
+
+The plot above also demonstrates that the acceptable solutions contain 2 and 3 signatures.
+
+#### Analysis of all the acceptable solutions 
+
+The ML solutions containing an acceptable number of signatures are further analyzed as follows:
+
+#### Analysis of the 3-signature solution
+
+The results for a solution with **3** signatures presented above will be further discussed here.
+
+The well attributes are clustered into **3** groups:
+
+<div style="background-color: gray;">
+    <iframe src="../results-set00-v9-inv-750-1000-dlan/attributes-3-groups.txt" frameborder="0" height="400"
+      width="95%"></iframe>
+</div>
+
+This grouping is based on analyses of the attribute matrix `W`:
+
+![attributes-3-labeled-sorted](../figures-set00-v9-inv-750-1000-dlan/attributes-3-labeled-sorted.png)
+
+Note that the attribute matrix `W` is automatically modified to account that a range of vertical depths is applied in characterizing the site wells.
+
+The well locations are also clustered into **3** groups:
+
+<div style="background-color: gray;">
+  <p>
+    <iframe src="../results-set00-v9-inv-750-1000-dlan/locations-3-groups.txt" frameborder="0" height="400"
+      width="95%"></iframe>
+  </p>
+</div>
+
+This grouping is based on analyses of the location matrix `H`:
+
+![locations-3-labeled-sorted](../figures-set00-v9-inv-750-1000-dlan/locations-3-labeled-sorted.png)
+
+The map [../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html](../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html) provides interactive visualization of the extracted well location groups (the html file can also be opened with any browser). 
+
+<div>
+    <iframe src="../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html" frameborder="0" height="400" width="50%"></iframe>
+</div>
+

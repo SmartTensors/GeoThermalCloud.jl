@@ -1,4 +1,4 @@
-Geothermal machine learning analysis: Brady site, NV
+Geothermal machine learning analysis: Brady site, Nevada
 ---
 
 This notebook is a part of the GTcloud.jl: GeoThermal Cloud for Machine Learning.
@@ -19,7 +19,7 @@ This notebook demonstrates how the **NMFk** module of **SmartTensors** can be ap
 	<img src="../../logos/nmfk-logo.png" alt="nmfk" width=25%  max-width=125px;/>
 </div>
 
-More information how the ML results are interpreted to provide geothermal insights is discussed in our research paper.
+More information on how the ML results are interpreted to provide geothermal insights is discussed in our research paper.
 
 ## Import required Julia modules
 
@@ -1354,7 +1354,7 @@ nkrange = 2:8 # range of k values explored by the NMFk algorithm
 
 casename = "set00-v9-inv" # casename of the performed ML analyses
 figuredir = "figures-$(casename)-$(depth)" # directory to store figures associated with the performed ML analyses
-resultdir = "results-$(casename)-$(depth)"; # directory to store results associated with the performed ML analyses
+resultdir = "results-$(casename)-$(depth)"; # directory to store obtained results associated with the performed ML analyses
 ```
 
 ### Plot well data
@@ -1371,18 +1371,15 @@ NMFk.plot_wells("map/dataset-$(casename).html", xcoord, ycoord, String.(welltype
 ```
 
 A HTML file named [../map/dataset-set00-v9-inv.html](../map/dataset-set00-v9-inv.html) is generated mapping the site data.
+The map provides interactive visualization of the site data (it can also be opened with any browser). 
 
-The map provides interacive visualization of the site data (it can be also openned with any browswer). 
+The map below shows the location of the `Dry`, `Injection` and `Production` wells.
 
-The map shows the location of the `Dry`, `Injection` and `Production` wells.
-
-<div>
-        <iframe src="../map/dataset-set00-v9-inv.html" frameborder="0" height="400" width="50%"></iframe>
-</div>
+![dataset-set01-v9-inv](../map/dataset-set01-v9-inv.png)
 
 ## Perform ML analyses
 
-For the ML analyses, the data tensor can be flatten into a data matrix by using two different approaches:
+For the ML analyses, the data tensor can be flattened into a data matrix by using two different approaches:
 
 - Type 1: Merge depth and attribute tensor dimensions; in this way, the focus of the ML analysis is on finding the features associated with the well locations
 - Type 2: Merge depth and location tensor dimensions; in this way, the focus of the ML analysis is on finding the features associated with the well attributes
@@ -1400,7 +1397,7 @@ Xdaln = reshape(Tn, (depth * length(attributes_process)), length(locations));
 
 Matrix rows merge the depth and attribute dimensions.
 
-Matrix cols represent the well locations.
+Matrix columns represent the well locations.
 
 #### Perform NMFk analyses
 
@@ -1445,7 +1442,7 @@ W, H, fitquality, robustness, aic = NMFk.load(nkrange, nruns; resultdir=resultdi
     └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkIO.jl:30
 
 
-Here, the **NMFk** results are loaded from a prior ML runs.
+Here, the **NMFk** results are loaded from a prior ML run.
 
 As seen from the output above, the **NMFk** analyses identified that the optimal number of geothermal signatures in the dataset **6**.
 
@@ -1453,7 +1450,7 @@ Solutions with a number of signatures less than **6** are underfitting.
 
 Solutions with a number of signatures greater than **6** are overfitting and unacceptable.
 
-The set of accetable solutions are defined as follows:
+The set of acceptable solutions are defined by the **NMFk** algorithm as follows:
 
 
 ```julia
@@ -1470,13 +1467,13 @@ NMFk.getks(nkrange, robustness[nkrange])
 
 
 
-The accceptable solutions contain 2, 5 and 6 signatures.
+The acceptable solutions contain 2, 5 and 6 signatures.
 
 #### Post-process NMFk results
 
 #### Number of signatures
 
-Plot representing solution quality (fit) and silhouette width (robustness) for different number of sigantures `k`:
+Below is a plot representing solution quality (fit) and silhouette width (robustness) for different numbers of signatures `k`:
 
 
 ```julia
@@ -1493,9 +1490,9 @@ NMFk.plot_signal_selecton(nkrange, fitquality, robustness; figuredir="$figuredir
 
     
 
-The plot above also demonstrates that the accceptable solutions contain 2, 5 and 6 signatures.
+The plot above also demonstrates that the acceptable solutions contain 2, 5 and 6 signatures.
 
-#### Analysis of all the accceptable solutions 
+#### Analysis of all the acceptable solutions 
 
 The ML solutions containing an acceptable number of signatures are further analyzed as follows:
 
@@ -2297,6 +2294,13 @@ The results for a solution with **6** signatures presented above will be further
 
 The well attributes are clustered into **6** groups:
 
+
+```julia
+Mads.display("results-set00-v9-inv-750-1000-daln/attributes-6-groups.txt")
+```
+
+
+
 <div style="background-color: gray;">
   <p>
     <iframe src="../results-set00-v9-inv-750-1000-daln/attributes-6-groups.txt" frameborder="0" height="400"
@@ -2308,7 +2312,7 @@ This grouping is based on analyses of the attribute matrix `W`:
 
 ![attributes-6-labeled-sorted](../figures-set00-v9-inv-750-1000-daln/attributes-6-labeled-sorted.png)
 
-Note that the attribute matrix `W` is automatically modified to account that vertical depths are applied in charecterizing  the analyzed datasets.
+Note that the attribute matrix `W` is automatically modified to account that a range of vertical depths is applied in characterizing the site wells.
 
 The well locations are also clustered into **6** groups:
 
@@ -2323,13 +2327,13 @@ This grouping is based on analyses of the location matrix `H`:
 
 ![locations-6-labeled-sorted](../figures-set00-v9-inv-750-1000-daln/locations-6-labeled-sorted.png)
 
-The map [../figures-set00-v9-inv-750-1000-daln/locations-6-map.html](../figures-set00-v9-inv-750-1000-daln/locations-6-map.html) provides interacive visualization of the extracted well location groups (the html file can be also openned with any browswer). 
+The map [../figures-set00-v9-inv-750-1000-daln/locations-6-map.html](../figures-set00-v9-inv-750-1000-daln/locations-6-map.html) provides interactive visualization of the extracted well location groups (the html file can also be opened with any browser). 
 
 <div>
     <iframe src="../figures-set00-v9-inv-750-1000-daln/locations-6-map.html" frameborder="0" height="400" width="50%"></iframe>
 </div>
 
-More information how the ML results are interpreted to provide geothermal insights is discussed in our research paper.
+More information on how the ML results are interpreted to provide geothermal insights is discussed in our research paper.
 
 ### Type 2 flattening: Focus on well attributes
 
@@ -2342,7 +2346,7 @@ Xdlan = reshape(permutedims(Tn, (1,3,2)), (depth * length(locations)), length(at
 
 Matrix rows merge the depth and well locations dimensions.
 
-Matrix cols represent the well attributes.
+Matrix columns represent the well attributes.
 
 #### Perform NMFk analyses
 
@@ -2381,7 +2385,7 @@ W, H, fitquality, robustness, aic = NMFk.load(nkrange, nruns; resultdir=resultdi
     └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkIO.jl:30
 
 
-Here the **NMFk** results are loaded from a prior ML runs.
+Here the **NMFk** results are loaded from a prior ML run.
 
 As seen from the output above, the **NMFk** analyses identified that the optimal number of geothermal signatures in the dataset **3**.
 
@@ -2389,7 +2393,7 @@ Solutions with a number of signatures less than **3** are underfitting.
 
 Solutions with a number of signatures greater than **3** are overfitting and unacceptable.
 
-The set of accetable solutions are defined as follows:
+The set of acceptable solutions are defined by the **NMFk** algorithm as follows:
 
 
 ```julia
@@ -2405,13 +2409,13 @@ NMFk.getks(nkrange, robustness[nkrange])
 
 
 
-The accceptable solutions contain 2 and 3 signatures.
+The acceptable solutions contain 2 and 3 signatures.
 
 #### Post-process NMFk results
 
 #### Number of signatures
 
-Plot representing solution quality (fit) and silhouette width (robustness) for different number of sigantures `k`:
+Below is a plot representing solution quality (fit) and silhouette width (robustness) for different numbers of signatures `k`:
 
 
 ```julia
@@ -2420,15 +2424,15 @@ NMFk.plot_signal_selecton(nkrange, fitquality, robustness; figuredir="$figuredir
 
 
     
-![png](Brady_files/Brady_61_0.png)
+![png](Brady_files/Brady_63_0.png)
     
 
 
     
 
-The plot above also demonstrates that the accceptable solutions contain 2 and 3 signatures.
+The plot above also demonstrates that the acceptable solutions contain 2 and 3 signatures.
 
-#### Analysis of all the accceptable solutions 
+#### Analysis of all the acceptable solutions 
 
 The ML solutions containing an acceptable number of signatures are further analyzed as follows:
 
@@ -2478,7 +2482,7 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, locations, a
 
 
     
-![png](Brady_files/Brady_63_3.png)
+![png](Brady_files/Brady_65_3.png)
     
 
 
@@ -2500,7 +2504,7 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, locations, a
 
 
     
-![png](Brady_files/Brady_63_5.png)
+![png](Brady_files/Brady_65_5.png)
     
 
 
@@ -2508,13 +2512,13 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, locations, a
 
 
     
-![png](Brady_files/Brady_63_7.png)
+![png](Brady_files/Brady_65_7.png)
     
 
 
 
     
-![png](Brady_files/Brady_63_8.png)
+![png](Brady_files/Brady_65_8.png)
     
 
 
@@ -2522,7 +2526,7 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, locations, a
 
 
     
-![png](Brady_files/Brady_63_10.png)
+![png](Brady_files/Brady_65_10.png)
     
 
 
@@ -2582,7 +2586,7 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, locations, a
 
 
     
-![png](Brady_files/Brady_63_13.png)
+![png](Brady_files/Brady_65_13.png)
     
 
 
@@ -2604,7 +2608,7 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, locations, a
 
 
     
-![png](Brady_files/Brady_63_15.png)
+![png](Brady_files/Brady_65_15.png)
     
 
 
@@ -2612,27 +2616,13 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, locations, a
 
 
     
-![png](Brady_files/Brady_63_17.png)
+![png](Brady_files/Brady_65_17.png)
     
 
 
 
     
-![png](Brady_files/Brady_63_18.png)
-    
-
-
-    
-
-
-    
-![png](Brady_files/Brady_63_20.png)
-    
-
-
-
-    
-![png](Brady_files/Brady_63_21.png)
+![png](Brady_files/Brady_65_18.png)
     
 
 
@@ -2640,7 +2630,21 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, locations, a
 
 
     
-![png](Brady_files/Brady_63_23.png)
+![png](Brady_files/Brady_65_20.png)
+    
+
+
+
+    
+![png](Brady_files/Brady_65_21.png)
+    
+
+
+    
+
+
+    
+![png](Brady_files/Brady_65_23.png)
     
 
 
@@ -2693,7 +2697,7 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, locations, a
 
 
     
-![png](Brady_files/Brady_63_28.png)
+![png](Brady_files/Brady_65_28.png)
     
 
 
@@ -2715,7 +2719,7 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, locations, a
 
 
     
-![png](Brady_files/Brady_63_30.png)
+![png](Brady_files/Brady_65_30.png)
     
 
 
@@ -2723,13 +2727,13 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, locations, a
 
 
     
-![png](Brady_files/Brady_63_32.png)
+![png](Brady_files/Brady_65_32.png)
     
 
 
 
     
-![png](Brady_files/Brady_63_33.png)
+![png](Brady_files/Brady_65_33.png)
     
 
 
@@ -2737,7 +2741,7 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, locations, a
 
 
     
-![png](Brady_files/Brady_63_35.png)
+![png](Brady_files/Brady_65_35.png)
     
 
 
@@ -2804,7 +2808,7 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, locations, a
 
 
     
-![png](Brady_files/Brady_63_40.png)
+![png](Brady_files/Brady_65_40.png)
     
 
 
@@ -2832,7 +2836,7 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, locations, a
 
 
     
-![png](Brady_files/Brady_63_42.png)
+![png](Brady_files/Brady_65_42.png)
     
 
 
@@ -2840,27 +2844,13 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, locations, a
 
 
     
-![png](Brady_files/Brady_63_44.png)
+![png](Brady_files/Brady_65_44.png)
     
 
 
 
     
-![png](Brady_files/Brady_63_45.png)
-    
-
-
-    
-
-
-    
-![png](Brady_files/Brady_63_47.png)
-    
-
-
-
-    
-![png](Brady_files/Brady_63_48.png)
+![png](Brady_files/Brady_65_45.png)
     
 
 
@@ -2868,7 +2858,21 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, locations, a
 
 
     
-![png](Brady_files/Brady_63_50.png)
+![png](Brady_files/Brady_65_47.png)
+    
+
+
+
+    
+![png](Brady_files/Brady_65_48.png)
+    
+
+
+    
+
+
+    
+![png](Brady_files/Brady_65_50.png)
     
 
 
@@ -2896,7 +2900,7 @@ This grouping is based on analyses of the attribute matrix `W`:
 
 ![attributes-3-labeled-sorted](../figures-set00-v9-inv-750-1000-dlan/attributes-3-labeled-sorted.png)
 
-Note that the attribute matrix `W` is automatically modified to account that vertical depths are applied in charecterizing  the analyzed datasets.
+Note that the attribute matrix `W` is automatically modified to account that a range of vertical depths is applied in characterizing the site wells.
 
 The well locations are also clustered into **3** groups:
 
@@ -2911,7 +2915,7 @@ This grouping is based on analyses of the location matrix `H`:
 
 ![locations-3-labeled-sorted](../figures-set00-v9-inv-750-1000-dlan/locations-3-labeled-sorted.png)
 
-The map [../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html](../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html) provides interacive visualization of the extracted well location groups (the html file can be also openned with any browswer). 
+The map [../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html](../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html) provides interactive visualization of the extracted well location groups (the html file can also be opened with any browser). 
 
 <div>
     <iframe src="../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html" frameborder="0" height="400" width="50%"></iframe>

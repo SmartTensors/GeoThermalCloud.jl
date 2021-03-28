@@ -405,36 +405,39 @@ machine-learning analyses.
 <img src="../../logos/nmfk-logo.png" alt="nmfk" width=25%  max-width=125px;/>
 \end{verbatim}
 
-More information how the ML results are interpreted to provide
+More information on how the ML results are interpreted to provide
 geothermal insights is discussed in our research paper.
 
     \hypertarget{introduction}{%
 \subsection{Introduction}\label{introduction}}
 
+Southwest New Mexico (\textbf{SWNM}) is a region important for
+geothermal exploration.
+
 \textbf{SWNM} is broadly divided into four physiographic provinces: -
 the Colorado Plateau - the Mogollon-Datil Volcanic Field (MDVF) - the
 Basin and Range, and - the Rio Grande rift.
 
-Each of the \textbf{SWNM} physiographic province is associated with
+Each of the \textbf{SWNM} physiographic provinces is associated with
 different types of unique hydrothermal systems with temperatures ranging
 from low (\textless90℃) to medium (90-150℃).
 
 Some of the \textbf{SWNM} systems are already utilized for commercial
 and recreational purposes.
 
-There are alreadt energy-production facilities for both electricity and
+There are already energy-production facilities for both electricity and
 direct-use heating.
 
-For example, the Basin and Range province has one geothermal based power
-plant (Lightning dock) of gross \textasciitilde14 MWe power, five
-greenhouse based farms, and numerous medium temperature wells and
-springs. There are 14 spas and recreational facilities utilizing the
-\textbf{SWNM} geothermal resources.
+For example, the Basin and Range province has one geothermal power plant
+(Lightning dock) of gross \textasciitilde14 MWe power, five greenhouse
+farms, and numerous medium-temperature wells and springs. There are 14
+spas and recreational facilities utilizing the \textbf{SWNM} geothermal
+resources.
 
 Recent Play Fairway Analysis (PFA) Phase I study of \textbf{SWNM}
-conducted at LANL, revealed more potential geothermal resources.
+conducted at LANL revealed more potential geothermal resources.
 
-The study are and the data collection locations are mapped below.
+The study area and the data collection locations are mapped below.
 
 \begin{figure}
 \centering
@@ -513,8 +516,8 @@ data}\label{setup-the-working-directory-containing-the-swnm-data}}
 \end{Verbatim}
 \end{tcolorbox}
 
-    \hypertarget{load-the-data-file}{%
-\subsubsection{Load the data file}\label{load-the-data-file}}
+    \hypertarget{load-the-swnm-data-file}{%
+\subsubsection{Load the SWNM data file}\label{load-the-swnm-data-file}}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{3}{\boxspacing}
@@ -716,9 +719,9 @@ coordinates}\label{define-location-coordinates}}
 \end{Verbatim}
 \end{tcolorbox}
 
-    \hypertarget{set-up-directories-to-store-results-and-figures}{%
-\subsubsection{Set up directories to store results and
-figures}\label{set-up-directories-to-store-results-and-figures}}
+    \hypertarget{set-up-directories-to-store-obtained-results-and-figures}{%
+\subsubsection{Set up directories to store obtained results and
+figures}\label{set-up-directories-to-store-obtained-results-and-figures}}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{9}{\boxspacing}
@@ -728,9 +731,9 @@ figures}\label{set-up-directories-to-store-results-and-figures}}
 \end{Verbatim}
 \end{tcolorbox}
 
-    \hypertarget{define-a-range-for-number-of-signatures-to-be-explored}{%
-\subsubsection{Define a range for number of signatures to be
-explored}\label{define-a-range-for-number-of-signatures-to-be-explored}}
+    \hypertarget{define-a-range-for-the-number-of-signatures-to-be-explored}{%
+\subsubsection{Define a range for the number of signatures to be
+explored}\label{define-a-range-for-the-number-of-signatures-to-be-explored}}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{10}{\boxspacing}
@@ -812,17 +815,17 @@ Signals: 10 Fit:     6.023938 Silhouette:   0.02130362 AIC:    -2624.026
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkIO.jl:30
     \end{Verbatim}
 
-    Here, the \textbf{NMFk} results are loaded from a prior ML runs.
+    Here, the \textbf{NMFk} results are loaded from a prior ML run.
 
 As seen from the output above, the NMFk analyses identified that the
 optimal number of geothermal signatures in the dataset \textbf{5}. This
-estimate based on a criteria that \texttt{Silhouette}
-(\texttt{robustness}) of the acceptable solutions is \textgreater0.5. If
-a criteria for \texttt{Silhouette} is \textgreater0.25, the optimaal
-number of signatures is \textbf{8}.
+estimate is based on a criterion that \texttt{Silhouette}
+(\texttt{robustness}) of the acceptable solutions is \textgreater0.5.
+However, if a criterion for \texttt{Silhouette} is \textgreater0.25, the
+optimal number of signatures is \textbf{8}.
 
 It is important to note that our ML methodology can be applied to
-perform both \textbf{clasification} and \textbf{regression} analyses.
+perform both \textbf{classification} and \textbf{regression} analyses.
 
 For the case of \textbf{regression} (predictive) analyses, the optimal
 number of signatures is \textbf{5}.
@@ -834,11 +837,12 @@ Solutions with a number of signatures greater than \textbf{5} are
 overfitting and unacceptable.
 
 The solution for \texttt{k=8} is also analyzed below because it provides
-further refinements in the extracted geothermal features. It also
-provides further demonstration of the \textbf{clasification} capabilites
-of our ML methodology.
+further refinements in the extracted geothermal signatures. It also
+provides further demonstration of the \textbf{classification}
+capabilities of our ML methodology.
 
-The set of accetable solutions are defined as follows:
+The set of acceptable solutions are defined by the \textbf{NMFk}
+algorithm as follows:
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{13}{\boxspacing}
@@ -858,7 +862,7 @@ The set of accetable solutions are defined as follows:
 \end{Verbatim}
 \end{tcolorbox}
         
-    The accceptable solutions contain 2, 3, 4, and 5 signatures.
+    The acceptable solutions contain 2, 3, 4, and 5 signatures.
 
     \hypertarget{post-process-nmfk-results}{%
 \subsubsection{Post-process NMFk
@@ -867,8 +871,8 @@ results}\label{post-process-nmfk-results}}
 \hypertarget{number-of-signatures}{%
 \paragraph{Number of signatures}\label{number-of-signatures}}
 
-Plot representing solution quality (fit) and silhouette width
-(robustness) for different number of sigantures \texttt{k}:
+Below is a plot representing solution quality (fit) and silhouette width
+(robustness) for different numbers of signatures \texttt{k}:
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{14}{\boxspacing}
@@ -886,13 +890,12 @@ Plot representing solution quality (fit) and silhouette width
 
     \end{Verbatim}
 
-    The plot above also demonstrates that the accceptable solutions contain
-2, 3, 4, 5 and 8 signatures. Note, any solution is accepted if the
-robustness \textgreater0.25.
+    The plot above also demonstrates that the acceptable solutions contain
+2, 3, 4, and 5 signatures.
 
-\hypertarget{analysis-of-all-the-accceptable-solutions}{%
-\paragraph{Analysis of all the accceptable
-solutions}\label{analysis-of-all-the-accceptable-solutions}}
+\hypertarget{analysis-of-all-the-acceptable-solutions}{%
+\paragraph{Analysis of all the acceptable
+solutions}\label{analysis-of-all-the-acceptable-solutions}}
 
 The ML solutions containing an acceptable number of signatures are
 further analyzed as follows:
@@ -2093,16 +2096,16 @@ B.Iorio well    0.409
 \caption{locations-5-labeled-sorted}
 \end{figure}
 
-The map \url{../figures-case01/locations-5-map.html} provides interacive
-visualization of the extracted location groups (the html file can be
-also openned within any browser).
+The map \url{../figures-case01/locations-5-map.html} provides
+interactive visualization of the extracted location groups (the html
+file can also be opened within any browser).
 
     \hypertarget{comparison-of-the-ml-solutions-against-the-swnm-physiographic-provinces}{%
 \paragraph{Comparison of the ML solutions against the SWNM physiographic
 provinces}\label{comparison-of-the-ml-solutions-against-the-swnm-physiographic-provinces}}
 
-Spatial association of the extracted signatures with the four
-physiographic provinces in SWNM is summarized here:
+The spatial association of the extracted signatures with the four
+physiographic provinces in SWNM is summarized in the figure below:
 
 \begin{figure}
 \centering
@@ -2110,58 +2113,71 @@ physiographic provinces in SWNM is summarized here:
 \caption{signatures}
 \end{figure}
 
-The solutions for k=2, 3, and 4 provide a higher-level generalization of
-the geothermal signatures while the k=8 solution allow us to further
-refine the geothermal signatures. The solution for k=5 provides
-appropriate generalization for the data used. Clearly, the ML algorithm
-was able to blindly indentify the physiographic provinces associated
-with analyzed hydrogeothermal systems without providing any information
-about their location (coordinates).
+The solutions for k=2, 3, and 4 provide a higher-level classification of
+the geothermal locations, while the k=8 solution allow us to further
+refine the geothermal signatures and their association to the
+physiographic provinces. The solution for k=5 provides the best
+classification of the geothermal locations.
+
+Based on the figure above, it is clear that our ML algorithm was able to
+blindly identify the physiographic provinces associated with analyzed
+hydrogeothermal systems without providing any information about their
+spatial location (coordinates).
+
+Further observations based on the figure above are:
 
 \begin{itemize}
 \tightlist
 \item
-  The NMFk solution for k=2 separates the Colorado Plateau and the
-  Volcanic Field (Signature A) from the Basin and Range and the Rift
-  zone (Signature B) provinces (Figure a).
+  The solution for k=2 separates the Colorado Plateau and the Volcanic
+  Field (Signature A) from the Basin and Range and the Rift zone
+  (Signature B) provinces (Figure a).
 \item
-  The k=3 solution combined the Colorado Plateau and the Volcanic Field
+  The k=3 solution combines the Colorado Plateau and the Volcanic Field
   in Signature A; however, Signatures B and C separate the Basin and
   Range and the Rio Grande Rift provinces, respectively (Figure b).
 \item
   Signature A of the k=4 solution (Figure c) represents the Volcanic
   Field. Signature B captures the Basin and Range province. Signature C
   coincides with the Colorado Plateau. Signature D encompasses the Rio
-  Grande rift zone (Figure c).
+  Grande Rift zone (Figure c).
 \item
-  The k=5 solution (Figure d), regrouped the four signatures of the k=4
+  The k=5 solution (Figure d) regroups the four signatures of the k=4
   solution into five signatures. Signatures A and E cover MDVF;
   Signatures B, C, and D capture the remaining three provinces: the
-  Basin and Range, the Colorado Plateau, and the Rio Grande rift
+  Basin and Range, the Colorado Plateau, and the Rio Grande Rift
   provinces, respectively.
 \item
   In the k=8 solution (Figure e), Signature B captures the Colorado
   Plateau province. Signatures G and H encompass two separate areas in
-  the Rio Grande rift zone (Figure e). Three of the signatures (A, C, D)
-  associated with the Volcanic Field capture spatial variability within
-  this province. Two signatures (E and F) represent the spatial
+  the Rio Grande Rift zone (Figure e). Three of the signatures (A, C, D)
+  are associated with the Volcanic Field capture spatial variability
+  within this province. Two signatures (E and F) represent the spatial
   variability in the Basin and Range province.
 \end{itemize}
 
-    \hypertarget{description-of-signatures-for-spatial-associations}{%
-\paragraph{Description of signatures for spatial
-associations}\label{description-of-signatures-for-spatial-associations}}
+    \hypertarget{description-of-location-matrices-w}{%
+\paragraph{\texorpdfstring{Description of location matrices
+(\texttt{W})}{Description of location matrices (W)}}\label{description-of-location-matrices-w}}
 
-Contribution of each location on each signatures. This plot shows
-signatures of accepted solution together. From left to right, numbers of
-signature increased. This shows how the signatures progress if number of
-signature increases.
+The plot below shows location matrices (\texttt{W}) of the extracted
+signatures for all the accepted solutions together. From left to right,
+the number of signatures increases. The matrices are color-coded to show
+high (red) and low (green) associations between the locations and
+signatures. Like the maps above, this figure below demonstrates how the
+signatures get transformed and modified as the number of signatures
+increases. The transitions of the signatures show the consistencies of
+the obtained results.
 
 \begin{figure}
 \centering
 \includegraphics{../figures-case01/locations.png}
 \caption{Ws}
 \end{figure}
+
+Further observations based on the figure above are (note that these
+observations are consistent with the observations provided above
+regarding the physiographic provinces):
 
 \begin{itemize}
 \tightlist
@@ -2170,42 +2186,43 @@ signature increases.
 \item
   Signatures A and B of the k=3 solution are split up into Signatures A,
   B, and C of the k=4 solution; however, Signature C of the k=3 solution
-  and Signature D of the k=4 solution share similar properties.
+  and Signature D of the k=4 solution share very similar properties.
 \item
   Signatures A, B, C, and D of both the k=4 and 5 solutions possess
   similar properties; however, the k=5 solution got a completely new
   signature (Signature E).
 \item
-  The k=8 solution regrouped the k=5 solution. Signature A of the k=5
-  solution possesses similar properties to Signatures A and D of the k=8
-  solution. Signature B of the k=5 solution shares similar properties of
-  Signatures E and F of the k=8 solution. Signature C of the k=5
-  solution has similar properties to both Signatures B and C of the k=8
-  solution. Signature D of the k=5 solution and both Signatures G and H
-  of the k=8 solution share similar properties.
+  The k=8 solution regrouped the signatures of the k=5 solution.
+  Signature A of the k=5 solution possesses similar properties to
+  Signatures A and D of the k=8 solution. Signature B of the k=5
+  solution shares similar properties to Signatures E and F of the k=8
+  solution. Signature C of the k=5 solution has similar properties to
+  both Signatures B and C of the k=8 solution. Signature D of the k=5
+  solution and both Signatures G and H of the k=8 solution share similar
+  properties.
 \item
-  It is critical to mention that although the 44 locations in the W
-  matrices are labeled (Figures 3 and 4) to be associated predominantly
-  with a given geothermal signature (i.e., a certain region; A, B,
-  etc.), it does not mean the locations are associated with only one
-  signature.
+  It is critical to mention that although the 44 locations in the
+  \texttt{W} matrices are labeled to be associated with a given
+  geothermal signature (i.e., a certain region; A, B, etc.), it does not
+  mean the locations are associated with only one signature as seen by
+  the color-coding in the figure.
 \item
   Instead, it means that those locations predominantly dominate
   commensurate signatures with contributions from other signatures too.
-\item
-  Based on the spatial associations of these geothermal signatures, we
-  identify that the k=5 solution to be the most optimal to represent
-  spatial variability of the geothermal data in the study region.
 \end{itemize}
 
-    \hypertarget{description-of-attribute-matrices}{%
-\paragraph{Description of attribute
-matrices}\label{description-of-attribute-matrices}}
+    \hypertarget{description-of-attribute-matrices-h}{%
+\paragraph{\texorpdfstring{Description of attribute matrices
+(\texttt{H})}{Description of attribute matrices (H)}}\label{description-of-attribute-matrices-h}}
 
-The plot below shows attribute matrices of all accepted solutions.
-Numbers of signature increases from left to right. This plot shows how
-each attribute contribute to each signature. Also, this plot shows how
-the signature progress as the numbers of signature increase.
+The plot below shows attribute matrices of all the accepted solutions.
+The number of signatures increases from left to right. The figure
+demonstrates how each attribute contributes to the extracted signature.
+The matrices are color-coded to show high (red) and low (green)
+associations between the attributes and signatures. Also, this plot
+shows how the signatures get transformed and modified as the number of
+signatures increases. As above, the transitions of the signatures show
+the consistencies of the obtained ML results.
 
 \begin{figure}
 \centering
@@ -2213,18 +2230,13 @@ the signature progress as the numbers of signature increase.
 \caption{Hs}
 \end{figure}
 
+Further observations based on the figure above are:
+
 \begin{itemize}
 \tightlist
 \item
-  The above figure shows the H matrices for signatures of the k=2, 3, 4,
-  5, and 8.
-\item
-  The H matrices demonstrate the transformation of the extracted
-  signatures as the number of signatures increases.
-\item
-  For example, Signatures A, B, and C of the k=3 solution have similar
-  properties to Signatures A, B, and both C and D of the k=4 solution,
-  respectively.
+  Signatures A, B, and C of the k=3 solution have similar properties to
+  Signatures A, B, and both C and D of the k=4 solution, respectively.
 \item
   Signatures of A, B, C, and D of the k=4 solution possess similar
   properties to signatures both A and E, B, C, and D of the k=5
@@ -2235,8 +2247,9 @@ the signature progress as the numbers of signature increase.
   the k=8 solution, respectively.
 \end{itemize}
 
-    \hypertarget{optimal-signatures}{%
-\paragraph{Optimal signatures}\label{optimal-signatures}}
+    \hypertarget{optimal-geothermal-signatures-charecterizing-swnm-region}{%
+\paragraph{Optimal geothermal signatures charecterizing SWNM
+region}\label{optimal-geothermal-signatures-charecterizing-swnm-region}}
 
 The figure below shows the map of the optimal signatures. The k=5
 solution best characterizes the spatial associations and geothermal
@@ -2248,10 +2261,10 @@ attributes of the SWNM.
 \caption{Ws}
 \end{figure}
 
-    \hypertarget{signatures-and-corresponding-resource-type-dominant-attributes-physical-significance-and-physiographic-provinces}{%
-\paragraph{Signatures and corresponding resource type, dominant
-attributes, physical significance and physiographic
-provinces}\label{signatures-and-corresponding-resource-type-dominant-attributes-physical-significance-and-physiographic-provinces}}
+    \hypertarget{signatures-and-their-relationships-to-resource-types-geothermal-attributes-physical-processes-and-physiographic-provinces}{%
+\paragraph{Signatures and their relationships to resource types,
+geothermal attributes, physical processes and physiographic
+provinces}\label{signatures-and-their-relationships-to-resource-types-geothermal-attributes-physical-processes-and-physiographic-provinces}}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.16}}
@@ -2267,31 +2280,31 @@ Signature & Resource type & Dominant attributes & Physical Significance
 \bottomrule
 \end{longtable}
 
-\textbar A\textbar Low temperarutre\textbar{}
+\textbar A\textbar Low temperature\textbar{}
 
 Gravity anomaly Magnetic intensity Volcanic dike density Drainage
 density Li+ concentration
 
 \textbar Shallow heat flow\textbar Southern MDVF\textbar{}
-\textbar B\textbar Medium temperarutre\textbar{}
+\textbar B\textbar Medium temperature\textbar{}
 
 B+ and Li+ concentrations Gravity anomaly Magnetic intensity Quaternary
 fault density Silica geothermometer Heat flow Depth to the basement
 
 \textbar Deep heat flow\textbar Southern Rio Grande rift\textbar{}
-\textbar C\textbar Low temperarutre\textbar{}
+\textbar C\textbar Low temperature\textbar{}
 
 B+ and Li+ concentrations Magnetic intensity Drainage density Crustal
 thickness
 
 \textbar Deep heat source\textbar Colorado Plateau\textbar{}
-\textbar D\textbar Low temperarutre\textbar{}
+\textbar D\textbar Low temperature\textbar{}
 
 Drainage density Fault intersection density Seismicity State map fault
 density Spring density Hydraulic gradient
 
-\textbar Tectonics\textbar Northern Rio Grande rift \textbar{}
-\textbar E\textbar Medium temperarutre\textbar{}
+\textbar Tectonics\textbar Northern Rio Grande Rift \textbar{}
+\textbar E\textbar Medium temperature\textbar{}
 
 Drainage density State map fault density Precipitation Silica
 geothermometer Hydraulic gradient
@@ -2305,30 +2318,30 @@ assessment}\label{geothermal-resource-assessment}}
 \begin{itemize}
 \tightlist
 \item
-  The excacted signatures charecterize low- and medium-temperature
+  The extracted signatures characterize low- and medium-temperature
   hydrothermal systems.
 \item
-  The signatures are charecterized by unique geothermal attributes which
-  are automatically indentified by our ML analyses.
+  The signatures are characterized by unique geothermal attributes which
+  are automatically identified by our ML analyses.
 \end{itemize}
 
-\hypertarget{medium-temperarutre-hydrothermal-systems}{%
-\subparagraph{Medium-temperarutre hydrothermal
-systems}\label{medium-temperarutre-hydrothermal-systems}}
+\hypertarget{medium-temperature-hydrothermal-systems}{%
+\subparagraph{Medium-temperature hydrothermal
+systems}\label{medium-temperature-hydrothermal-systems}}
 
 \begin{itemize}
 \tightlist
 \item
-  Two of the signatures (B and E) represnt medium-temperarutre
+  Two of the signatures (B and E) represent medium-temperature
   hydrothermal systems
 \item
   The medium-temperature signatures (B and E) fall in the Southern Rio
-  Grande rift and the Northern MDVF zones.
+  Grande Rift and the Northern MDVF zones.
 
   \begin{itemize}
   \tightlist
   \item
-    The dominant attributes of the Southern Rio Grande rift zone are B+
+    The dominant attributes of the Southern Rio Grande Rift zone are B+
     and Li+ concentrations, Gravity anomaly, Magnetic intensity,
     Quaternary fault density, Silica geothermometer, Heat flow, Depth to
     the basement.
@@ -2339,18 +2352,18 @@ systems}\label{medium-temperarutre-hydrothermal-systems}}
   \end{itemize}
 \end{itemize}
 
-\hypertarget{low-temperarutre-hydrothermal-systems}{%
-\subparagraph{Low-temperarutre hydrothermal
-systems}\label{low-temperarutre-hydrothermal-systems}}
+\hypertarget{low-temperature-hydrothermal-systems}{%
+\subparagraph{Low-temperature hydrothermal
+systems}\label{low-temperature-hydrothermal-systems}}
 
 \begin{itemize}
 \tightlist
 \item
-  Three of the signatures (A, C and D) represnt low-temperature
+  Three of the signatures (A, C, and D) represent low-temperature
   hydrothermal systems.
 \item
-  The low-temperature signatures (A, C and D) fall in the Southern MDVF,
-  Colorado Plateau, and Northern Rio Grande Rift zones.
+  The low-temperature signatures (A, C, and D) fall in the Southern
+  MDVF, Colorado Plateau, and Northern Rio Grande Rift zones.
 \end{itemize}
 
 For more details, please look at our paper titled: ``Discovering Hidden
