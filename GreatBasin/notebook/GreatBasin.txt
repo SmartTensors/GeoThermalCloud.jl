@@ -1,0 +1,229 @@
+Geothermal machine learning analysis: Great Basin 
+---
+
+This notebook is a part of the GTcloud.jl: GeoThermal Cloud for Machine Learning.
+
+<div style="text-align: left; padding-bottom: 30px;">
+    <img src="../../logos/geothermalcloud-small.png" alt="geothermalcloud" width=25%  max-width=125px;/>
+</div>
+
+Machine learning analyses are performed using the **SmartTensors** machine learning framework.
+
+<div style="text-align: left; padding-bottom: 30px;">
+	<img src="../../logos/SmartTensorsNewSmaller.png" alt="SmartTensors" width=25%  max-width=125px;/>
+</div>
+
+This notebook demonstrates how the **NMFk** module of **SmartTensors** can be applied to perform unsupervised geothermal machine-learning analyses.
+
+<div style="text-align: left; padding-bottom: 30px;">
+	<img src="../../logos/nmfk-logo.png" alt="nmfk" width=25%  max-width=125px;/>
+</div>
+
+More information on how the ML results are interpreted to provide geothermal insights is discussed in our research paper.
+
+## Introduction
+
+- The Great Basin is the largest area of contiguous endorheic watersheds in North America
+- It spans nearly all of Nevada, much of Oregon and Utah, and portions of California, Idaho, Wyoming, and Baja California, Mexico
+- The Great Basin includes multiple geothermal reservoirs ranging from low- to high-temperature
+- The Great Basin has huge potential geothermal potential 
+- Further explorations requires an understanding of the local/regional as well as spatial/temporal patterns in various geothermal-related attributes  
+- Here, we apply our unsupervised machine learning method **NMFk** to analyze the available geothermal and geochemical data to understand better the spatial distribution of the hydrothermal resources
+- Our study area (below) includes 14,258 data points
+
+
+<div style="text-align: left; padding-bottom: 30px; padding-top: 30px;">
+	<img src="../img/greatbasin_data_locs_alt.png" alt="greatbasin_data_locs_alt" width=50%  max-width=225px;/>
+</div>
+
+## Import required libraries for this work
+
+If **NMFk** is not installed, first execute in the Julia REPL `import Pkg; Pkg.add("NMFk"); Pkg.add("DelimitedFiles"); Pkg.add("JLD"); Pkg.add("Gadfly"); Pkg.add("Cairo"); Pkg.add("Fontconfig"); Pkg.add("Mads"); Pkg.add("Kriging")`.
+
+## Load and pre-process the data
+
+### Setup the working directory containing the Great Basin data
+
+### Load the data file
+
+### Define names of the data attributes (matrix columns)
+
+Short attribute names are used for coding.
+
+Long attribute names are used for plotting and visualization.
+
+### Define location coordinates
+
+### Pre-processing
+
+It is important to note that a lot of the attribute data are missing.
+
+![gb_duplicatedRows](../data/gb_duplicatedRows.png)
+
+Close to complete records are available only for `Temperature`.
+
+Data for `TDS`, `Al`, and `δO18` are heavily missing.
+
+Even though the dataset is very sparse, our ML methods can analyze the inputs.
+
+Most of the commonly used ML methods cannot process datasets that are sparse.
+
+Furthermore, different attributes in the Great Basin dataset cover different areas.
+
+This is demonstrated in the maps generated below.
+
+### Log-transformation
+
+Attribute values are log-transformed to better capture the order of magnitude variability.
+
+All attributes except for `Quartz`, `Chalcedony` and `pH` are log-transformed.
+
+#### Define and normalize the data matrix
+
+### Define a range for the number of signatures to be explored 
+
+### Define directory with exsiting model runs
+
+#### Define the number of NMF runs to be executed
+
+The higher the NMF runs, the better.
+In addition, convergence has already been explored using different numbers of NMF runs.
+
+## Perform ML analyses
+
+The **NMFk** algorithm factorizes the normalized data matrix `Xn` into `W` and `H` matrices.
+For more information, check out the [**NMFk** website](https://github.com/SmartTensors/NMFk.jl)
+
+Here, the **NMFk** results are loaded from a prior ML run.
+
+As seen from the output above, the NMFk analyses identified that the optimal number of geothermal signatures in the dataset **3**.
+
+Solutions with a number of signatures less than **3** are underfitting.
+
+Solutions with a number of signatures greater than **3** are overfitting and unacceptable.
+
+The set of acceptable solutions are defined as follows:
+
+The acceptable solutions contain 2 and 3 signatures.
+
+### Post-processing NMFk results
+
+#### Number of signatures
+
+Plot representing solution quality (fit) and silhouette width (robustness) for different numbers of signatures `k`:
+
+The plot above also demonstrates that the acceptable solutions contain 2 and 3 signatures.
+Note, a solution is accepted if the robustness >0.25.
+
+#### Analysis of the optimal solution
+
+The ML solution with the optimal number of signatures (3) is further analyzed as follows:
+
+The geothermal attributes are clustered into **3** groups:
+
+This grouping is based on analyses of the attribute matrix `W`:
+
+![attributes-3-labeled-sorted](../figures-postprocessing-nl-640/attributes-3-labeled-sorted.png)
+
+The well locations are also clustered into **3** groups.
+The grouping is based on analyses of the location matrix `H`.
+
+A spatial map of the locations is obtained:
+
+![locations-3-map](../figures-postprocessing-nl-640/locations-3-map.png)
+
+The map [../figures-postprocessing-nl-640/locations-3-map.html](../figures-postprocessing-nl-640/locations-3-map.html) provides interactive visualization of the extracted location groups (the html file can also be opened with any browser).
+
+### Discussion of NMFk results
+
+Our ML algorithm extracted **3** signatures in the analyzed dataset.
+
+Signature **B** is detected at 5201 locations shown in the map above.
+
+At these locations, `Temperature`, `Quartz`, `Chalcedony` and `Al` appear to be elevated.
+There are general correlations between `Temperature`, `Quartz`, `Chalcedony`, and `Al` observations at these locations.
+All these locations can be identified as geothermal resources with high prospectivity.
+
+Signature **C** is detected at 2801 locations shown in the map above.
+
+At these locations, `Temperature` is also elevated. However, `Quartz`, `Chalcedony` and `Al` are low.
+However, `Ca` and `Mg` are elevated as well.
+All these locations can be identified as geothermal resources with lower prospectivity.
+Additional analyses and data acquisition activities are needed to define their prospectivity.
+
+Signature **A** is detected at 6256 locations shown in the map above.
+
+At these locations, `TDS`, `B`, and `Br` are elevated.
+However, the `Temperature` is low.
+These locations can be identified as geothermal resources with low prospectivity.
+
+Biplots are also generated by the scripts presented above to map the interrelations between the attributes as defined by the extracted **3** signatures, which can also be viewed as basis vectors.
+The interpretation of the biplots is consistent with the way eigenanalysis (SVD/PCA) biplots are also interpreted.
+
+![attributes-3-biplots-labeled](../figures-postprocessing-nl-640/attributes-3-biplots-labeled.png)
+
+It clear from the figure above that `Temperature`, `Quartz`, `Chalcedony` and `Al` are generally collocated.
+
+`Ca` and `Mg` are also collocated.
+
+Similarly, `K`, `Li` and `Na` are also collocated.
+
+The coloring of the dots represents the ML clustering of the attributes into **3** groups.
+
+The figure demonstrates that ML algorithm successfully identified attributes that generally have similar spatial patterns.
+
+The biplots can also map the locations at which the data are collected, as shown in the figure below.
+
+![all-3-biplots-labeled](../figures-postprocessing-nl-640/all-3-biplots-labeled.png)
+
+The coloring of the dots represents the ML clustering of the attributes and locations into **3** groups each (**6** groups in total).
+
+The biplots above show how the attribute data is applied to label the locations so that they are optimally grouped into **3** location clusters.
+
+#### Spatial maps of the extracted signatures
+
+The 3 extracted signatures are spatially mapped within the explored domain.
+
+The maps below show the estimated importance of 3 signatures in the Great Basin (red: high; green: low).
+
+Signature B (high) and C (mid) represent areas with geothermal prospectivity.
+
+Signature A defines areas with low geothermal prospectivity according to performed analyses.
+
+It is important to note that these spatial maps are generated using spatial interpolation methods.
+There are uncertainties associated with these predictions of geothermal prospectivity.
+These uncertainties can be evaluated as well.
+
+<div style="display: flex;">
+    <div style="text-align: left; padding-bottom: 30px;">
+        <img src="../figures-postprocessing-nl-640/Signature_A_map_inversedistance.png" alt="Signature_A_map_inversedistance" max-width=125px;/>
+    </div>
+    <div style="text-align: left; padding-bottom: 30px;">
+        <img src="../figures-postprocessing-nl-640/Signature_B_map_inversedistance.png" alt="Signature_B_map_inversedistance" max-width=125px;/>
+    </div>    
+    <div style="text-align: left; padding-bottom: 30px;">
+        <img src="../figures-postprocessing-nl-640/Signature_C_map_inversedistance.png" alt="Signature_C_map_inversedistance" max-width=125px;/>
+    </div>
+</div>
+
+It is also important to note that maps generated for Signatures A, B, and C above are representative of a large portion of the Great Basin domain.
+This is true even though some of the analyzed data provides partial or very limited converge (as seen in the data maps provided above).
+
+##### Signature A: low geothermal prospectivty
+
+<div style="text-align: left; padding-bottom: 30px;">
+    <img src="../figures-postprocessing-nl-640/Signature_A_map_inversedistance.png" alt="Signature_A_map_inversedistance" width=25%  max-width=125px;/>
+</div>
+
+##### Signature B:  high geothermal prospectivty
+
+<div style="text-align: left; padding-bottom: 30px;">
+    <img src="../figures-postprocessing-nl-640/Signature_B_map_inversedistance.png" alt="Signature_B_map_inversedistance" width=25%  max-width=125px;/>
+</div>
+
+##### Signature C:  intermediate geothermal prospectivty
+
+<div style="text-align: left; padding-bottom: 30px;">
+    <img src="../figures-postprocessing-nl-640/Signature_C_map_inversedistance.png" alt="Signature_C_map_inversedistance" width=25%  max-width=125px;/>
+</div>
+
