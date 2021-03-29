@@ -6,27 +6,27 @@
 	</a>
 </div>
 
-# Southwest New Mexico (SWNM)
+# Great Basin, USa
 
-Southwest New Mexico (SWNM) consists of low-, medium-, and high-temperature hydrogeothermal systems.
+Brady geothermal field is located in northwestern, Nevada, USA. It is located in the Basin and Range physiographic province.
 
-However, most of these systems are poorly characterized because of a lack of understanding of interrelationships between geological, hydrogeological, geophysical, and geothermal attributes.
+It has seen geothermal electricity production since 1992 and research or exploration since at least 1959.
 
-SWNM is broadly divided into four physiographic provinces:
- - Colorado Plateau
- - Mogollon-Datil Volcanic Field (MDVF)
- - Basin and Range
- - Rio Grande rift
+The existing hydrothermal system supplies hot fluid to two power stations and a direct-use vegetable drying facility.
 
-Our machine learning analyses presented here aim to identify patterns of hydrogeothermal systems in SWNM.
+Electricity production capacity at Brady is 26.1 MWe, and ~7 MWth is supplied to the drying facility.
 
-We target to find geothermal processes and attributes associated with the analyzed hydrogeothermal systems, in specific, and the analyzed physiographic provinces, in general.
+Temperatures of produced fluid have been ~130-185°C, though temperatures as high as 219°C have been measured as well.
 
-# SWNM Machine Learning Repository
+These relatively high temperatures at relatively shallow levels (300-600 depth for some production wells) occur as a result of either convective upwelling driven by temperature control differences in fluid density, or hydraulic head driven circulation through the hot rock.
 
-**SWNM** repository contains all the data and codes required to demonstrate applications of machine learning methods for geothermal exploration at this site.
+In either case, relatively high heat flow at the site is associated with crustal thinning provides the heat.
 
-**SWNM** repository includes:
+# Great Basin Machine Learning Repository
+
+**Great Basin** repository contains all the data and codes required to demonstrate applications of machine learning methods for geothermal exploration at this site.
+
+**Great Basin** repository includes:
 - site data
 - simulation scripts
 - jupyter notebooks
@@ -36,15 +36,15 @@ We target to find geothermal processes and attributes associated with the analyz
 
 Reports, research papers, and presentations summarizing these machine learning analyses are also available and will be posted soon.
 
-**SWNM** repository directories store:
+**Great Basin** repository directories store:
 
 - `data`: site data
+- `maps-*`: site maps
 - `results-*`: machine learning outputs
 - `figures-*`: summary figures
 - `notebook`: jupyter notebook to execute the machine learning analyses
-- `scripts`: Julia scripts to execute the machine learning analyses
 
-# SWNM Machine Learning Analyses
+# Great Basin Machine Learning Analyses
 
 ## SmartTensors
 
@@ -101,13 +101,13 @@ Pkg.add("Mads")
 To execute the machine learning analyses, run the following command:
 
 ```julia
-include("notebook/SWNM.jl")
+include("notebook/GreatBasin.jl")
 ```
 
-Note that the **SWNM** repository should be the current working directory.
+Note that the **Great Basin** repository should be the current working directory.
 
 ### Jupyter notebook
 
-To execute the machine learning analyses, open the jupyter notebook `notebook/SWNM.ipynb`
+To execute the machine learning analyses, open the jupyter notebook `notebook/Brady.ipynb`
 
 The jupyter notebook is also saved in `html`, `pdf` and `markdown` formats.

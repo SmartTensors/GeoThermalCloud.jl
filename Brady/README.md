@@ -102,7 +102,7 @@ Pkg.add("Mads")
 To execute the machine learning analyses, run the following command:
 
 ```julia
-include("scripts/execute.jl")
+include("notebook/Brady.jl")
 ```
 
 Note that the **Brady** repository should be the current working directory.
