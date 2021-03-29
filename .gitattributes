@@ -1,0 +1,2 @@
+*.jl linguist-language=Julia
+*.html linguist-language=HTML
