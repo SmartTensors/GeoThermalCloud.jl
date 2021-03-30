@@ -1,7 +1,7 @@
 Geothermal machine learning analysis: Great Basin
 ---
 
-This notebook is a part of the GeoThermalCloud.jl: GeoThermal Cloud for Machine Learning.
+This notebook is a part of the GeoThermalCloud.jl: Machine Learning framework for Geothermal Exploration.
 
 <div style="text-align: left; padding-bottom: 30px;">
     <img src="../../logos/geothermalcloud-small.png" alt="geothermalcloud" width=25%  max-width=125px;/>
