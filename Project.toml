@@ -1,7 +1,6 @@
 name = "GTcloud"
 uuid = "9b555b37-faa4-4dca-b31f-51f0aad2d23b"
 authors = ["Velimir V Vesselinov (monty) <velimir.vesselinov@gmail.com>"]
-authors = ["monty <velimir.vesselinov@gmail.com>"]
 version = "0.1.0"
 
 [deps]
