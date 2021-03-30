@@ -6,7 +6,7 @@
 	</a>
 </div>
 
-# Great Basin, USa
+# Great Basin, USA
 
 Brady geothermal field is located in northwestern, Nevada, USA. It is located in the Basin and Range physiographic province.
 
