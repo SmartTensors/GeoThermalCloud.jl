@@ -6,7 +6,7 @@ import Gadfly
 import Fontconfig
 import Mads
 
-cd("/Users/vvv/Julia/GTcloud-SmartTensors.jl/SWNM/");
+cd("/Users/vvv/Julia/GeoThermalCloud.jl/SWNM/");
 
 d, h = DelimitedFiles.readdlm("data/Pepin_PCA_Input_Data_LANL.csv", ','; header=true);
 

@@ -6,7 +6,7 @@ import Cairo
 import Fontconfig
 import Mads
 
-cd("/Users/vvv/Julia/GTcloud-SmartTensors.jl/Brady");
+cd("/Users/vvv/Julia/GeoThermalCloud.jl/Brady");
 
 d, h = DelimitedFiles.readdlm("data/AllBradyWells_LANL_ML_9.txt", ','; header=true);
 

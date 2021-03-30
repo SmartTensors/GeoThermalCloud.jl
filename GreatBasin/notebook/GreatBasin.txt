@@ -1,7 +1,7 @@
-Geothermal machine learning analysis: Great Basin 
+Geothermal machine learning analysis: Great Basin
 ---
 
-This notebook is a part of the GTcloud.jl: GeoThermal Cloud for Machine Learning.
+This notebook is a part of the GeoThermalCloud.jl: GeoThermal Cloud for Machine Learning.
 
 <div style="text-align: left; padding-bottom: 30px;">
     <img src="../../logos/geothermalcloud-small.png" alt="geothermalcloud" width=25%  max-width=125px;/>
@@ -26,8 +26,8 @@ More information on how the ML results are interpreted to provide geothermal ins
 - The Great Basin is the largest area of contiguous endorheic watersheds in North America
 - It spans nearly all of Nevada, much of Oregon and Utah, and portions of California, Idaho, Wyoming, and Baja California, Mexico
 - The Great Basin includes multiple geothermal reservoirs ranging from low- to high-temperature
-- The Great Basin has huge potential geothermal potential 
-- Further explorations requires an understanding of the local/regional as well as spatial/temporal patterns in various geothermal-related attributes  
+- The Great Basin has huge potential geothermal potential
+- Further explorations requires an understanding of the local/regional as well as spatial/temporal patterns in various geothermal-related attributes
 - Here, we apply our unsupervised machine learning method **NMFk** to analyze the available geothermal and geochemical data to understand better the spatial distribution of the hydrothermal resources
 - Our study area (below) includes 14,258 data points
 
@@ -80,7 +80,7 @@ All attributes except for `Quartz`, `Chalcedony` and `pH` are log-transformed.
 
 #### Define and normalize the data matrix
 
-### Define a range for the number of signatures to be explored 
+### Define a range for the number of signatures to be explored
 
 ### Define directory with exsiting model runs
 
@@ -200,7 +200,7 @@ These uncertainties can be evaluated as well.
     </div>
     <div style="text-align: left; padding-bottom: 30px;">
         <img src="../figures-postprocessing-nl-640/Signature_B_map_inversedistance.png" alt="Signature_B_map_inversedistance" max-width=125px;/>
-    </div>    
+    </div>
     <div style="text-align: left; padding-bottom: 30px;">
         <img src="../figures-postprocessing-nl-640/Signature_C_map_inversedistance.png" alt="Signature_C_map_inversedistance" max-width=125px;/>
     </div>

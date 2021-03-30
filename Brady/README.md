@@ -1,7 +1,7 @@
-# GTcloud.jl: GeoThermal Cloud for Machine Learning
+# GeoThermalCloud.jl: GeoThermal Cloud for Machine Learning
 
 <div style="text-align: left; padding-bottom: 30px;">
-	<a href="https://github.com/SmartTensors/GTcloud.jl">
+	<a href="https://github.com/SmartTensors/GeoThermalCloud.jl">
     	<img src="../logos/geothermalcloud-small.png" alt="geothermalcloud" width=25%  max-width=125px;/>
 	</a>
 </div>
@@ -113,4 +113,4 @@ To execute the machine learning analyses, open the jupyter notebook `notebook/Br
 
 The jupyter notebook is also saved in `html`, `latex`, `txt`, `pdf` and `markdown` formats.
 
-The content of the Jupyter notebook is also available as a [Readme.md](https://github.com/SmartTensors/GTcloud.jl/tree/master/Brady/notebook) file on GitHub.
+The content of the Jupyter notebook is also available as a [Readme.md](https://github.com/SmartTensors/GeoThermalCloud.jl/tree/master/Brady/notebook) file on GitHub.

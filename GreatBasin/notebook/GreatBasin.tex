@@ -2,7 +2,7 @@
 
     \usepackage[breakable]{tcolorbox}
     \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
-    
+
     \usepackage{iftex}
     \ifPDFTeX
     	\usepackage[T1]{fontenc}
@@ -39,7 +39,7 @@
     \usepackage{eurosym} % defines \euro
     \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
     \usepackage{fancyvrb} % verbatim replacement that allows latex
-    \usepackage{grffile} % extends the file name processing of package graphics 
+    \usepackage{grffile} % extends the file name processing of package graphics
                          % to support a larger range
     \makeatletter % fix for old versions of grffile with XeLaTeX
     \@ifpackagelater{grffile}{2019/11/01}
@@ -70,9 +70,9 @@
     \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
                                 % normalem makes italics be italics, not underlines
     \usepackage{mathrsfs}
-    
 
-    
+
+
     % Colors for the hyperref package
     \definecolor{urlcolor}{rgb}{0,.145,.698}
     \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
@@ -122,7 +122,7 @@
     \newcommand{\RegionMarkerTok}[1]{{#1}}
     \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
     \newcommand{\NormalTok}[1]{{#1}}
-    
+
     % Additional commands for more recent versions of Pandoc
     \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
     \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
@@ -141,8 +141,8 @@
     \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
     \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
     \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-    
-    
+
+
     % Define a nice break command that doesn't care if a line doesn't already
     % exist.
     \def\br{\hspace*{\fill} \\* }
@@ -156,11 +156,11 @@
     % Document parameters
     % Document title
     \title{GreatBasin}
-    
-    
-    
-    
-    
+
+
+
+
+
 % Pygments definitions
 \makeatletter
 \def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
@@ -263,53 +263,53 @@
 \makeatother
 
 
-    % For linebreaks inside Verbatim environment from package fancyvrb. 
+    % For linebreaks inside Verbatim environment from package fancyvrb.
     \makeatletter
-        \newbox\Wrappedcontinuationbox 
-        \newbox\Wrappedvisiblespacebox 
-        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}} 
-        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}} 
-        \newcommand*\Wrappedcontinuationindent {3ex } 
-        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox} 
-        % Take advantage of the already applied Pygments mark-up to insert 
-        % potential linebreaks for TeX processing. 
-        %        {, <, #, %, $, ' and ": go to next line. 
-        %        _, }, ^, &, >, - and ~: stay at end of broken line. 
-        % Use of \textquotesingle for straight quote. 
-        \newcommand*\Wrappedbreaksatspecials {% 
-            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}% 
-            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}% 
-            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}% 
-            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}% 
-            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}% 
-            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}% 
-            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}% 
-            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}% 
-            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}% 
-            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}% 
-            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}% 
-            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}% 
-            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}% 
-            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}% 
-        } 
-        % Some characters . , ; ? ! / are not pygmentized. 
-        % This macro makes them "active" and they will insert potential linebreaks 
-        \newcommand*\Wrappedbreaksatpunct {% 
-            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}% 
-            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}% 
-            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}% 
-            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}% 
-            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}% 
-            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}% 
-            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}% 
+        \newbox\Wrappedcontinuationbox
+        \newbox\Wrappedvisiblespacebox
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}}
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}}
+        \newcommand*\Wrappedcontinuationindent {3ex }
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox}
+        % Take advantage of the already applied Pygments mark-up to insert
+        % potential linebreaks for TeX processing.
+        %        {, <, #, %, $, ' and ": go to next line.
+        %        _, }, ^, &, >, - and ~: stay at end of broken line.
+        % Use of \textquotesingle for straight quote.
+        \newcommand*\Wrappedbreaksatspecials {%
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}%
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}%
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}%
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}%
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}%
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}%
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}%
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}%
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}%
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}%
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}%
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}%
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}%
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}%
+        }
+        % Some characters . , ; ? ! / are not pygmentized.
+        % This macro makes them "active" and they will insert potential linebreaks
+        \newcommand*\Wrappedbreaksatpunct {%
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}%
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}%
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}%
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}%
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}%
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}%
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}%
             \catcode`\.\active
-            \catcode`\,\active 
+            \catcode`\,\active
             \catcode`\;\active
             \catcode`\:\active
             \catcode`\?\active
             \catcode`\!\active
-            \catcode`\/\active 
-            \lccode`\~`\~ 	
+            \catcode`\/\active
+            \lccode`\~`\~
         }
     \makeatother
 
@@ -332,10 +332,10 @@
             \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
             {\kern\fontdimen2\font}%
         }%
-        
+
         % Allow breaks at special characters using \PYG... macros.
         \Wrappedbreaksatspecials
-        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active 	
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active
         \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
     }
     \makeatother
@@ -345,7 +345,7 @@
     \definecolor{outcolor}{HTML}{D84315}
     \definecolor{cellborder}{HTML}{CFCFCF}
     \definecolor{cellbackground}{HTML}{F7F7F7}
-    
+
     % prompt
     \makeatletter
     \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
@@ -353,11 +353,11 @@
     \newcommand{\prompt}[4]{
         {\ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}}
     }
-    
 
-    
+
+
     % Prevent overflowing lines due to hard-to-break entities
-    \sloppy 
+    \sloppy
     % Setup hyperref package
     \hypersetup{
       breaklinks=true,  % so long urls are correctly broken across lines
@@ -367,23 +367,23 @@
       citecolor=citecolor,
       }
     % Slightly bigger margins than the latex defaults
-    
+
     \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
-    
-    
+
+
 
 \begin{document}
-    
-    \maketitle
-    
-    
 
-    
+    \maketitle
+
+
+
+
     \hypertarget{geothermal-machine-learning-analysis-great-basin}{%
 \subsection{Geothermal machine learning analysis: Great
 Basin}\label{geothermal-machine-learning-analysis-great-basin}}
 
-This notebook is a part of the GTcloud.jl: GeoThermal Cloud for Machine
+This notebook is a part of the GeoThermalCloud.jl: GeoThermal Cloud for Machine
 Learning.
 
 \begin{verbatim}
@@ -526,12 +526,12 @@ NMFk provides automatic identification of the optimal number of signals
 NMFk offers visualization, pre-, and post-processing capabilities.
     \end{Verbatim}
 
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 HTML\{String\}("<script>\textbackslash{}n// Immediately-invoked-function-expression to avoid global variables.\textbackslash{}n(function() \{\textbackslash{}n    var warning\_div = document.getElementById(\textbackslash{}"webio-warning-6297181692748984827\textbackslash{}");\textbackslash{}n    var hide = function () \{\textbackslash{}n        var script = document.getElementById(\textbackslash{}"webio-setup-12440862489099057575\textbackslash{}");\textbackslash{}n        var parent = script \&\& script.parentElement;\textbackslash{}n        var grandparent = parent \&\& parent.parentElement;\textbackslash{}n        if (grandparent) \{\textbackslash{}n            grandparent.style.display = \textbackslash{}"none\textbackslash{}";\textbackslash{}n        \}\textbackslash{}n        warning\_div.style.display = \textbackslash{}"none\textbackslash{}";\textbackslash{}n    \};\textbackslash{}n    if (typeof Jupyter !== \textbackslash{}"undefined\textbackslash{}") \{\textbackslash{}n        console.log(\textbackslash{}"WebIO detected Jupyter notebook environment.\textbackslash{}");\textbackslash{}n        // Jupyter notebook.\textbackslash{}n        var extensions = (\textbackslash{}n            Jupyter\textbackslash{}n            \&\& Jupyter.notebook.config.data\textbackslash{}n            \&\& Jupyter.notebook.config.data.load\_extensions\textbackslash{}n        );\textbackslash{}n        if (extensions \&\& extensions[\textbackslash{}"webio-jupyter-notebook\textbackslash{}"]) \{\textbackslash{}n            // Extension already loaded.\textbackslash{}n            console.log(\textbackslash{}"Jupyter WebIO nbextension detected; not loading ad-hoc.\textbackslash{}");\textbackslash{}n            hide();\textbackslash{}n            return;\textbackslash{}n        \}\textbackslash{}n    \} else if (window.location.pathname.includes(\textbackslash{}"/lab\textbackslash{}")) \{\textbackslash{}n        // Guessing JupyterLa\textbackslash{}n        console.log(\textbackslash{}"Jupyter Lab detected; make sure the @webio/jupyter-lab-provider labextension is installed.\textbackslash{}");\textbackslash{}n        hide();\textbackslash{}n        return;\textbackslash{}n    \}\textbackslash{}n\})();\textbackslash{}n\textbackslash{}n</script>\textbackslash{}n<p\textbackslash{}n    id=\textbackslash{}"webio-warning-6297181692748984827\textbackslash{}"\textbackslash{}n    class=\textbackslash{}"output\_text output\_stderr\textbackslash{}"\textbackslash{}n    style=\textbackslash{}"padding: 1em; font-weight: bold;\textbackslash{}"\textbackslash{}n>\textbackslash{}n    Unable to load WebIO. Please make sure WebIO works for your Jupyter client.\textbackslash{}n    For troubleshooting, please see <a href=\textbackslash{}"https://juliagizmos.github.io/WebIO.jl/latest/providers/ijulia/\textbackslash{}">\textbackslash{}n    the WebIO/IJulia documentation</a>.\textbackslash{}n    <!-- TODO: link to installation docs. -->\textbackslash{}n</p>\textbackslash{}n")
     \end{Verbatim}
 
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Info: Installing pyqt package to avoid buggy tkagg backend.
 └ @ PyPlot /Users/vvv/.julia/packages/PyPlot/XHEG0/src/init.jl:118
@@ -612,7 +612,7 @@ coordinates}\label{define-location-coordinates}}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_0.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Info: Temperature
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPreprocess.jl:54
@@ -626,7 +626,7 @@ Temperature: Min 0.1 Max 275.0 StdDev 25.12217 Skewness 4.087667 Count 13894
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_3.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -640,7 +640,7 @@ Temperature: Min 0.1 Max 275.0 StdDev 25.12217 Skewness 4.087667 Count 13894
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_6.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Quartz: Min -50.870045 Max 273.2438 StdDev 34.105637 Skewness 0.6946969 Count
 8683
@@ -655,7 +655,7 @@ Quartz: Min -50.870045 Max 273.2438 StdDev 34.105637 Skewness 0.6946969 Count
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_9.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Chalcedony: Min -81.64773 Max 271.23828 StdDev 36.418324 Skewness 0.8679946
 Count 8683
@@ -670,7 +670,7 @@ Count 8683
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_12.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 pH: Min 1.0 Max 11.7 StdDev 0.55800503 Skewness -0.5521828 Count 9261
     \end{Verbatim}
@@ -684,7 +684,7 @@ pH: Min 1.0 Max 11.7 StdDev 0.55800503 Skewness -0.5521828 Count 9261
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_15.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 TDS: Min 0.0 Max 329000.0 StdDev 34939.605 Skewness 7.7629066 Count 1740
     \end{Verbatim}
@@ -698,7 +698,7 @@ TDS: Min 0.0 Max 329000.0 StdDev 34939.605 Skewness 7.7629066 Count 1740
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_18.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Al: Min 0.0 Max 6400.0 StdDev 175.44391 Skewness 35.600906 Count 1362
     \end{Verbatim}
@@ -712,7 +712,7 @@ Al: Min 0.0 Max 6400.0 StdDev 175.44391 Skewness 35.600906 Count 1362
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_21.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 B: Min 0.0 Max 590.0 StdDev 19.017153 Skewness 19.091574 Count 5462
     \end{Verbatim}
@@ -726,7 +726,7 @@ B: Min 0.0 Max 590.0 StdDev 19.017153 Skewness 19.091574 Count 5462
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_24.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Ba: Min 0.0 Max 27.430857 StdDev 0.58066297 Skewness 41.943157 Count 2516
     \end{Verbatim}
@@ -740,7 +740,7 @@ Ba: Min 0.0 Max 27.430857 StdDev 0.58066297 Skewness 41.943157 Count 2516
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_27.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Be: Min 0.0 Max 0.7 StdDev 0.020862982 Skewness 26.046818 Count 1640
     \end{Verbatim}
@@ -754,7 +754,7 @@ Be: Min 0.0 Max 0.7 StdDev 0.020862982 Skewness 26.046818 Count 1640
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_30.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Br: Min 0.0 Max 84.0 StdDev 7.721104 Skewness 5.398518 Count 1935
     \end{Verbatim}
@@ -768,12 +768,12 @@ Br: Min 0.0 Max 84.0 StdDev 7.721104 Skewness 5.398518 Count 1935
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_33.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_34.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Ca: Min 0.0 Max 2566.6667 StdDev 191.38284 Skewness 5.880362 Count 9468
 Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
@@ -790,7 +790,7 @@ Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_37.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 HCO3: Min 0.0 Max 37000.0 StdDev 740.00256 Skewness 37.66232 Count 3413
     \end{Verbatim}
@@ -804,7 +804,7 @@ HCO3: Min 0.0 Max 37000.0 StdDev 740.00256 Skewness 37.66232 Count 3413
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_40.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 K: Min 0.0 Max 13000.0 StdDev 692.70734 Skewness 9.866844 Count 8446
     \end{Verbatim}
@@ -818,7 +818,7 @@ K: Min 0.0 Max 13000.0 StdDev 692.70734 Skewness 9.866844 Count 8446
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_43.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Li: Min 0.0 Max 970.0 StdDev 41.178646 Skewness 15.181558 Count 2809
     \end{Verbatim}
@@ -832,7 +832,7 @@ Li: Min 0.0 Max 970.0 StdDev 41.178646 Skewness 15.181558 Count 2809
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_46.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Mg: Min 0.0 Max 8500.0 StdDev 454.54953 Skewness 9.703973 Count 9296
     \end{Verbatim}
@@ -846,7 +846,7 @@ Mg: Min 0.0 Max 8500.0 StdDev 454.54953 Skewness 9.703973 Count 9296
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_49.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Na: Min 0.0 Max 160000.0 StdDev 12159.811 Skewness 7.597518 Count 8814
 δO18: Min 0.79999924 Max 27.85 StdDev 2.772077 Skewness 2.0067368 Count 1471
@@ -929,7 +929,7 @@ This is demonstrated in the maps generated below.
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_0.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Info: Make dir maps-data
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkIO.jl:114
@@ -939,7 +939,7 @@ This is demonstrated in the maps generated below.
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_2.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -948,12 +948,12 @@ This is demonstrated in the maps generated below.
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_4.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_5.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -962,12 +962,12 @@ This is demonstrated in the maps generated below.
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_7.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_8.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -976,12 +976,12 @@ This is demonstrated in the maps generated below.
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_10.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_11.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -990,12 +990,12 @@ This is demonstrated in the maps generated below.
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_13.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_14.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -1004,12 +1004,12 @@ This is demonstrated in the maps generated below.
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_16.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_17.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -1018,12 +1018,12 @@ This is demonstrated in the maps generated below.
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_19.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_20.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -1032,12 +1032,12 @@ This is demonstrated in the maps generated below.
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_22.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_23.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -1046,12 +1046,12 @@ This is demonstrated in the maps generated below.
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_25.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_26.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -1097,7 +1097,7 @@ All attributes except for \texttt{Quartz}, \texttt{Chalcedony} and
  "δO18"          true
 \end{Verbatim}
 \end{tcolorbox}
-        
+
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{9}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -1109,7 +1109,7 @@ All attributes except for \texttt{Quartz}, \texttt{Chalcedony} and
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_0.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Info: Temperature: log10-transformed
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPreprocess.jl:51
@@ -1119,12 +1119,12 @@ All attributes except for \texttt{Quartz}, \texttt{Chalcedony} and
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_2.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_3.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Temperature: Min -1.0 Max 2.4393327 StdDev 0.28062904 Skewness 0.8823397 Count
 13894
@@ -1143,12 +1143,12 @@ Quartz: Min -50.870045 Max 273.2438 StdDev 34.105637 Skewness 0.6946969 Count
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_6.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_7.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Chalcedony: Min -81.64773 Max 271.23828 StdDev 36.418324 Skewness 0.8679946
 Count 8683
@@ -1166,12 +1166,12 @@ pH: Min 1.0 Max 11.7 StdDev 0.55800503 Skewness -0.5521828 Count 9261
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_10.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_11.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 TDS: Min -2.6989698 Max 5.5171957 StdDev 2.0129914 Skewness -1.7111415 Count
 1740
@@ -1189,7 +1189,7 @@ Al: Min -5.8860564 Max 3.80618 StdDev 1.2161667 Skewness -0.44271475 Count 1362
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_14.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 B: Min -4.0 Max 2.770852 StdDev 0.99189556 Skewness -0.15991572 Count 5462
     \end{Verbatim}
@@ -1203,12 +1203,12 @@ B: Min -4.0 Max 2.770852 StdDev 0.99189556 Skewness -0.15991572 Count 5462
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_17.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_18.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Ba: Min -4.0 Max 1.4382393 StdDev 0.492002 Skewness -0.63361335 Count 2516
 Be: Min -8.0 Max -0.15490197 StdDev 0.8196359 Skewness -2.5543597 Count 1640
@@ -1225,7 +1225,7 @@ Be: Min -8.0 Max -0.15490197 StdDev 0.8196359 Skewness -2.5543597 Count 1640
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_21.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Br: Min -3.102373 Max 1.9242793 StdDev 0.90064573 Skewness 0.497394 Count 1935
     \end{Verbatim}
@@ -1239,7 +1239,7 @@ Br: Min -3.102373 Max 1.9242793 StdDev 0.90064573 Skewness 0.497394 Count 1935
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_24.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Ca: Min -2.0 Max 3.4093695 StdDev 0.51392627 Skewness -0.4936186 Count 9468
     \end{Verbatim}
@@ -1253,12 +1253,12 @@ Ca: Min -2.0 Max 3.4093695 StdDev 0.51392627 Skewness -0.4936186 Count 9468
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_27.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_28.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Cl: Min -4.0 Max 5.3802114 StdDev 0.99255455 Skewness 0.45536557 Count 10091
 HCO3: Min -1.0 Max 4.5682015 StdDev 0.36140293 Skewness -0.94632554 Count 3413
@@ -1275,7 +1275,7 @@ HCO3: Min -1.0 Max 4.5682015 StdDev 0.36140293 Skewness -0.94632554 Count 3413
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_31.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 K: Min -2.09691 Max 4.1139436 StdDev 0.686127 Skewness 1.5732428 Count 8446
     \end{Verbatim}
@@ -1289,12 +1289,12 @@ K: Min -2.09691 Max 4.1139436 StdDev 0.686127 Skewness 1.5732428 Count 8446
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_34.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_35.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Li: Min -6.0 Max 2.9867718 StdDev 1.2346249 Skewness -0.6840743 Count 2809
 Mg: Min -3.69897 Max 3.929419 StdDev 0.79547274 Skewness -1.0883808 Count 9296
@@ -1311,7 +1311,7 @@ Mg: Min -3.69897 Max 3.929419 StdDev 0.79547274 Skewness -1.0883808 Count 9296
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_38.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 Na: Min -1.6989701 Max 5.20412 StdDev 0.8328025 Skewness 1.1553397 Count 8814
 δO18: Min -0.096910425 Max 1.4448252 StdDev 0.20046535 Skewness 0.21996279 Count
@@ -1481,7 +1481,7 @@ algorithm as follows:
  3
 \end{Verbatim}
 \end{tcolorbox}
-        
+
     The acceptable solutions contain 2 and 3 signatures.
 
     \hypertarget{post-processing-nmfk-results}{%
@@ -1513,7 +1513,7 @@ Below is a plot representing solution quality (fit) and silhouette width
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_36_0.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -1573,7 +1573,7 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:265
     \end{Verbatim}
 
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 8×2 Matrix\{Any\}:
  "TDS"   1.0
@@ -1586,7 +1586,7 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
  "Cl"    0.581544
     \end{Verbatim}
 
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Info: Signal A -> B Count: 10
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:265
@@ -1594,7 +1594,7 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:282
     \end{Verbatim}
 
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 10×2 Matrix\{Any\}:
  "B"            1.0
@@ -1609,12 +1609,12 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
  "K"            0.58262
     \end{Verbatim}
 
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_6.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Info: Signal B (S2) (k-means clustering)
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:282
@@ -1624,7 +1624,7 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_8.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -1633,12 +1633,12 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_10.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_11.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -1647,12 +1647,12 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_13.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
 
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 11662×2 Matrix\{Any\}:
  "11271"  1.0
@@ -1668,7 +1668,7 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
  "6748"   0.86425
  "6672"   0.860871
  "6743"   0.857552
- ⋮        
+ ⋮
  "13228"  0.0
  "13282"  0.0
  "13373"  0.0
@@ -1683,8 +1683,8 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
  "13882"  0.0
     \end{Verbatim}
 
-    
-    
+
+
     \begin{Verbatim}[commandchars=\\\{\}]
 2596×2 Matrix\{Any\}:
  "9946"   1.0
@@ -1700,7 +1700,7 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
  "12897"  0.949163
  "11848"  0.948021
  "10488"  0.94737
- ⋮        
+ ⋮
  "4110"   0.350342
  "529"    0.348303
  "326"    0.344399
@@ -1715,12 +1715,12 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
  "470"    0.241611
     \end{Verbatim}
 
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_17.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Info: Locations (signals=2)
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:340
@@ -1742,7 +1742,7 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_19.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -1751,7 +1751,7 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_21.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 ArgumentError("Distance matrix should be symmetric.")
     \end{Verbatim}
@@ -1765,7 +1765,7 @@ ArgumentError("Distance matrix should be symmetric.")
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_24.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -1774,12 +1774,12 @@ ArgumentError("Distance matrix should be symmetric.")
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_26.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_27.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -1792,7 +1792,7 @@ ArgumentError("Distance matrix should be symmetric.")
 'A', 'B', 'A', 'A', 'A', 'B', 'B', 'A', 'B', 'B']])
 \end{Verbatim}
 \end{tcolorbox}
-        
+
     The geothermal attributes are clustered into \textbf{3} groups:
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
@@ -1955,7 +1955,7 @@ be evaluated as well.
 </div>
 <div style="text-align: left; padding-bottom: 30px;">
     <img src="../figures-postprocessing-nl-640/Signature_B_map_inversedistance.png" alt="Signature_B_map_inversedistance" max-width=125px;/>
-</div>    
+</div>
 <div style="text-align: left; padding-bottom: 30px;">
     <img src="../figures-postprocessing-nl-640/Signature_C_map_inversedistance.png" alt="Signature_C_map_inversedistance" max-width=125px;/>
 </div>
@@ -1993,7 +1993,7 @@ prospectivty}\label{signature-c-intermediate-geothermal-prospectivty}}
 
 
     % Add a bibliography block to the postdoc
-    
-    
-    
+
+
+
 \end{document}

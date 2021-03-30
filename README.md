@@ -1,14 +1,14 @@
-# GTcloud.jl: GeoThermal Cloud for Machine Learning
+# GeoThermalCloud.jl: GeoThermal Cloud for Machine Learning
 
 <div style="text-align: left; padding-bottom: 30px;">
-	<a href="https://github.com/SmartTensors/GTcloud.jl">
+	<a href="https://github.com/SmartTensors/GeoThermalCloud.jl">
     	<img src="logos/geothermalcloud-small.png" alt="geothermalcloud" width=25%  max-width=125px;/>
 	</a>
 </div>
 
-**GTcloud.jl** is a repository containing all the data and codes required to demonstrate applications of machine learning methods for geothermal exploration.
+**GeoThermalCloud.jl** is a repository containing all the data and codes required to demonstrate applications of machine learning methods for geothermal exploration.
 
-**GTcloud.jl** includes:
+**GeoThermalCloud.jl** includes:
 - site data
 - simulation scripts
 - jupyter notebooks
@@ -17,7 +17,7 @@
 - summary figures
 - readme markdown files
 
-**GTcloud.jl** showcases the machine learning analyses performed for the following geothermal sites:
+**GeoThermalCloud.jl** showcases the machine learning analyses performed for the following geothermal sites:
 
 - **Brady**: geothermal exploration of the Brady geothermal site, Nevada
 - **SWNM**: geothermal exploration of the Southwest New Mexico (SWNM) region

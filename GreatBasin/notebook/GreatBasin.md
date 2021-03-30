@@ -1,7 +1,7 @@
-Geothermal machine learning analysis: Great Basin 
+Geothermal machine learning analysis: Great Basin
 ---
 
-This notebook is a part of the GTcloud.jl: GeoThermal Cloud for Machine Learning.
+This notebook is a part of the GeoThermalCloud.jl: GeoThermal Cloud for Machine Learning.
 
 <div style="text-align: left; padding-bottom: 30px;">
     <img src="../../logos/geothermalcloud-small.png" alt="geothermalcloud" width=25%  max-width=125px;/>
@@ -26,8 +26,8 @@ More information on how the ML results are interpreted to provide geothermal ins
 - The Great Basin is the largest area of contiguous endorheic watersheds in North America
 - It spans nearly all of Nevada, much of Oregon and Utah, and portions of California, Idaho, Wyoming, and Baja California, Mexico
 - The Great Basin includes multiple geothermal reservoirs ranging from low- to high-temperature
-- The Great Basin has huge potential geothermal potential 
-- Further explorations requires an understanding of the local/regional as well as spatial/temporal patterns in various geothermal-related attributes  
+- The Great Basin has huge potential geothermal potential
+- Further explorations requires an understanding of the local/regional as well as spatial/temporal patterns in various geothermal-related attributes
 - Here, we apply our unsupervised machine learning method **NMFk** to analyze the available geothermal and geochemical data to understand better the spatial distribution of the hydrothermal resources
 - Our study area (below) includes 14,258 data points
 
@@ -59,7 +59,7 @@ import Revise
 
     [1mMads: Model Analysis & Decision Support[0m
     ====
-    
+
     [1m[34m    ___      ____    [1m[31m        ____   [1m[32m ____         [1m[35m     ______[0m
     [1m[34m   /   \    /    \  [1m[31m        /    | [1m[32m |    \     [1m[35m       /  __  \[0m
     [1m[34m  |     \  /     |   [1m[31m      /     |  [1m[32m|     \     [1m[35m     /  /  \__\[0m
@@ -70,7 +70,7 @@ import Revise
     [1m[34m  |  |        |  |  [1m[31m  /  /===|   | [1m[32m |   |___\  \ [1m[35m   __.        |  |[0m
     [1m[34m  |  |        |  | [1m[31m  /  /    |   | [1m[32m |           \  [1m[35m \  \______/  /[0m
     [1m[34m  |__|        |__| [1m[31m /__/     |___| [1m[32m |____________\ [1m[35m  \__________/[0m
-    
+
     [1mMADS[0m is an integrated high-performance computational framework for data- and model-based analyses.
     [1mMADS[0m can perform: Sensitivity Analysis, Parameter Estimation, Model Inversion and Calibration, Uncertainty Quantification, Model Selection and Model Averaging, Model Reduction and Surrogate Modeling, Machine Learning, Decision Analysis and Support.
 
@@ -82,7 +82,7 @@ import Revise
 
     [1mNMFk: Nonnegative Matrix Factorization + k-means clustering and physics constraints[0m
     ====
-    
+
     [1m[34m  _     _  [1m[31m _      _  [1m[32m _______   [1m[35m_[0m
     [1m[34m |  \  | | [1m[31m|  \  /  | [1m[32m|  _____| [1m[35m| |  _[0m
     [1m[34m | . \ | | [1m[31m| . \/ . | [1m[32m| |___    [1m[35m| | / /[0m
@@ -90,7 +90,7 @@ import Revise
     [1m[34m | | \ ' | [1m[31m| | \/ | | [1m[32m| |       [1m[35m|   ([0m
     [1m[34m | |  \  | [1m[31m| |    | | [1m[32m| |       [1m[35m| |\ \[0m
     [1m[34m |_|   \_| [1m[31m|_|    |_| [1m[32m|_|       [1m[35m|_| \_\[0m
-    
+
     NMFk performs unsupervised machine learning based on matrix decomposition coupled with various constraints.
     NMFk provides automatic identification of the optimal number of signals (features) present in two-dimensional data arrays (matrices).
     NMFk offers visualization, pre-, and post-processing capabilities.
@@ -156,7 +156,7 @@ import Revise
 
 
 ```julia
-cd("/Users/vvv/Julia/GTcloud-SmartTensors.jl/GreatBasin");
+cd("/Users/vvv/Julia/GeoThermalCloud.jl/GreatBasin");
 ```
 
 ### Load the data file
@@ -202,9 +202,9 @@ NMFk.datanalytics(X, attributes; dims=2);
 ```
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_15_0.png)
-    
+
 
 
     ┌ Info: Temperature
@@ -214,12 +214,12 @@ NMFk.datanalytics(X, attributes; dims=2);
     Temperature: Min 0.1 Max 275.0 StdDev 25.12217 Skewness 4.087667 Count 13894
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_15_3.png)
-    
 
 
-    
+
+
 
 
     ┌ Info: Quartz
@@ -227,9 +227,9 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_15_6.png)
-    
+
 
 
     Quartz: Min -50.870045 Max 273.2438 StdDev 34.105637 Skewness 0.6946969 Count 8683
@@ -240,9 +240,9 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_15_9.png)
-    
+
 
 
     Chalcedony: Min -81.64773 Max 271.23828 StdDev 36.418324 Skewness 0.8679946 Count 8683
@@ -253,9 +253,9 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_15_12.png)
-    
+
 
 
     pH: Min 1.0 Max 11.7 StdDev 0.55800503 Skewness -0.5521828 Count 9261
@@ -266,9 +266,9 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_15_15.png)
-    
+
 
 
     TDS: Min 0.0 Max 329000.0 StdDev 34939.605 Skewness 7.7629066 Count 1740
@@ -279,9 +279,9 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_15_18.png)
-    
+
 
 
     Al: Min 0.0 Max 6400.0 StdDev 175.44391 Skewness 35.600906 Count 1362
@@ -292,9 +292,9 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_15_21.png)
-    
+
 
 
     B: Min 0.0 Max 590.0 StdDev 19.017153 Skewness 19.091574 Count 5462
@@ -305,9 +305,9 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_15_24.png)
-    
+
 
 
     Ba: Min 0.0 Max 27.430857 StdDev 0.58066297 Skewness 41.943157 Count 2516
@@ -318,9 +318,9 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_15_27.png)
-    
+
 
 
     Be: Min 0.0 Max 0.7 StdDev 0.020862982 Skewness 26.046818 Count 1640
@@ -331,9 +331,9 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_15_30.png)
-    
+
 
 
     Br: Min 0.0 Max 84.0 StdDev 7.721104 Skewness 5.398518 Count 1935
@@ -344,15 +344,15 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_15_33.png)
-    
 
 
 
-    
+
+
 ![png](GreatBasin_files/GreatBasin_15_34.png)
-    
+
 
 
     Ca: Min 0.0 Max 2566.6667 StdDev 191.38284 Skewness 5.880362 Count 9468
@@ -366,9 +366,9 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_15_37.png)
-    
+
 
 
     HCO3: Min 0.0 Max 37000.0 StdDev 740.00256 Skewness 37.66232 Count 3413
@@ -379,9 +379,9 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_15_40.png)
-    
+
 
 
     K: Min 0.0 Max 13000.0 StdDev 692.70734 Skewness 9.866844 Count 8446
@@ -392,9 +392,9 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_15_43.png)
-    
+
 
 
     Li: Min 0.0 Max 970.0 StdDev 41.178646 Skewness 15.181558 Count 2809
@@ -405,9 +405,9 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_15_46.png)
-    
+
 
 
     Mg: Min 0.0 Max 8500.0 StdDev 454.54953 Skewness 9.703973 Count 9296
@@ -418,9 +418,9 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_15_49.png)
-    
+
 
 
     Na: Min 0.0 Max 160000.0 StdDev 12159.811 Skewness 7.597518 Count 8814
@@ -490,9 +490,9 @@ end
 ```
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_17_0.png)
-    
+
 
 
     ┌ Info: Make dir maps-data
@@ -500,124 +500,124 @@ end
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_17_2.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](GreatBasin_files/GreatBasin_17_4.png)
-    
 
 
 
-    
+
+
 ![png](GreatBasin_files/GreatBasin_17_5.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](GreatBasin_files/GreatBasin_17_7.png)
-    
 
 
 
-    
+
+
 ![png](GreatBasin_files/GreatBasin_17_8.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](GreatBasin_files/GreatBasin_17_10.png)
-    
 
 
 
-    
+
+
 ![png](GreatBasin_files/GreatBasin_17_11.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](GreatBasin_files/GreatBasin_17_13.png)
-    
 
 
 
-    
+
+
 ![png](GreatBasin_files/GreatBasin_17_14.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](GreatBasin_files/GreatBasin_17_16.png)
-    
 
 
 
-    
+
+
 ![png](GreatBasin_files/GreatBasin_17_17.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](GreatBasin_files/GreatBasin_17_19.png)
-    
 
 
 
-    
+
+
 ![png](GreatBasin_files/GreatBasin_17_20.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](GreatBasin_files/GreatBasin_17_22.png)
-    
 
 
 
-    
+
+
 ![png](GreatBasin_files/GreatBasin_17_23.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](GreatBasin_files/GreatBasin_17_25.png)
-    
 
 
 
-    
+
+
 ![png](GreatBasin_files/GreatBasin_17_26.png)
-    
 
 
-    
+
+
 
 ### Log-transformation
 
@@ -662,9 +662,9 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 ```
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_20_0.png)
-    
+
 
 
     ┌ Info: Temperature: log10-transformed
@@ -672,15 +672,15 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_20_2.png)
-    
 
 
 
-    
+
+
 ![png](GreatBasin_files/GreatBasin_20_3.png)
-    
+
 
 
     Temperature: Min -1.0 Max 2.4393327 StdDev 0.28062904 Skewness 0.8823397 Count 13894
@@ -694,15 +694,15 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_20_6.png)
-    
 
 
 
-    
+
+
 ![png](GreatBasin_files/GreatBasin_20_7.png)
-    
+
 
 
     Chalcedony: Min -81.64773 Max 271.23828 StdDev 36.418324 Skewness 0.8679946 Count 8683
@@ -716,15 +716,15 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_20_10.png)
-    
 
 
 
-    
+
+
 ![png](GreatBasin_files/GreatBasin_20_11.png)
-    
+
 
 
     TDS: Min -2.6989698 Max 5.5171957 StdDev 2.0129914 Skewness -1.7111415 Count 1740
@@ -738,9 +738,9 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_20_14.png)
-    
+
 
 
     B: Min -4.0 Max 2.770852 StdDev 0.99189556 Skewness -0.15991572 Count 5462
@@ -751,15 +751,15 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_20_17.png)
-    
 
 
 
-    
+
+
 ![png](GreatBasin_files/GreatBasin_20_18.png)
-    
+
 
 
     Ba: Min -4.0 Max 1.4382393 StdDev 0.492002 Skewness -0.63361335 Count 2516
@@ -773,9 +773,9 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_20_21.png)
-    
+
 
 
     Br: Min -3.102373 Max 1.9242793 StdDev 0.90064573 Skewness 0.497394 Count 1935
@@ -786,9 +786,9 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_20_24.png)
-    
+
 
 
     Ca: Min -2.0 Max 3.4093695 StdDev 0.51392627 Skewness -0.4936186 Count 9468
@@ -799,15 +799,15 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_20_27.png)
-    
 
 
 
-    
+
+
 ![png](GreatBasin_files/GreatBasin_20_28.png)
-    
+
 
 
     Cl: Min -4.0 Max 5.3802114 StdDev 0.99255455 Skewness 0.45536557 Count 10091
@@ -821,9 +821,9 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_20_31.png)
-    
+
 
 
     K: Min -2.09691 Max 4.1139436 StdDev 0.686127 Skewness 1.5732428 Count 8446
@@ -834,15 +834,15 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_20_34.png)
-    
 
 
 
-    
+
+
 ![png](GreatBasin_files/GreatBasin_20_35.png)
-    
+
 
 
     Li: Min -6.0 Max 2.9867718 StdDev 1.2346249 Skewness -0.6840743 Count 2809
@@ -856,9 +856,9 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_20_38.png)
-    
+
 
 
     Na: Min -1.6989701 Max 5.20412 StdDev 0.8328025 Skewness 1.1553397 Count 8814
@@ -897,7 +897,7 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 Xnl, xlmin, xlmax, zflag = NMFk.normalizematrix_col(X; logv=logv);
 ```
 
-### Define a range for the number of signatures to be explored 
+### Define a range for the number of signatures to be explored
 
 
 ```julia
@@ -1017,12 +1017,12 @@ NMFk.plot_feature_selecton(nkrange, fitquality, robustness; figuredir=figuredirp
 ```
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_36_0.png)
-    
 
 
-    
+
+
 
 The plot above also demonstrates that the acceptable solutions contain 2 and 3 signatures.
 Note, a solution is accepted if the robustness >0.25.
@@ -1098,9 +1098,9 @@ Sorder, Wclusters, Hclusters = NMFk.clusterresults(NMFk.getk(nkrange, robustness
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_38_6.png)
-    
+
 
 
     ┌ Info: Signal B (S2) (k-means clustering)
@@ -1108,34 +1108,34 @@ Sorder, Wclusters, Hclusters = NMFk.clusterresults(NMFk.getk(nkrange, robustness
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_38_8.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](GreatBasin_files/GreatBasin_38_10.png)
-    
 
 
 
-    
+
+
 ![png](GreatBasin_files/GreatBasin_38_11.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](GreatBasin_files/GreatBasin_38_13.png)
-    
 
 
-    
+
+
 
 
     11662×2 Matrix{Any}:
@@ -1152,7 +1152,7 @@ Sorder, Wclusters, Hclusters = NMFk.clusterresults(NMFk.getk(nkrange, robustness
      "6748"   0.86425
      "6672"   0.860871
      "6743"   0.857552
-     ⋮        
+     ⋮
      "13228"  0.0
      "13282"  0.0
      "13373"  0.0
@@ -1182,7 +1182,7 @@ Sorder, Wclusters, Hclusters = NMFk.clusterresults(NMFk.getk(nkrange, robustness
      "12897"  0.949163
      "11848"  0.948021
      "10488"  0.94737
-     ⋮        
+     ⋮
      "4110"   0.350342
      "529"    0.348303
      "326"    0.344399
@@ -1198,9 +1198,9 @@ Sorder, Wclusters, Hclusters = NMFk.clusterresults(NMFk.getk(nkrange, robustness
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_38_17.png)
-    
+
 
 
     ┌ Info: Locations (signals=2)
@@ -1220,17 +1220,17 @@ Sorder, Wclusters, Hclusters = NMFk.clusterresults(NMFk.getk(nkrange, robustness
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_38_19.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](GreatBasin_files/GreatBasin_38_21.png)
-    
+
 
 
     ArgumentError("Distance matrix should be symmetric.")
@@ -1241,26 +1241,26 @@ Sorder, Wclusters, Hclusters = NMFk.clusterresults(NMFk.getk(nkrange, robustness
 
 
 
-    
+
 ![png](GreatBasin_files/GreatBasin_38_24.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](GreatBasin_files/GreatBasin_38_26.png)
-    
 
 
 
-    
+
+
 ![png](GreatBasin_files/GreatBasin_38_27.png)
-    
 
 
-    
+
+
 
 
 
@@ -1285,12 +1285,12 @@ Mads.display("results-postprocessing-nl-640/attributes-3-groups.txt")
     Li         	0.464
     Cl         	0.458
     K          	0.427
-    
+
     Signal B (S1)
     Quartz     	1.0
     Chalcedony 	0.946
     Al         	0.802
-    
+
     Signal C (S2)
     Mg         	1.0
     Ca         	0.936
@@ -1299,7 +1299,7 @@ Mads.display("results-postprocessing-nl-640/attributes-3-groups.txt")
     Ba         	0.622
     Be         	0.578
     Temperature	0.465
-    
+
 
 
 This grouping is based on analyses of the attribute matrix `W`:
@@ -1381,7 +1381,7 @@ These uncertainties can be evaluated as well.
     </div>
     <div style="text-align: left; padding-bottom: 30px;">
         <img src="../figures-postprocessing-nl-640/Signature_B_map_inversedistance.png" alt="Signature_B_map_inversedistance" max-width=125px;/>
-    </div>    
+    </div>
     <div style="text-align: left; padding-bottom: 30px;">
         <img src="../figures-postprocessing-nl-640/Signature_C_map_inversedistance.png" alt="Signature_C_map_inversedistance" max-width=125px;/>
     </div>

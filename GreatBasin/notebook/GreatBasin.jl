@@ -8,7 +8,7 @@ import Mads
 import Kriging
 import Revise
 
-cd("/Users/vvv/Julia/GTcloud-SmartTensors.jl/GreatBasin");
+cd("/Users/vvv/Julia/GeoThermalCloud.jl/GreatBasin");
 
 Xdat, headers = DelimitedFiles.readdlm("data/gb_duplicatedRows.txt", ',', header=true);
 
