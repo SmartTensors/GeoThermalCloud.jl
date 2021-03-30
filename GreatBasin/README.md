@@ -108,6 +108,8 @@ Note that the **Great Basin** repository should be the current working directory
 
 ### Jupyter notebook
 
-To execute the machine learning analyses, open the jupyter notebook `notebook/Brady.ipynb`
+To execute the machine learning analyses, open the jupyter notebook `notebook/Brady.ipynb`.
 
-The jupyter notebook is also saved in `html`, `pdf` and `markdown` formats.
+The jupyter notebook is also saved in `html`, `latex`, `txt`, `pdf` and `markdown` formats.
+
+The content of the Jupyter notebook is also available as a [Readme.md](https://github.com/SmartTensors/GTcloud.jl/tree/master/GreatBasin/notebook) file on GitHub.
