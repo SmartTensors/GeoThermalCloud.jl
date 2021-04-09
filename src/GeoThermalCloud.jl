@@ -1,6 +1,8 @@
 module GeoThermalCloud
 
 import NMFk
+import NTFk
+import IJulia
 import JLD
 import JLD2
 import DelimitedFiles
@@ -9,22 +11,32 @@ import Statistics
 import Clustering
 import Mads
 import Kriging
+import Cairo
+import Fontconfig
 
 dir = dirname(Base.source_path())
+dir = dirname(dir)
 
-function Brady()
-	cd(joinpath(dir, Brady))
-	include(joinpath(notebook, Brady.jl))
+function analysis(problem::AbstractString; notebook::Bool=false)
+	@info("GeoThermalCloud: $problem analysis")
+	if notebook
+		IJulia.notebook(; dir=joinpath(dir, problem, "notebook"), detached=true)
+	else
+		cd(joinpath(dir, problem))
+		include(joinpath("notebook", "$(problem).jl"))
+	end
 end
 
-function SWNM()
-	cd(joinpath(dir, SWNM))
-	include(joinpath(notebook, SWNM.jl))
+function Brady(; kw...)
+	analysis("Brady"; kw...)
 end
 
-function GreatBasin()
-	cd(joinpath(dir, GreatBasin))
-	include(joinpath(notebook, GreatBasin.jl))
+function SWNM(; notebook::Bool=false)
+	analysis("SWNM"; kw...)
+end
+
+function GreatBasin(; notebook::Bool=false)
+	analysis("GreatBasin"; kw...)
 end
 
 end

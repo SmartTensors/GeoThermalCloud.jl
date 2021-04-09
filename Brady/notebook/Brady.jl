@@ -1,12 +1,14 @@
+
+import GeoThermalCloud
 import NMFk
+import Mads
 import DelimitedFiles
 import JLD
 import Gadfly
 import Cairo
 import Fontconfig
-import Mads
 
-cd("/Users/vvv/Julia/GeoThermalCloud.jl/Brady");
+cd(joinpath(GeoThermalCloud.dir, "Brady"));
 
 d, h = DelimitedFiles.readdlm("data/AllBradyWells_LANL_ML_9.txt", ','; header=true);
 

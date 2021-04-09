@@ -141,7 +141,7 @@ import Mads
 
 
 ```julia
-cd("/Users/vvv/Julia/GeoThermalCloud.jl/SWNM/");
+cd(joinpath(GeoThermalCloud.dir, "SWNM/");
 ```
 
 ### Load the SWNM data file

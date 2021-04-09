@@ -43,7 +43,7 @@ import Mads
 
 
 ```julia
-cd("/Users/vvv/Julia/GeoThermalCloud.jl/Brady");
+cd(joinpath(GeoThermalCloud.dir, "Brady");
 ```
 
 ### Load the data file

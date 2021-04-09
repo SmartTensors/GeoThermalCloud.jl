@@ -8,7 +8,7 @@ import Mads
 import Kriging
 import Revise
 
-cd("/Users/vvv/Julia/GeoThermalCloud.jl/GreatBasin");
+cd(joinpath(GeoThermalCloud.dir, "GreatBasin");
 
 Xdat, headers = DelimitedFiles.readdlm("data/gb_duplicatedRows.txt", ',', header=true);
 

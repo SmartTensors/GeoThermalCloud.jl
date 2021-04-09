@@ -60,7 +60,7 @@ md"""
 """
 
 # ╔═╡ 018e6301-5ef2-4337-87ba-bce8395ec085
-cd("/Users/vvv/Julia/GeoThermalCloud.jl/Brady");
+cd(joinpath(GeoThermalCloud.dir, "Brady");
 
 # ╔═╡ 09575485-0e2b-4aac-9c01-0dfbf89f135d
 md"""
@@ -131,7 +131,7 @@ begin
 	ai = indexin(attributes_process, attributes_short)
 	pr = indexin(["production"], attributes_short)
 	attributes_process_long = attributes_long[ai]
-	
+
 	attributes_col = vec(permutedims(h))
 	attributes = attributes_col[ai];
 end
@@ -149,7 +149,7 @@ end
 
 # ╔═╡ e99c2d3b-796b-4f68-991e-891a8a46384d
 md"""
-### Get well locations and production 
+### Get well locations and production
 """
 
 # ╔═╡ b9f66361-c2ab-4373-9b64-c4c7d0637110
@@ -157,7 +157,7 @@ begin
 	locations = unique(sort(d[:,1]))
 	ii = convert.(Int64, round.(d[:,2]))
 	zi = unique(sort(ii))
-	
+
 	xcoord = Vector{Float64}(undef, length(locations))
 	ycoord = Vector{Float64}(undef, length(locations))
 	production = Vector{String}(undef, length(locations))
@@ -197,7 +197,7 @@ end
 
 # ╔═╡ 6d1a9e89-e8ae-4269-98dd-bf891524fc57
 md"""
-### Collect the well data into a 3D tensor 
+### Collect the well data into a 3D tensor
 
 Tensor indices (dimensions) define depths, attributes, and wells.
 """
@@ -206,7 +206,7 @@ Tensor indices (dimensions) define depths, attributes, and wells.
 begin
 	T = Array{Float64}(undef, length(zi), length(ai), length(locations))
 	T .= NaN
-	
+
 	for w = 1:length(locations)
 		iw = d[:, 1] .== locations[w]
 		m = d[iw, ai]
@@ -224,11 +224,11 @@ end
 
 # ╔═╡ 63c661d2-672e-4511-a74b-75c9d095ba4a
 md"""
-### Define the maximum depth 
+### Define the maximum depth
 
 The maximum depth limits the depth of the data included in the analyses.
 
-The maximum depth is set to 750 m. 
+The maximum depth is set to 750 m.
 """
 
 # ╔═╡ ff035352-09a8-48c7-a698-4476d54e31dd
@@ -256,7 +256,7 @@ md"""
 begin
 	nruns = 1000 # number of random NMF runs
 	nkrange = 2:8 # range of k values explored by the NMFk algorithm
-	
+
 	casename = "set00-v9-inv" # casename of the performed ML analyses
 	figuredir = "figures-$(casename)-$(depth)" # directory to store figures associated with the performed ML analyses
 	resultdir = "results-$(casename)-$(depth)"; # directory to store obtained results associated with the performed ML analyses
@@ -274,14 +274,14 @@ begin
 	for i = 1:nlocations
 		hovertext[i] = join(map(j->("$(attributes_process_long[j]): $(round(float.(NMFk.meannan(T[:,j,i])); sigdigits=3))<br>"), 1:length(attributes_process_long)))
 	end
-	
+
 	NMFk.plot_wells("map/dataset-$(casename).html", xcoord, ycoord, String.(welltype); hover=locations .* "<br>" .* String.(welltype) .* "<br>" .* production .* "<br>" .* hovertext, title="Brady site: Data")
 end
 
 # ╔═╡ 3358ad10-d9fe-47f3-b4f8-06b05d0eeb41
 md"""
 A HTML file named [../map/dataset-set00-v9-inv.html](../map/dataset-set00-v9-inv.html) is generated mapping the site data.
-The map provides interactive visualization of the site data (it can also be opened with any browser). 
+The map provides interactive visualization of the site data (it can also be opened with any browser).
 
 The map below shows the location of the `Dry`, `Injection` and `Production` wells.
 
@@ -353,7 +353,7 @@ Below is a plot representing solution quality (fit) and silhouette width (robust
 md"""
 The plot above also demonstrates that the acceptable solutions contain 2, 5 and 6 signatures.
 
-#### Analysis of all the acceptable solutions 
+#### Analysis of all the acceptable solutions
 
 The ML solutions containing an acceptable number of signatures are further analyzed as follows:
 """
@@ -398,7 +398,7 @@ This grouping is based on analyses of the location matrix `H`:
 
 ![locations-6-labeled-sorted](../figures-set00-v9-inv-750-1000-daln/locations-6-labeled-sorted.png)
 
-The map [../figures-set00-v9-inv-750-1000-daln/locations-6-map.html](../figures-set00-v9-inv-750-1000-daln/locations-6-map.html) provides interactive visualization of the extracted well location groups (the html file can also be opened with any browser). 
+The map [../figures-set00-v9-inv-750-1000-daln/locations-6-map.html](../figures-set00-v9-inv-750-1000-daln/locations-6-map.html) provides interactive visualization of the extracted well location groups (the html file can also be opened with any browser).
 
 <div>
     <iframe src="../figures-set00-v9-inv-750-1000-daln/locations-6-map.html" frameborder="0" height="400" width="50%"></iframe>
@@ -477,7 +477,7 @@ NMFk.plot_signal_selecton(nkrange, fitquality, robustness; figuredir="$figuredir
 md"""
 The plot above also demonstrates that the acceptable solutions contain 2 and 3 signatures.
 
-#### Analysis of all the acceptable solutions 
+#### Analysis of all the acceptable solutions
 
 The ML solutions containing an acceptable number of signatures are further analyzed as follows:
 """
@@ -517,7 +517,7 @@ This grouping is based on analyses of the location matrix `H`:
 
 ![locations-3-labeled-sorted](../figures-set00-v9-inv-750-1000-dlan/locations-3-labeled-sorted.png)
 
-The map [../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html](../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html) provides interactive visualization of the extracted well location groups (the html file can also be opened with any browser). 
+The map [../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html](../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html) provides interactive visualization of the extracted well location groups (the html file can also be opened with any browser).
 
 <div>
     <iframe src="../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html" frameborder="0" height="400" width="50%"></iframe>

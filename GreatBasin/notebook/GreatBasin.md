@@ -156,7 +156,7 @@ import Revise
 
 
 ```julia
-cd("/Users/vvv/Julia/GeoThermalCloud.jl/GreatBasin");
+cd(joinpath(GeoThermalCloud.dir, "GreatBasin");
 ```
 
 ### Load the data file

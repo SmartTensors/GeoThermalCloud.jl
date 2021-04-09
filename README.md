@@ -27,13 +27,43 @@ Reports, research papers, and presentations summarizing these machine learning a
 
 ## Julia installation
 
-Machine Learning analyses are performed using Julia.
+GeoThermalCloud Machine Learning analyses are performed using Julia.
 
 To install the most recent version of Julia, follow the instructions at https://julialang.org/downloads/
 
+## GeoThermalCloud installation
+
+To install required all the modules, execute in the Julia REPL:
+
+```julia
+import Pkg
+Pkg.add("GeoThermalCloud")
+```
+
+## GeoThermalCloud examples
+
+GeoThermalCloud analyses can be executed as follows:
+
+```julia
+import Pkg
+Pkg.add("GeoThermalCloud")
+import GeoThermalCloud
+
+GeoThermalCloud.SWNM() # performs analyses of the Sounthwest New Mexico region
+GeoThermalCloud.GreatBasin() # performs analyses of the Great Basin region
+GeoThermalCloud.Brady() # performs analyses of the Brady site, Nevada
+```
+
+GeoThermalCloud analyses can be also executed as Jupyter notebooks as well
+
+```julia
+GeoThermalCloud.SWNM(notebook=true) # opens Jupyter notebook for analyses of the Sounthwest New Mexico region
+GeoThermalCloud.GreatBasin(notebook=true) # opens Jupyter notebook for analyses of the Great Basin region
+GeoThermalCloud.Brady(notebook=true) # opens Jupyter notebook for analyses of the Brady site, Nevada
+```
 ## SmartTensors
 
-Machine Learning analyses are performed using the [**SmartTensors**](https://github.com/SmartTensors) machine learning framework.
+GeoThermalCloud Machine Learning analyses are performed using the [**SmartTensors**](https://github.com/SmartTensors) machine learning framework.
 
 <div style="text-align: left; padding-bottom: 30px;">
 	<a href="https://github.com/SmartTensors">
@@ -61,20 +91,3 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 		<img src="logos/ntfk-logo.png" alt="ntfk" width=40%  max-width=125px;/>
 	</a>
 </div>
-
-## SmartTensors installation
-
-To install required [**SmartTensors**](https://github.com/SmartTensors) modules, execute in the Julia REPL:
-
-```julia
-import Pkg
-Pkg.add("NMFk")
-Pkg.add("NTFk")
-Pkg.add("DelimitedFiles")
-Pkg.add("JLD")
-Pkg.add("JLD2")
-Pkg.add("Gadfly")
-Pkg.add("Cairo")
-Pkg.add("Fontconfig")
-Pkg.add("Mads")
-```
