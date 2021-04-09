@@ -2,7 +2,7 @@
 
     \usepackage[breakable]{tcolorbox}
     \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
-
+    
     \usepackage{iftex}
     \ifPDFTeX
     	\usepackage[T1]{fontenc}
@@ -39,7 +39,7 @@
     \usepackage{eurosym} % defines \euro
     \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
     \usepackage{fancyvrb} % verbatim replacement that allows latex
-    \usepackage{grffile} % extends the file name processing of package graphics
+    \usepackage{grffile} % extends the file name processing of package graphics 
                          % to support a larger range
     \makeatletter % fix for old versions of grffile with XeLaTeX
     \@ifpackagelater{grffile}{2019/11/01}
@@ -70,9 +70,9 @@
     \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
                                 % normalem makes italics be italics, not underlines
     \usepackage{mathrsfs}
+    
 
-
-
+    
     % Colors for the hyperref package
     \definecolor{urlcolor}{rgb}{0,.145,.698}
     \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
@@ -122,7 +122,7 @@
     \newcommand{\RegionMarkerTok}[1]{{#1}}
     \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
     \newcommand{\NormalTok}[1]{{#1}}
-
+    
     % Additional commands for more recent versions of Pandoc
     \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
     \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
@@ -141,8 +141,8 @@
     \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
     \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
     \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-
-
+    
+    
     % Define a nice break command that doesn't care if a line doesn't already
     % exist.
     \def\br{\hspace*{\fill} \\* }
@@ -156,11 +156,11 @@
     % Document parameters
     % Document title
     \title{Brady}
-
-
-
-
-
+    
+    
+    
+    
+    
 % Pygments definitions
 \makeatletter
 \def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
@@ -263,53 +263,53 @@
 \makeatother
 
 
-    % For linebreaks inside Verbatim environment from package fancyvrb.
+    % For linebreaks inside Verbatim environment from package fancyvrb. 
     \makeatletter
-        \newbox\Wrappedcontinuationbox
-        \newbox\Wrappedvisiblespacebox
-        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}}
-        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}}
-        \newcommand*\Wrappedcontinuationindent {3ex }
-        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox}
-        % Take advantage of the already applied Pygments mark-up to insert
-        % potential linebreaks for TeX processing.
-        %        {, <, #, %, $, ' and ": go to next line.
-        %        _, }, ^, &, >, - and ~: stay at end of broken line.
-        % Use of \textquotesingle for straight quote.
-        \newcommand*\Wrappedbreaksatspecials {%
-            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}%
-            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}%
-            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}%
-            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}%
-            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}%
-            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}%
-            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}%
-            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}%
-            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}%
-            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}%
-            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}%
-            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}%
-            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}%
-            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}%
-        }
-        % Some characters . , ; ? ! / are not pygmentized.
-        % This macro makes them "active" and they will insert potential linebreaks
-        \newcommand*\Wrappedbreaksatpunct {%
-            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}%
-            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}%
-            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}%
-            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}%
-            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}%
-            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}%
-            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}%
+        \newbox\Wrappedcontinuationbox 
+        \newbox\Wrappedvisiblespacebox 
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}} 
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}} 
+        \newcommand*\Wrappedcontinuationindent {3ex } 
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox} 
+        % Take advantage of the already applied Pygments mark-up to insert 
+        % potential linebreaks for TeX processing. 
+        %        {, <, #, %, $, ' and ": go to next line. 
+        %        _, }, ^, &, >, - and ~: stay at end of broken line. 
+        % Use of \textquotesingle for straight quote. 
+        \newcommand*\Wrappedbreaksatspecials {% 
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}% 
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}% 
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}% 
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}% 
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}% 
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}% 
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}% 
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}% 
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}% 
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}% 
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}% 
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}% 
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}% 
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}% 
+        } 
+        % Some characters . , ; ? ! / are not pygmentized. 
+        % This macro makes them "active" and they will insert potential linebreaks 
+        \newcommand*\Wrappedbreaksatpunct {% 
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}% 
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}% 
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}% 
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}% 
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}% 
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}% 
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}% 
             \catcode`\.\active
-            \catcode`\,\active
+            \catcode`\,\active 
             \catcode`\;\active
             \catcode`\:\active
             \catcode`\?\active
             \catcode`\!\active
-            \catcode`\/\active
-            \lccode`\~`\~
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
         }
     \makeatother
 
@@ -332,10 +332,10 @@
             \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
             {\kern\fontdimen2\font}%
         }%
-
+        
         % Allow breaks at special characters using \PYG... macros.
         \Wrappedbreaksatspecials
-        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active 	
         \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
     }
     \makeatother
@@ -345,7 +345,7 @@
     \definecolor{outcolor}{HTML}{D84315}
     \definecolor{cellborder}{HTML}{CFCFCF}
     \definecolor{cellbackground}{HTML}{F7F7F7}
-
+    
     % prompt
     \makeatletter
     \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
@@ -353,11 +353,11 @@
     \newcommand{\prompt}[4]{
         {\ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}}
     }
+    
 
-
-
+    
     % Prevent overflowing lines due to hard-to-break entities
-    \sloppy
+    \sloppy 
     % Setup hyperref package
     \hypersetup{
       breaklinks=true,  % so long urls are correctly broken across lines
@@ -367,24 +367,24 @@
       citecolor=citecolor,
       }
     % Slightly bigger margins than the latex defaults
-
+    
     \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
-
-
+    
+    
 
 \begin{document}
-
+    
     \maketitle
+    
+    
 
-
-
-
+    
     \hypertarget{geothermal-machine-learning-analysis-brady-site-nevada}{%
 \subsection{Geothermal machine learning analysis: Brady site,
 Nevada}\label{geothermal-machine-learning-analysis-brady-site-nevada}}
 
-This notebook is a part of the GeoThermalCloud.jl: GeoThermal Cloud for Machine
-Learning.
+This notebook is a part of the GeoThermalCloud.jl: Machine Learning
+framework for Geothermal Exploration.
 
 \begin{verbatim}
 <img src="../../logos/geothermalcloud-small.png" alt="geothermalcloud" width=25%  max-width=125px;/>
@@ -408,23 +408,25 @@ machine-learning analyses.
 More information on how the ML results are interpreted to provide
 geothermal insights is discussed in our research paper.
 
-    \hypertarget{import-required-julia-modules}{%
-\subsection{Import required Julia
-modules}\label{import-required-julia-modules}}
+    \hypertarget{geothermalcloud-installation}{%
+\subsection{GeoThermalCloud
+installation}\label{geothermalcloud-installation}}
 
-If \textbf{NMFk} is not installed, first execute in the Julia REPL
-\texttt{import\ Pkg;\ Pkg.add("NMFk");\ Pkg.add("DelimitedFiles");\ Pkg.add("JLD");\ Pkg.add("Gadfly");\ Pkg.add("Cairo");\ Pkg.add("Fontconfig");\ Pkg.add("Mads")}.
+If \textbf{GeoThermalCloud} is not installed, first execute in the Julia
+REPL
+\texttt{import\ Pkg;\ Pkg.add("GeoThermalCloud");\ import\ Pkg;\ Pkg.add("NMFk");\ Pkg.add("Mads");\ Pkg.add("DelimitedFiles");\ Pkg.add("JLD");\ Pkg.add("Gadfly");\ Pkg.add("Cairo");\ Pkg.add("Fontconfig")}.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{1}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{import} \PY{n}{GeoThermalCloud}
 \PY{k}{import} \PY{n}{NMFk}
+\PY{k}{import} \PY{n}{Mads}
 \PY{k}{import} \PY{n}{DelimitedFiles}
 \PY{k}{import} \PY{n}{JLD}
 \PY{k}{import} \PY{n}{Gadfly}
 \PY{k}{import} \PY{n}{Cairo}
 \PY{k}{import} \PY{n}{Fontconfig}
-\PY{k}{import} \PY{n}{Mads}
 \end{Verbatim}
 \end{tcolorbox}
 
@@ -439,7 +441,7 @@ data}\label{setup-the-working-directory-containing-the-brady-site-data}}
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{2}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{cd}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{/}\PY{l+s}{U}\PY{l+s}{s}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{s}\PY{l+s}{/}\PY{l+s}{v}\PY{l+s}{v}\PY{l+s}{v}\PY{l+s}{/}\PY{l+s}{J}\PY{l+s}{u}\PY{l+s}{l}\PY{l+s}{i}\PY{l+s}{a}\PY{l+s}{/}\PY{l+s}{G}\PY{l+s}{T}\PY{l+s}{c}\PY{l+s}{l}\PY{l+s}{o}\PY{l+s}{u}\PY{l+s}{d}\PY{l+s}{\PYZhy{}}\PY{l+s}{S}\PY{l+s}{m}\PY{l+s}{a}\PY{l+s}{r}\PY{l+s}{t}\PY{l+s}{T}\PY{l+s}{e}\PY{l+s}{n}\PY{l+s}{s}\PY{l+s}{o}\PY{l+s}{r}\PY{l+s}{s}\PY{l+s}{.}\PY{l+s}{j}\PY{l+s}{l}\PY{l+s}{/}\PY{l+s}{B}\PY{l+s}{r}\PY{l+s}{a}\PY{l+s}{d}\PY{l+s}{y}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+\PY{n}{cd}\PY{p}{(}\PY{n}{joinpath}\PY{p}{(}\PY{n}{GeoThermalCloud}\PY{o}{.}\PY{n}{dir}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{B}\PY{l+s}{r}\PY{l+s}{a}\PY{l+s}{d}\PY{l+s}{y}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{)}\PY{p}{;}
 \end{Verbatim}
 \end{tcolorbox}
 
@@ -561,7 +563,7 @@ ts: Column 20 Min 0.0 Max 0.4
 curve: Column 21 Min 0.0 Max 0.0028201111126691
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 47-element Array\{Any,1\}:
  "15-12"
@@ -592,7 +594,7 @@ curve: Column 21 Min 0.0 Max 0.0028201111126691
  "MGI-2"
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 modeltemp: Column 22 Min 19.935361862183 Max 211.10404968262
 faultdense: Column 23 Min 0.2445030361414 Max 68.830604553223
@@ -604,7 +606,7 @@ goodlith: Column 28 Min 0 Max 1
 wellid: Column 1 Unique entries:
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 2482-element Array\{Any,1\}:
     0
@@ -635,12 +637,12 @@ wellid: Column 1 Unique entries:
  2213.723
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 md: Column 2 Unique entries:
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 5965-element Array\{Any,1\}:
    0
@@ -671,8 +673,8 @@ md: Column 2 Unique entries:
  359.991
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 7680-element Array\{Any,1\}:
    0
@@ -703,8 +705,8 @@ md: Column 2 Unique entries:
  359.963
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 9381-element Array\{Any,1\}:
  326859.34
@@ -735,8 +737,8 @@ md: Column 2 Unique entries:
  328813.04
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 9349-element Array\{Any,1\}:
  4.4051245e6
@@ -767,8 +769,8 @@ md: Column 2 Unique entries:
  4.40887416e6
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 32247-element Array\{Any,1\}:
  -923.476
@@ -799,7 +801,7 @@ md: Column 2 Unique entries:
  1277.29
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 azimuth: Column 3 Unique entries:
 inclination: Column 4 Unique entries:
@@ -808,7 +810,7 @@ y: Column 6 Unique entries:
 z: Column 7 Unique entries:
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 3-element Array\{Any,1\}:
  "Cased"
@@ -816,8 +818,8 @@ z: Column 7 Unique entries:
  "Slotted"
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 3-element Array\{Any,1\}:
  "Flowing"
@@ -825,8 +827,8 @@ z: Column 7 Unique entries:
  "NotFlowing"
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 4-element Array\{Any,1\}:
  "Dry"
@@ -835,8 +837,8 @@ z: Column 7 Unique entries:
  "Production"
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 4-element Array\{Any,1\}:
  "InjectionZone"
@@ -845,7 +847,7 @@ z: Column 7 Unique entries:
  "SecondaryProductionZone"
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 casing: Column 8 Unique entries:
 fluids: Column 9 Unique entries:
@@ -853,7 +855,7 @@ use: Column 10 Unique entries:
 production: Column 11 Unique entries:
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 3-element Array\{Any,1\}:
  "Dry"
@@ -861,8 +863,8 @@ production: Column 11 Unique entries:
  "Production"
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 3-element Array\{Any,1\}:
  "Dry"
@@ -870,8 +872,8 @@ production: Column 11 Unique entries:
  "Production"
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34981-element Array\{Any,1\}:
  -100.6743850708
@@ -902,8 +904,8 @@ production: Column 11 Unique entries:
   156.40034484863
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34987-element Array\{Any,1\}:
  -0.000240148059675
@@ -934,7 +936,7 @@ production: Column 11 Unique entries:
   0.0002483890857548
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 use2: Column 12 Unique entries:
 lt750mstatus: Column 13 Unique entries:
@@ -942,7 +944,7 @@ normal: Column 14 Unique entries:
 dilation: Column 15 Unique entries:
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34967-element Array\{Any,1\}:
  -44.226177215576
@@ -973,8 +975,8 @@ dilation: Column 15 Unique entries:
  105.31118774414
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34981-element Array\{Any,1\}:
  -104.33931732178
@@ -1005,16 +1007,16 @@ dilation: Column 15 Unique entries:
    87.588310241699
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 2-element Array\{Any,1\}:
  0
  1
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 10676-element Array\{Any,1\}:
  0
@@ -1045,8 +1047,8 @@ dilation: Column 15 Unique entries:
  1
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 9007-element Array\{Any,1\}:
  0
@@ -1077,8 +1079,8 @@ dilation: Column 15 Unique entries:
  0.4
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 10157-element Array\{Any,1\}:
  0
@@ -1109,7 +1111,7 @@ dilation: Column 15 Unique entries:
  0.0028201111126691
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 coulomb: Column 16 Unique entries:
 shear: Column 17 Unique entries:
@@ -1119,7 +1121,7 @@ ts: Column 20 Unique entries:
 curve: Column 21 Unique entries:
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34051-element Array\{Any,1\}:
   19.935361862183
@@ -1150,8 +1152,8 @@ curve: Column 21 Unique entries:
  211.10404968262
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34942-element Array\{Any,1\}:
   0.2445030361414
@@ -1182,8 +1184,8 @@ curve: Column 21 Unique entries:
  68.830604553223
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34973-element Array\{Any,1\}:
   0.0004273319500498
@@ -1214,8 +1216,8 @@ curve: Column 21 Unique entries:
  26.058692932129
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34998-element Array\{Any,1\}:
    0
@@ -1246,7 +1248,7 @@ curve: Column 21 Unique entries:
  524.44979986751
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 modeltemp: Column 22 Unique entries:
 faultdense: Column 23 Unique entries:
@@ -1254,7 +1256,7 @@ faultintdense: Column 24 Unique entries:
 inv\_distfaults: Column 25 Unique entries:
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34698-element Array\{Any,1\}:
    0
@@ -1285,8 +1287,8 @@ inv\_distfaults: Column 25 Unique entries:
  788.70471191407
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 7470-element Array\{Any,1\}:
    0
@@ -1317,15 +1319,15 @@ inv\_distfaults: Column 25 Unique entries:
  829.723
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 2-element Array\{Any,1\}:
  0
  1
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 inv\_distcontacts: Column 26 Unique entries:
 unitthick: Column 27 Unique entries:
@@ -1384,7 +1386,7 @@ attributes}\label{display-information-about-processed-well-attributes}}
 \end{Verbatim}
 \end{tcolorbox}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34981-element Array\{Float64,1\}:
  -100.6743850708
@@ -1415,12 +1417,12 @@ attributes}\label{display-information-about-processed-well-attributes}}
   156.40034484863
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 normal: 14
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34987-element Array\{Float64,1\}:
  -0.000240148059675
@@ -1451,8 +1453,8 @@ normal: 14
   0.0002483890857548
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34967-element Array\{Float64,1\}:
  -44.226177215576
@@ -1483,8 +1485,8 @@ normal: 14
  105.31118774414
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34981-element Array\{Float64,1\}:
  -104.33931732178
@@ -1515,16 +1517,16 @@ normal: 14
    87.588310241699
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 2-element Array\{Float64,1\}:
  0.0
  1.0
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 10676-element Array\{Float64,1\}:
  0.0
@@ -1555,8 +1557,8 @@ normal: 14
  1.0
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 9007-element Array\{Float64,1\}:
  0.0
@@ -1587,8 +1589,8 @@ normal: 14
  0.4
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 10157-element Array\{Float64,1\}:
  0.0
@@ -1619,8 +1621,8 @@ normal: 14
  0.0028201111126691
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34051-element Array\{Float64,1\}:
   19.935361862183
@@ -1651,8 +1653,8 @@ normal: 14
  211.10404968262
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34942-element Array\{Float64,1\}:
   0.2445030361414
@@ -1683,7 +1685,7 @@ normal: 14
  68.830604553223
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 dilation: 15
 coulomb: 16
@@ -1696,7 +1698,7 @@ modeltemp: 22
 faultdense: 23
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34973-element Array\{Float64,1\}:
   0.0004273319500498
@@ -1727,8 +1729,8 @@ faultdense: 23
  26.058692932129
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34998-element Array\{Float64,1\}:
    0.0
@@ -1759,8 +1761,8 @@ faultdense: 23
  524.44979986751
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 34698-element Array\{Float64,1\}:
    0.0
@@ -1791,8 +1793,8 @@ faultdense: 23
  788.70471191407
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 7470-element Array\{Float64,1\}:
    0.0
@@ -1823,7 +1825,7 @@ faultdense: 23
  829.723
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 faultintdense: 24
 inv\_distfaults: 25
@@ -2056,7 +2058,7 @@ algorithm as follows:
  6
 \end{Verbatim}
 \end{tcolorbox}
-
+        
     The acceptable solutions contain 2, 5 and 6 signatures.
 
     \hypertarget{post-process-nmfk-results}{%
@@ -2079,7 +2081,7 @@ Below is a plot representing solution quality (fit) and silhouette width
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_48_0.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -2139,7 +2141,7 @@ set00-v9-inv-750-1000-daln/Wmatrix-2-2\_14-1000.jld!
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:255
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 24×2 Array\{Any,2\}:
  "MGI-2"       1.0
@@ -2168,7 +2170,7 @@ set00-v9-inv-750-1000-daln/Wmatrix-2-2\_14-1000.jld!
  "22-13"       0.269227
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Info: Signal B -> B Count: 23
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:255
@@ -2176,7 +2178,7 @@ set00-v9-inv-750-1000-daln/Wmatrix-2-2\_14-1000.jld!
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:272
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 23×2 Array\{Any,2\}:
  "18-31"   1.0
@@ -2204,12 +2206,12 @@ set00-v9-inv-750-1000-daln/Wmatrix-2-2\_14-1000.jld!
  "82A-11"  0.354477
     \end{Verbatim}
 
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_6.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Info: Signal B (S2) (k-means clustering)
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:272
@@ -2219,7 +2221,7 @@ set00-v9-inv-750-1000-daln/Wmatrix-2-2\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_8.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -2228,12 +2230,12 @@ set00-v9-inv-750-1000-daln/Wmatrix-2-2\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_10.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_11.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -2242,19 +2244,19 @@ set00-v9-inv-750-1000-daln/Wmatrix-2-2\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_13.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 1×2 Array\{Any,2\}:
  "Inverse distance from contacts"  0.619519
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 13×2 Array\{Any,2\}:
  "Unit thickness"                1.0
@@ -2272,12 +2274,12 @@ set00-v9-inv-750-1000-daln/Wmatrix-2-2\_14-1000.jld!
  "Temperature"                   0.131901
     \end{Verbatim}
 
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_17.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Info: Attributes (signals=2)
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:322
@@ -2299,7 +2301,7 @@ set00-v9-inv-750-1000-daln/Wmatrix-2-2\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_19.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -2308,12 +2310,12 @@ set00-v9-inv-750-1000-daln/Wmatrix-2-2\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_21.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_22.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -2322,12 +2324,12 @@ set00-v9-inv-750-1000-daln/Wmatrix-2-2\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_24.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_25.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -2336,7 +2338,7 @@ set00-v9-inv-750-1000-daln/Wmatrix-2-2\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_27.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 Signal importance (high->low): [1, 3, 5, 4, 2]
     \end{Verbatim}
@@ -2372,7 +2374,7 @@ set00-v9-inv-750-1000-daln/Wmatrix-5-5\_14-1000.jld!
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkCluster.jl:67
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 11×2 Array\{Any,2\}:
  "MG-2(SP-2)"  1.0
@@ -2388,8 +2390,8 @@ set00-v9-inv-750-1000-daln/Wmatrix-5-5\_14-1000.jld!
  "22-13"       0.384279
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 11×2 Array\{Any,2\}:
  "68A-1"       1.0
@@ -2405,8 +2407,8 @@ set00-v9-inv-750-1000-daln/Wmatrix-5-5\_14-1000.jld!
  "B5"          0.444441
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 9×2 Array\{Any,2\}:
  "56B-1"  1.0
@@ -2420,8 +2422,8 @@ set00-v9-inv-750-1000-daln/Wmatrix-5-5\_14-1000.jld!
  "47A-1"  0.549964
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 8×2 Array\{Any,2\}:
  "18-1"    1.0
@@ -2434,8 +2436,8 @@ set00-v9-inv-750-1000-daln/Wmatrix-5-5\_14-1000.jld!
  "56A-1"   0.3504
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 8×2 Array\{Any,2\}:
  "26-12"  0.82344
@@ -2448,12 +2450,12 @@ set00-v9-inv-750-1000-daln/Wmatrix-5-5\_14-1000.jld!
  "MGI-1"  0.456212
     \end{Verbatim}
 
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_35.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Warning: Procedure to find unique signals could not identify a solution {\ldots}
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkCluster.jl:158
@@ -2487,7 +2489,7 @@ set00-v9-inv-750-1000-daln/Wmatrix-5-5\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_37.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -2496,12 +2498,12 @@ set00-v9-inv-750-1000-daln/Wmatrix-5-5\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_39.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_40.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -2510,12 +2512,12 @@ set00-v9-inv-750-1000-daln/Wmatrix-5-5\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_42.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 7×2 Array\{Any,2\}:
  "Unit thickness"                0.849937
@@ -2527,15 +2529,15 @@ set00-v9-inv-750-1000-daln/Wmatrix-5-5\_14-1000.jld!
  "Temperature"                   0.123165
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 1×2 Array\{Any,2\}:
  "Inverse distance from contacts"  1.0
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 3×2 Array\{Any,2\}:
  "Faulting"       0.892846
@@ -2543,27 +2545,27 @@ set00-v9-inv-750-1000-daln/Wmatrix-5-5\_14-1000.jld!
  "Dilation"       0.841464
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 1×2 Array\{Any,2\}:
  "Lithology"  0.89235
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 2×2 Array\{Any,2\}:
  "Coulomb shear stress"  0.826886
  "Normal stress"         0.820471
     \end{Verbatim}
 
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_49.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Info: Attributes (signals=5)
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:322
@@ -2603,7 +2605,7 @@ set00-v9-inv-750-1000-daln/Wmatrix-5-5\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_51.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -2612,12 +2614,12 @@ set00-v9-inv-750-1000-daln/Wmatrix-5-5\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_53.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_54.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -2626,12 +2628,12 @@ set00-v9-inv-750-1000-daln/Wmatrix-5-5\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_56.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_57.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -2640,7 +2642,7 @@ set00-v9-inv-750-1000-daln/Wmatrix-5-5\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_59.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 Signal importance (high->low): [1, 5, 2, 6, 4, 3]
     \end{Verbatim}
@@ -2675,7 +2677,7 @@ present in workspace; reconstructing
 └ @ JLD /Users/vvv/.julia/packages/JLD/nQ9iW/src/jld\_types.jl:697
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 11×2 Array\{Any,2\}:
  "MG-1(SP-1)"  1.0
@@ -2691,8 +2693,8 @@ present in workspace; reconstructing
  "B3"          0.643308
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 10×2 Array\{Any,2\}:
  "82A-11"  1.0
@@ -2707,8 +2709,8 @@ present in workspace; reconstructing
  "18-31"   0.413683
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 7×2 Array\{Any,2\}:
  "MG-2(SP-2)"  1.0
@@ -2720,8 +2722,8 @@ present in workspace; reconstructing
  "55-1"        0.453248
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 7×2 Array\{Any,2\}:
  "B2"     1.0
@@ -2733,8 +2735,8 @@ present in workspace; reconstructing
  "81-11"  0.320946
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 6×2 Array\{Any,2\}:
  "BCH-3"  1.0
@@ -2745,8 +2747,8 @@ present in workspace; reconstructing
  "81A-1"  0.707665
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 6×2 Array\{Any,2\}:
  "47C-1"  1.0
@@ -2757,12 +2759,12 @@ present in workspace; reconstructing
  "56A-1"  0.720315
     \end{Verbatim}
 
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_68.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Info: Robust k-means analysis results are loaded from file results-
 set00-v9-inv-750-1000-daln/Wmatrix-6-6\_14-1000.jld!
@@ -2799,7 +2801,7 @@ set00-v9-inv-750-1000-daln/Wmatrix-6-6\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_70.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -2808,12 +2810,12 @@ set00-v9-inv-750-1000-daln/Wmatrix-6-6\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_72.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_73.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -2822,26 +2824,26 @@ set00-v9-inv-750-1000-daln/Wmatrix-6-6\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_75.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 1×2 Array\{Any,2\}:
  "Inverse distance from contacts"  1.0
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 1×2 Array\{Any,2\}:
  "Lithology"  0.864227
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 5×2 Array\{Any,2\}:
  "Fault intersection density"  0.534767
@@ -2851,24 +2853,24 @@ set00-v9-inv-750-1000-daln/Wmatrix-6-6\_14-1000.jld!
  "Temperature"                 0.136511
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 2×2 Array\{Any,2\}:
  "Unit thickness"                1.0
  "Inverse distance from faults"  0.778501
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 2×2 Array\{Any,2\}:
  "Normal stress"         0.896801
  "Coulomb shear stress"  0.845105
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 3×2 Array\{Any,2\}:
  "Fault density"  1.0
@@ -2876,12 +2878,12 @@ set00-v9-inv-750-1000-daln/Wmatrix-6-6\_14-1000.jld!
  "Dilation"       0.834909
     \end{Verbatim}
 
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_83.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Info: Attributes (signals=6)
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:322
@@ -2927,7 +2929,7 @@ set00-v9-inv-750-1000-daln/Wmatrix-6-6\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_85.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -2936,12 +2938,12 @@ set00-v9-inv-750-1000-daln/Wmatrix-6-6\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_87.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_88.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -2950,12 +2952,12 @@ set00-v9-inv-750-1000-daln/Wmatrix-6-6\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_90.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_91.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -2964,7 +2966,7 @@ set00-v9-inv-750-1000-daln/Wmatrix-6-6\_14-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_50_93.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -2982,7 +2984,7 @@ set00-v9-inv-750-1000-daln/Wmatrix-6-6\_14-1000.jld!
 'E', 'D', 'A', 'C', 'C', 'A']])
 \end{Verbatim}
 \end{tcolorbox}
-
+        
     The results for a solution with \textbf{6} signatures presented above
 will be further discussed here.
 
@@ -3118,7 +3120,7 @@ algorithm as follows:
  3
 \end{Verbatim}
 \end{tcolorbox}
-
+        
     The acceptable solutions contain 2 and 3 signatures.
 
     \hypertarget{post-process-nmfk-results}{%
@@ -3141,7 +3143,7 @@ Below is a plot representing solution quality (fit) and silhouette width
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_63_0.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -3186,7 +3188,7 @@ present in workspace; reconstructing
 └ @ JLD /Users/vvv/.julia/packages/JLD/nQ9iW/src/jld\_types.jl:697
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 10×2 Array\{Any,2\}:
  "Unit thickness"                  1.0
@@ -3201,8 +3203,8 @@ present in workspace; reconstructing
  "Inverse distance from contacts"  0.388519
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 4×2 Array\{Any,2\}:
  "Fault dilation tendency"  1.0
@@ -3211,12 +3213,12 @@ present in workspace; reconstructing
  "Temperature"              0.239306
     \end{Verbatim}
 
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_3.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Info: Robust k-means analysis results are loaded from file results-
 set00-v9-inv-750-1000-dlan/Wmatrix-2-2\_47-1000.jld!
@@ -3239,7 +3241,7 @@ set00-v9-inv-750-1000-dlan/Wmatrix-2-2\_47-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_5.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -3248,12 +3250,12 @@ set00-v9-inv-750-1000-dlan/Wmatrix-2-2\_47-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_7.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_8.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -3262,8 +3264,8 @@ set00-v9-inv-750-1000-dlan/Wmatrix-2-2\_47-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_10.png}
     \end{center}
     { \hspace*{\fill} \\}
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 27×2 Array\{Any,2\}:
  "B8"          1.0
@@ -3279,7 +3281,7 @@ set00-v9-inv-750-1000-dlan/Wmatrix-2-2\_47-1000.jld!
  "18A-1"       0.782265
  "47C-1"       0.745002
  "22-13"       0.734719
- ⋮
+ ⋮             
  "88-11"       0.659403
  "46A-1"       0.629757
  "B5"          0.614479
@@ -3294,8 +3296,8 @@ set00-v9-inv-750-1000-dlan/Wmatrix-2-2\_47-1000.jld!
  "B2"          0.127328
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 20×2 Array\{Any,2\}:
  "56-1"    1.0
@@ -3320,12 +3322,12 @@ set00-v9-inv-750-1000-dlan/Wmatrix-2-2\_47-1000.jld!
  "B7"      0.156777
     \end{Verbatim}
 
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_13.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Info: Locations (signals=2)
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:322
@@ -3347,7 +3349,7 @@ set00-v9-inv-750-1000-dlan/Wmatrix-2-2\_47-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_15.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -3356,12 +3358,12 @@ set00-v9-inv-750-1000-dlan/Wmatrix-2-2\_47-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_17.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_18.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -3370,12 +3372,12 @@ set00-v9-inv-750-1000-dlan/Wmatrix-2-2\_47-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_20.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_21.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -3384,7 +3386,7 @@ set00-v9-inv-750-1000-dlan/Wmatrix-2-2\_47-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_23.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 Signal importance (high->low): [3, 1, 2]
 ┌ Info: Number of signals: 3
@@ -3413,7 +3415,7 @@ set00-v9-inv-750-1000-dlan/Wmatrix-3-3\_47-1000.jld!
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkCluster.jl:67
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 9×2 Array\{Any,2\}:
  "Unit thickness"                  1.0
@@ -3427,8 +3429,8 @@ set00-v9-inv-750-1000-dlan/Wmatrix-3-3\_47-1000.jld!
  "Inverse distance from contacts"  0.377979
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 4×2 Array\{Any,2\}:
  "Fault dilation tendency"  1.0
@@ -3437,19 +3439,19 @@ set00-v9-inv-750-1000-dlan/Wmatrix-3-3\_47-1000.jld!
  "Temperature"              0.239306
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 1×2 Array\{Any,2\}:
  "Lithology"  1.0
     \end{Verbatim}
 
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_28.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Warning: Procedure to find unique signals could not identify a solution {\ldots}
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkCluster.jl:158
@@ -3471,7 +3473,7 @@ set00-v9-inv-750-1000-dlan/Wmatrix-3-3\_47-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_30.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -3480,12 +3482,12 @@ set00-v9-inv-750-1000-dlan/Wmatrix-3-3\_47-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_32.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_33.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -3494,12 +3496,12 @@ set00-v9-inv-750-1000-dlan/Wmatrix-3-3\_47-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_35.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
 
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 13×2 Array\{Any,2\}:
  "B8"     1.0
@@ -3517,8 +3519,8 @@ set00-v9-inv-750-1000-dlan/Wmatrix-3-3\_47-1000.jld!
  "B2"     0.0820308
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 20×2 Array\{Any,2\}:
  "56-1"        1.0
@@ -3543,8 +3545,8 @@ set00-v9-inv-750-1000-dlan/Wmatrix-3-3\_47-1000.jld!
  "B7"          0.155895
     \end{Verbatim}
 
-
-
+    
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 14×2 Array\{Any,2\}:
  "88-11"       1.0
@@ -3563,12 +3565,12 @@ set00-v9-inv-750-1000-dlan/Wmatrix-3-3\_47-1000.jld!
  "B3"          0.212844
     \end{Verbatim}
 
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_40.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Info: Locations (signals=3)
 └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:322
@@ -3596,7 +3598,7 @@ set00-v9-inv-750-1000-dlan/Wmatrix-3-3\_47-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_42.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -3605,12 +3607,12 @@ set00-v9-inv-750-1000-dlan/Wmatrix-3-3\_47-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_44.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_45.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -3619,12 +3621,12 @@ set00-v9-inv-750-1000-dlan/Wmatrix-3-3\_47-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_47.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_48.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -3633,7 +3635,7 @@ set00-v9-inv-750-1000-dlan/Wmatrix-3-3\_47-1000.jld!
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brady_files/Brady_65_50.png}
     \end{center}
     { \hspace*{\fill} \\}
-
+    
     \begin{Verbatim}[commandchars=\\\{\}]
 
     \end{Verbatim}
@@ -3648,7 +3650,7 @@ set00-v9-inv-750-1000-dlan/Wmatrix-3-3\_47-1000.jld!
 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'A', 'A', 'A', 'A', 'A', 'C']])
 \end{Verbatim}
 \end{tcolorbox}
-
+        
     \hypertarget{analysis-of-the-3-signature-solution}{%
 \paragraph{Analysis of the 3-signature
 solution}\label{analysis-of-the-3-signature-solution}}
@@ -3695,7 +3697,7 @@ provides interactive visualization of the extracted well location groups
 
 
     % Add a bibliography block to the postdoc
-
-
-
+    
+    
+    
 \end{document}

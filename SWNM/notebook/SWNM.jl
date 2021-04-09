@@ -1,12 +1,13 @@
-import Cairo
+import GeoThermalCloud
 import NMFk
+import Mads
 import DelimitedFiles
 import JLD
 import Gadfly
+import Cairo
 import Fontconfig
-import Mads
 
-cd(joinpath(GeoThermalCloud.dir, "SWNM/");
+cd("/Users/vvv/Julia/GeoThermalCloud.jl/SWNM/");
 
 d, h = DelimitedFiles.readdlm("data/Pepin_PCA_Input_Data_LANL.csv", ','; header=true);
 

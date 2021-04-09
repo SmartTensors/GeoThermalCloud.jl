@@ -1,4 +1,4 @@
-Geothermal machine learning analysis: Southwest New Mexico
+Geothermal machine learning analysis: Southwest New Mexico 
 ---
 
 This notebook is a part of the GeoThermalCloud.jl: Machine Learning framework for Geothermal Exploration.
@@ -25,7 +25,7 @@ More information on how the ML results are interpreted to provide geothermal ins
 
 Southwest New Mexico (**SWNM**) is a region important for geothermal exploration.
 
-**SWNM** is broadly divided into four physiographic provinces:
+**SWNM** is broadly divided into four physiographic provinces: 
  - the Colorado Plateau
  - the Mogollon-Datil Volcanic Field (MDVF)
  - the Basin and Range, and
@@ -38,7 +38,7 @@ Some of the **SWNM** systems are already utilized for commercial and recreationa
 There are already energy-production facilities for both electricity and direct-use heating.
 
 For example, the Basin and Range province has one geothermal power plant (Lightning dock) of gross ~14 MWe power, five greenhouse farms, and numerous medium-temperature wells and springs.
-There are 14 spas and recreational facilities utilizing the **SWNM** geothermal resources.
+There are 14 spas and recreational facilities utilizing the **SWNM** geothermal resources. 
 
 Recent Play Fairway Analysis (PFA) Phase I study of **SWNM** conducted at LANL revealed more potential geothermal resources.
 
@@ -46,19 +46,20 @@ The study area and the data collection locations are mapped below.
 
 ![SWNM study area](../map/SWNM_study_area.png)
 
-## Import required libraries for this work
+## GeoThermalCloud installation
 
-If **NMFk** is not installed, first execute in the Julia REPL `import Pkg; Pkg.add("NMFk"); Pkg.add("DelimitedFiles"); Pkg.add("JLD"); Pkg.add("Gadfly"); Pkg.add("Cairo"); Pkg.add("Fontconfig"); Pkg.add("Mads")`.
+If **GeoThermalCloud** is not installed, first execute in the Julia REPL `import Pkg; Pkg.add("GeoThermalCloud"); import Pkg; Pkg.add("NMFk"); Pkg.add("Mads"); Pkg.add("DelimitedFiles"); Pkg.add("JLD"); Pkg.add("Gadfly"); Pkg.add("Cairo"); Pkg.add("Fontconfig")`.
 
 
 ```julia
-import Cairo
+import GeoThermalCloud
 import NMFk
+import Mads
 import DelimitedFiles
 import JLD
 import Gadfly
+import Cairo
 import Fontconfig
-import Mads
 ```
 
 
@@ -117,7 +118,7 @@ import Mads
 
     [1mNMFk: Nonnegative Matrix Factorization + k-means clustering and physics constraints[0m
     ====
-
+    
     [1m[34m  _     _  [1m[31m _      _  [1m[32m _______   [1m[35m_[0m
     [1m[34m |  \  | | [1m[31m|  \  /  | [1m[32m|  _____| [1m[35m| |  _[0m
     [1m[34m | . \ | | [1m[31m| . \/ . | [1m[32m| |___    [1m[35m| | / /[0m
@@ -125,7 +126,7 @@ import Mads
     [1m[34m | | \ ' | [1m[31m| | \/ | | [1m[32m| |       [1m[35m|   ([0m
     [1m[34m | |  \  | [1m[31m| |    | | [1m[32m| |       [1m[35m| |\ \[0m
     [1m[34m |_|   \_| [1m[31m|_|    |_| [1m[32m|_|       [1m[35m|_| \_\[0m
-
+    
     NMFk performs unsupervised machine learning based on matrix decomposition coupled with various constraints.
     NMFk provides automatic identification of the optimal number of signals (features) present in two-dimensional data arrays (matrices).
     NMFk offers visualization, pre-, and post-processing capabilities.
@@ -141,7 +142,7 @@ import Mads
 
 
 ```julia
-cd(joinpath(GeoThermalCloud.dir, "SWNM/");
+cd("/Users/vvv/Julia/GeoThermalCloud.jl/SWNM/");
 ```
 
 ### Load the SWNM data file
@@ -330,7 +331,7 @@ figuredir = "figures-case01"
 resultdir = "results-case01";
 ```
 
-### Define a range for the number of signatures to be explored
+### Define a range for the number of signatures to be explored 
 
 
 ```julia
@@ -445,16 +446,16 @@ NMFk.plot_signal_selecton(nkrange, fitquality, robustness; figuredir=figuredir, 
 ```
 
 
-
+    
 ![png](SWNM_files/SWNM_33_0.png)
+    
 
 
+    
 
+The plot above also demonstrates that the acceptable solutions contain 2, 3, 4, and 5 signatures. 
 
-
-The plot above also demonstrates that the acceptable solutions contain 2, 3, 4, and 5 signatures.
-
-#### Analysis of all the acceptable solutions
+#### Analysis of all the acceptable solutions 
 
 The ML solutions containing an acceptable number of signatures are further analyzed as follows:
 
@@ -507,7 +508,7 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, 
      "Freiborn spr"    0.745613
      "Well 1"          0.743076
      "Spring Can"      0.741828
-     ⋮
+     ⋮                 
      "Warm spr"        0.676919
      "Cliff spr"       0.676442
      "Ojo Caliente"    0.670285
@@ -542,9 +543,9 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, 
 
 
 
-
+    
 ![png](SWNM_files/SWNM_35_5.png)
-
+    
 
 
     ┌ Info: Signal B (S2) (k-means clustering)
@@ -552,31 +553,31 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, 
 
 
 
-
+    
 ![png](SWNM_files/SWNM_35_7.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_9.png)
+    
 
 
 
-
-
+    
 ![png](SWNM_files/SWNM_35_10.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_12.png)
-
+    
 
 
 
@@ -606,12 +607,12 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, 
 
 
 
-
+    
 ![png](SWNM_files/SWNM_35_15.png)
+    
 
 
-
-
+    
 
     ┌ Info: Attributes (signals=2)
     └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:340
@@ -630,45 +631,45 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, 
 
 
 
-
+    
 ![png](SWNM_files/SWNM_35_18.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_20.png)
+    
 
 
 
-
-
+    
 ![png](SWNM_files/SWNM_35_21.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_23.png)
+    
 
 
 
-
-
+    
 ![png](SWNM_files/SWNM_35_24.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_26.png)
-
+    
 
 
     Signal importance (high->low): [1, 2, 3]
@@ -751,9 +752,9 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, 
 
 
 
-
+    
 ![png](SWNM_files/SWNM_35_32.png)
-
+    
 
 
     ┌ Warning: Procedure to find unique signals could not identify a solution ...
@@ -773,31 +774,31 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, 
 
 
 
-
+    
 ![png](SWNM_files/SWNM_35_34.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_36.png)
+    
 
 
 
-
-
+    
 ![png](SWNM_files/SWNM_35_37.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_39.png)
-
+    
 
 
 
@@ -831,12 +832,12 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, 
 
 
 
-
+    
 ![png](SWNM_files/SWNM_35_43.png)
+    
 
 
-
-
+    
 
     ┌ Info: Attributes (signals=3)
     └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:340
@@ -861,45 +862,45 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, 
 
 
 
-
+    
 ![png](SWNM_files/SWNM_35_46.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_48.png)
+    
 
 
 
-
-
+    
 ![png](SWNM_files/SWNM_35_49.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_51.png)
+    
 
 
 
-
-
+    
 ![png](SWNM_files/SWNM_35_52.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_54.png)
-
+    
 
 
     Signal importance (high->low): [2, 1, 4, 3]
@@ -986,9 +987,9 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, 
 
 
 
-
+    
 ![png](SWNM_files/SWNM_35_61.png)
-
+    
 
 
     ┌ Info: Robust k-means analysis results are loaded from file results-case01/Wmatrix-4-4_18-1000.jld!
@@ -1012,31 +1013,31 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, 
 
 
 
-
+    
 ![png](SWNM_files/SWNM_35_63.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_65.png)
+    
 
 
 
-
-
+    
 ![png](SWNM_files/SWNM_35_66.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_68.png)
-
+    
 
 
 
@@ -1074,12 +1075,12 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, 
 
 
 
-
+    
 ![png](SWNM_files/SWNM_35_73.png)
+    
 
 
-
-
+    
 
     ┌ Info: Attributes (signals=4)
     └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:340
@@ -1110,45 +1111,45 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, 
 
 
 
-
+    
 ![png](SWNM_files/SWNM_35_76.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_78.png)
+    
 
 
 
-
-
+    
 ![png](SWNM_files/SWNM_35_79.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_81.png)
+    
 
 
 
-
-
+    
 ![png](SWNM_files/SWNM_35_82.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_84.png)
-
+    
 
 
     Signal importance (high->low): [1, 4, 2, 3, 5]
@@ -1227,9 +1228,9 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, 
 
 
 
-
+    
 ![png](SWNM_files/SWNM_35_92.png)
-
+    
 
 
     ┌ Info: Robust k-means analysis results are loaded from file results-case01/Hmatrix-5-5_44-1000.jld!
@@ -1273,31 +1274,31 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, 
 
 
 
-
+    
 ![png](SWNM_files/SWNM_35_94.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_96.png)
+    
 
 
 
-
-
+    
 ![png](SWNM_files/SWNM_35_97.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_99.png)
-
+    
 
 
 
@@ -1339,12 +1340,12 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, 
 
 
 
-
+    
 ![png](SWNM_files/SWNM_35_105.png)
+    
 
 
-
-
+    
 
     ┌ Info: Attributes (signals=5)
     └ @ NMFk /Users/vvv/.julia/dev/NMFk/src/NMFkPostprocess.jl:340
@@ -1381,48 +1382,48 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, 
 
 
 
-
+    
 ![png](SWNM_files/SWNM_35_108.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_110.png)
+    
 
 
 
-
-
+    
 ![png](SWNM_files/SWNM_35_111.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_113.png)
+    
 
 
 
-
-
+    
 ![png](SWNM_files/SWNM_35_114.png)
+    
 
 
+    
 
 
-
-
-
+    
 ![png](SWNM_files/SWNM_35_116.png)
+    
 
 
-
-
+    
 
 #### Analysis of the 5-signature solution
 
@@ -1439,7 +1440,7 @@ Mads.display("results-case01/attributes-5-groups.txt")
     Signal A
     Lithium concentration     	1.0
     Volcanic dike density     	0.569
-
+    
     Signal B
     Depth to basement         	0.761
     Boron concentration       	0.565
@@ -1447,23 +1448,23 @@ Mads.display("results-case01/attributes-5-groups.txt")
     Volcanic vent density     	0.304
     Spring density            	0.0
     Precipitation             	0.0
-
+    
     Signal C
     State map fault density   	0.755
     Hydraulic gradient        	0.743
     Silica geothermometer     	0.554
-
+    
     Signal D
     Crustal thickness         	1.0
     Magnetic intensity        	0.59
     Seismicity                	0.00309
     Gravity anomaly           	0.0
-
+    
     Signal E
     Fault intersection density	0.922
     Drainage density          	0.459
     Heat flow                 	0.184
-
+    
 
 
 This grouping is based on analyses of the attribute matrix `W`:
@@ -1494,7 +1495,7 @@ Mads.display("results-case01/locations-5-groups.txt")
     Derry spr     	0.578
     Mimbres spr   	0.565
     Goat spr      	0.37
-
+    
     Signal B (S4)
     Fed H1 well   	1.0
     Well 4        	0.848
@@ -1506,14 +1507,14 @@ Mads.display("results-case01/locations-5-groups.txt")
     Radium spr    	0.626
     Well 3        	0.593
     Victoria well 	0.38
-
+    
     Signal C (S2)
     Freiborn spr  	1.0
     Gila spr 1    	0.78
     Gila spr 2    	0.696
     Aragon spr    	0.695
     Ojo Caliente  	0.36
-
+    
     Signal D (S3)
     Jerry well    	1.0
     Pueblo well   	0.971
@@ -1523,14 +1524,14 @@ Mads.display("results-case01/locations-5-groups.txt")
     Alamos spr    	0.873
     Laguna Pbl    	0.855
     Well 1        	0.738
-
+    
     Signal E (S5)
     Socorro Can   	1.0
     Ojitos spr    	0.885
     Ojo Canas     	0.708
     T or C spr    	0.411
     B.Iorio well  	0.409
-
+    
 
 
 This grouping is based on analyses of the location matrix `H`:
@@ -1548,14 +1549,14 @@ The spatial association of the extracted signatures with the four physiographic 
 The solutions for k=2, 3, and 4 provide a higher-level classification of the geothermal locations, while the k=8 solution allow us to further refine the geothermal signatures and their association to the physiographic provinces.
 The solution for k=5 provides the best classification of the geothermal locations.
 
-Based on the figure above, it is clear that our ML algorithm was able to blindly identify the physiographic provinces associated with analyzed hydrogeothermal systems without providing any information about their spatial location (coordinates).
+Based on the figure above, it is clear that our ML algorithm was able to blindly identify the physiographic provinces associated with analyzed hydrogeothermal systems without providing any information about their spatial location (coordinates). 
 
 Further observations based on the figure above are:
 
-- The solution for k=2 separates the Colorado Plateau and the Volcanic Field (Signature A) from the Basin and Range and the Rift zone (Signature B) provinces (Figure a).
-- The k=3 solution combines the Colorado Plateau and the Volcanic Field in Signature A; however, Signatures B and C separate the Basin and Range and the Rio Grande Rift provinces, respectively (Figure b).
-- Signature A of the k=4 solution (Figure c) represents the Volcanic Field. Signature B captures the Basin and Range province. Signature C coincides with the Colorado Plateau. Signature D encompasses the Rio Grande Rift zone (Figure c).
-- The k=5 solution (Figure d) regroups the four signatures of the k=4 solution into five signatures. Signatures A and E cover MDVF; Signatures B, C, and D capture the remaining three provinces: the Basin and Range, the Colorado Plateau, and the Rio Grande Rift provinces, respectively.
+- The solution for k=2 separates the Colorado Plateau and the Volcanic Field (Signature A) from the Basin and Range and the Rift zone (Signature B) provinces (Figure a). 
+- The k=3 solution combines the Colorado Plateau and the Volcanic Field in Signature A; however, Signatures B and C separate the Basin and Range and the Rio Grande Rift provinces, respectively (Figure b). 
+- Signature A of the k=4 solution (Figure c) represents the Volcanic Field. Signature B captures the Basin and Range province. Signature C coincides with the Colorado Plateau. Signature D encompasses the Rio Grande Rift zone (Figure c). 
+- The k=5 solution (Figure d) regroups the four signatures of the k=4 solution into five signatures. Signatures A and E cover MDVF; Signatures B, C, and D capture the remaining three provinces: the Basin and Range, the Colorado Plateau, and the Rio Grande Rift provinces, respectively. 
 - In the k=8 solution (Figure e), Signature B captures the Colorado Plateau province. Signatures G and H encompass two separate areas in the Rio Grande Rift zone (Figure e). Three of the signatures (A, C, D) are associated with the Volcanic Field capture spatial variability within this province. Two signatures (E and F) represent the spatial variability in the Basin and Range province.
 
 #### Description of location matrices (`W`)
@@ -1570,11 +1571,11 @@ The transitions of the signatures show the consistencies of the obtained results
 
 Further observations based on the figure above are (note that these observations are consistent with the observations provided above regarding the physiographic provinces):
 
-- The k=2 solution subdivides the SWNM into two subregions.
-- Signatures A and B of the k=3 solution are split up into Signatures A, B, and C of the k=4 solution; however, Signature C of the k=3 solution and Signature D of the k=4 solution share very similar properties.
-- Signatures A, B, C, and D of both the k=4 and 5 solutions possess similar properties; however, the k=5 solution got a completely new signature (Signature E).
-- The k=8 solution regrouped the signatures of the k=5 solution. Signature A of the k=5 solution possesses similar properties to Signatures A and D of the k=8 solution. Signature B of the k=5 solution shares similar properties to Signatures E and F of the k=8 solution. Signature C of the k=5 solution has similar properties to both Signatures B and C of the k=8 solution. Signature D of the k=5 solution and both Signatures G and H of the k=8 solution share similar properties.
-- It is critical to mention that although the 44 locations in the `W` matrices are labeled to be associated with a given geothermal signature (i.e., a certain region; A, B, etc.), it does not mean the locations are associated with only one signature as seen by the color-coding in the figure.
+- The k=2 solution subdivides the SWNM into two subregions. 
+- Signatures A and B of the k=3 solution are split up into Signatures A, B, and C of the k=4 solution; however, Signature C of the k=3 solution and Signature D of the k=4 solution share very similar properties. 
+- Signatures A, B, C, and D of both the k=4 and 5 solutions possess similar properties; however, the k=5 solution got a completely new signature (Signature E). 
+- The k=8 solution regrouped the signatures of the k=5 solution. Signature A of the k=5 solution possesses similar properties to Signatures A and D of the k=8 solution. Signature B of the k=5 solution shares similar properties to Signatures E and F of the k=8 solution. Signature C of the k=5 solution has similar properties to both Signatures B and C of the k=8 solution. Signature D of the k=5 solution and both Signatures G and H of the k=8 solution share similar properties. 
+- It is critical to mention that although the 44 locations in the `W` matrices are labeled to be associated with a given geothermal signature (i.e., a certain region; A, B, etc.), it does not mean the locations are associated with only one signature as seen by the color-coding in the figure. 
 - Instead, it means that those locations predominantly dominate commensurate signatures with contributions from other signatures too.
 
 #### Description of attribute matrices (`H`)
@@ -1583,21 +1584,21 @@ The plot below shows attribute matrices of all the accepted solutions.
 The number of signatures increases from left to right.
 The figure demonstrates how each attribute contributes to the extracted signature.
 The matrices are color-coded to show high (red) and low (green) associations between the attributes and signatures.
-Also, this plot shows how the signatures get transformed and modified as the number of signatures increases.
+Also, this plot shows how the signatures get transformed and modified as the number of signatures increases. 
 As above, the transitions of the signatures show the consistencies of the obtained ML results.
 
 ![Hs](../figures-case01/signals.png)
 
 Further observations based on the figure above are:
 
-- Signatures A, B, and C of the k=3 solution have similar properties to Signatures A, B, and both C and D of the k=4 solution, respectively.
-- Signatures of A, B, C, and D of the k=4 solution possess similar properties to signatures both A and E, B, C, and D of the k=5 solution, respectively.
+- Signatures A, B, and C of the k=3 solution have similar properties to Signatures A, B, and both C and D of the k=4 solution, respectively. 
+- Signatures of A, B, C, and D of the k=4 solution possess similar properties to signatures both A and E, B, C, and D of the k=5 solution, respectively. 
 - Signatures A, B, C, D, and E of the k=5 solution share similar properties to both A and E, F, B, both G and H, and both C and D of the k=8 solution, respectively.
 
 #### Optimal geothermal signatures charecterizing SWNM region
 
 The figure below shows the map of the optimal signatures.
-The k=5 solution best characterizes the spatial associations and geothermal attributes of the SWNM.
+The k=5 solution best characterizes the spatial associations and geothermal attributes of the SWNM. 
 
 ![Ws](../figures-case01/nmfk5.png)
 
@@ -1617,10 +1618,10 @@ The k=5 solution best characterizes the spatial associations and geothermal attr
 - The signatures are characterized by unique geothermal attributes which are automatically identified by our ML analyses.
 
 ##### Medium-temperature hydrothermal systems
-- Two of the signatures (B and E) represent medium-temperature hydrothermal systems
+- Two of the signatures (B and E) represent medium-temperature hydrothermal systems 
 - The medium-temperature signatures (B and E) fall in the Southern Rio Grande Rift and the Northern MDVF zones.
     * The dominant attributes of the Southern Rio Grande Rift zone are B+ and Li+ concentrations, Gravity anomaly, Magnetic intensity, Quaternary fault density, Silica geothermometer, Heat flow, Depth to the basement.
-    * The dominant attributes of the Northern MDVF are Drainage density, State map fault density, Precipitation, Silica geothermometer, Hydraulic gradient.
+    * The dominant attributes of the Northern MDVF are Drainage density, State map fault density, Precipitation, Silica geothermometer, Hydraulic gradient. 
 
 
 ##### Low-temperature hydrothermal systems

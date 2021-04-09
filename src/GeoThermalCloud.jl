@@ -20,7 +20,7 @@ dir = dirname(dir)
 function analysis(problem::AbstractString; notebook::Bool=false)
 	@info("GeoThermalCloud: $problem analysis")
 	if notebook
-		IJulia.notebook(; dir=joinpath(dir, problem, "notebook"), detached=true)
+		IJulia.notebook(; dir=joinpath(dir, problem), detached=true)
 	else
 		cd(joinpath(dir, problem))
 		include(joinpath("notebook", "$(problem).jl"))
@@ -31,11 +31,11 @@ function Brady(; kw...)
 	analysis("Brady"; kw...)
 end
 
-function SWNM(; notebook::Bool=false)
+function SWNM(; kw...)
 	analysis("SWNM"; kw...)
 end
 
-function GreatBasin(; notebook::Bool=false)
+function GreatBasin(; kw...)
 	analysis("GreatBasin"; kw...)
 end
 

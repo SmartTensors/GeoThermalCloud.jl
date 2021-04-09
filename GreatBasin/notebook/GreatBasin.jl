@@ -1,14 +1,14 @@
-import Cairo
+import GeoThermalCloud
 import NMFk
+import Mads
 import DelimitedFiles
 import JLD
 import Gadfly
+import Cairo
 import Fontconfig
-import Mads
 import Kriging
-import Revise
 
-cd(joinpath(GeoThermalCloud.dir, "GreatBasin");
+cd(joinpath(GeoThermalCloud.dir, "GreatBasin"));
 
 Xdat, headers = DelimitedFiles.readdlm("data/gb_duplicatedRows.txt", ',', header=true);
 

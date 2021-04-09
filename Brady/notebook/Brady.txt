@@ -21,9 +21,9 @@ This notebook demonstrates how the **NMFk** module of **SmartTensors** can be ap
 
 More information on how the ML results are interpreted to provide geothermal insights is discussed in our research paper.
 
-## Import required Julia modules
+## GeoThermalCloud installation
 
-If **NMFk** is not installed, first execute in the Julia REPL `import Pkg; Pkg.add("NMFk"); Pkg.add("DelimitedFiles"); Pkg.add("JLD"); Pkg.add("Gadfly"); Pkg.add("Cairo"); Pkg.add("Fontconfig"); Pkg.add("Mads")`.
+If **GeoThermalCloud** is not installed, first execute in the Julia REPL `import Pkg; Pkg.add("GeoThermalCloud"); import Pkg; Pkg.add("NMFk"); Pkg.add("Mads"); Pkg.add("DelimitedFiles"); Pkg.add("JLD"); Pkg.add("Gadfly"); Pkg.add("Cairo"); Pkg.add("Fontconfig")`.
 
 
 ## Load and pre-process the dataset
@@ -48,21 +48,21 @@ Long attribute names are used for plotting and visualization.
 
 ### Display information about the processed data (min, max, count):
 
-### Get well locations and production
+### Get well locations and production 
 
 ### Define well types
 
 ### Display information about processed well attributes
 
-### Collect the well data into a 3D tensor
+### Collect the well data into a 3D tensor 
 
 Tensor indices (dimensions) define depths, attributes, and wells.
 
-### Define the maximum depth
+### Define the maximum depth 
 
 The maximum depth limits the depth of the data included in the analyses.
 
-The maximum depth is set to 750 m.
+The maximum depth is set to 750 m. 
 
 ### Normalize tensor slices associated with each attribute
 
@@ -71,7 +71,7 @@ The maximum depth is set to 750 m.
 ### Plot well data
 
 A HTML file named [../map/dataset-set00-v9-inv.html](../map/dataset-set00-v9-inv.html) is generated mapping the site data.
-The map provides interactive visualization of the site data (it can also be opened with any browser).
+The map provides interactive visualization of the site data (it can also be opened with any browser). 
 
 The map below shows the location of the `Dry`, `Injection` and `Production` wells.
 
@@ -116,7 +116,7 @@ Below is a plot representing solution quality (fit) and silhouette width (robust
 
 The plot above also demonstrates that the acceptable solutions contain 2, 5 and 6 signatures.
 
-#### Analysis of all the acceptable solutions
+#### Analysis of all the acceptable solutions 
 
 The ML solutions containing an acceptable number of signatures are further analyzed as follows:
 
@@ -152,7 +152,7 @@ This grouping is based on analyses of the location matrix `H`:
 
 ![locations-6-labeled-sorted](../figures-set00-v9-inv-750-1000-daln/locations-6-labeled-sorted.png)
 
-The map [../figures-set00-v9-inv-750-1000-daln/locations-6-map.html](../figures-set00-v9-inv-750-1000-daln/locations-6-map.html) provides interactive visualization of the extracted well location groups (the html file can also be opened with any browser).
+The map [../figures-set00-v9-inv-750-1000-daln/locations-6-map.html](../figures-set00-v9-inv-750-1000-daln/locations-6-map.html) provides interactive visualization of the extracted well location groups (the html file can also be opened with any browser). 
 
 <div>
     <iframe src="../figures-set00-v9-inv-750-1000-daln/locations-6-map.html" frameborder="0" height="400" width="50%"></iframe>
@@ -190,7 +190,7 @@ Below is a plot representing solution quality (fit) and silhouette width (robust
 
 The plot above also demonstrates that the acceptable solutions contain 2 and 3 signatures.
 
-#### Analysis of all the acceptable solutions
+#### Analysis of all the acceptable solutions 
 
 The ML solutions containing an acceptable number of signatures are further analyzed as follows:
 
@@ -224,7 +224,7 @@ This grouping is based on analyses of the location matrix `H`:
 
 ![locations-3-labeled-sorted](../figures-set00-v9-inv-750-1000-dlan/locations-3-labeled-sorted.png)
 
-The map [../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html](../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html) provides interactive visualization of the extracted well location groups (the html file can also be opened with any browser).
+The map [../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html](../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html) provides interactive visualization of the extracted well location groups (the html file can also be opened with any browser). 
 
 <div>
     <iframe src="../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html" frameborder="0" height="400" width="50%"></iframe>

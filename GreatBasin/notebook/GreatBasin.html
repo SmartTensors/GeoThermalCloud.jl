@@ -4551,7 +4551,7 @@ form{
   .bp3-running-text table th, table.bp3-html-table th{
     color:#182026;
     font-weight:600; }
-
+  
   .bp3-running-text table td,
   table.bp3-html-table td{
     color:#182026; }
@@ -14238,17 +14238,17 @@ a.anchor-link {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: {
-                    automatic: true
+                    linebreaks: { 
+                    automatic: true 
                     }
                 },
                 "HTML-CSS": {
-                    linebreaks: {
-                    automatic: true
+                    linebreaks: { 
+                    automatic: true 
                     }
                 }
             });
-
+        
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14290,7 +14290,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Import-required-libraries-for-this-work">Import required libraries for this work<a class="anchor-link" href="#Import-required-libraries-for-this-work">&#182;</a></h2><p>If <strong>NMFk</strong> is not installed, first execute in the Julia REPL <code>import Pkg; Pkg.add("NMFk"); Pkg.add("DelimitedFiles"); Pkg.add("JLD"); Pkg.add("Gadfly"); Pkg.add("Cairo"); Pkg.add("Fontconfig"); Pkg.add("Mads"); Pkg.add("Kriging")</code>.</p>
+<h2 id="GeoThermalCloud-installation">GeoThermalCloud installation<a class="anchor-link" href="#GeoThermalCloud-installation">&#182;</a></h2><p>If <strong>GeoThermalCloud</strong> is not installed, first execute in the Julia REPL <code>import Pkg; Pkg.add("GeoThermalCloud"); import Pkg; Pkg.add("NMFk"); Pkg.add("Mads"); Pkg.add("DelimitedFiles"); Pkg.add("JLD"); Pkg.add("Gadfly"); Pkg.add("Cairo"); Pkg.add("Fontconfig"); Pkg.add("Kriging")</code>.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14299,15 +14299,15 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">import</span> <span class="n">Cairo</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="k">import</span> <span class="n">GeoThermalCloud</span>
 <span class="k">import</span> <span class="n">NMFk</span>
+<span class="k">import</span> <span class="n">Mads</span>
 <span class="k">import</span> <span class="n">DelimitedFiles</span>
 <span class="k">import</span> <span class="n">JLD</span>
 <span class="k">import</span> <span class="n">Gadfly</span>
+<span class="k">import</span> <span class="n">Cairo</span>
 <span class="k">import</span> <span class="n">Fontconfig</span>
-<span class="k">import</span> <span class="n">Mads</span>
 <span class="k">import</span> <span class="n">Kriging</span>
-<span class="k">import</span> <span class="n">Revise</span>
 </pre></div>
 
      </div>
@@ -14322,7 +14322,7 @@ a.anchor-link {
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14335,7 +14335,7 @@ a.anchor-link {
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14362,7 +14362,7 @@ a.anchor-link {
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14376,7 +14376,7 @@ a.anchor-link {
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14401,7 +14401,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14460,7 +14460,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14491,7 +14491,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">cd</span><span class="p">(</span><span class="s">&quot;/Users/vvv/Julia/GeoThermalCloud.jl/GreatBasin&quot;</span><span class="p">);</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">cd</span><span class="p">(</span><span class="n">joinpath</span><span class="p">(</span><span class="n">GeoThermalCloud</span><span class="o">.</span><span class="n">dir</span><span class="p">,</span> <span class="s">&quot;GreatBasin&quot;</span><span class="p">));</span>
 </pre></div>
 
      </div>
@@ -14599,7 +14599,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14614,7 +14614,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14627,7 +14627,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14638,7 +14638,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14653,7 +14653,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14665,7 +14665,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14678,7 +14678,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14693,7 +14693,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14705,7 +14705,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14718,7 +14718,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14733,7 +14733,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14745,7 +14745,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14758,7 +14758,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14773,7 +14773,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14785,7 +14785,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14798,7 +14798,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14813,7 +14813,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14825,7 +14825,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14838,7 +14838,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14853,7 +14853,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14865,7 +14865,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14878,7 +14878,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14893,7 +14893,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14905,7 +14905,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14918,7 +14918,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14933,7 +14933,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14945,7 +14945,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14958,7 +14958,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14973,7 +14973,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14985,7 +14985,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14998,7 +14998,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15013,7 +15013,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15025,7 +15025,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15038,7 +15038,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15053,7 +15053,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15068,7 +15068,7 @@ NMFk offers visualization, pre-, and post-processing capabilities.
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15081,7 +15081,7 @@ Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15096,7 +15096,7 @@ Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15111,7 +15111,7 @@ Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15123,7 +15123,7 @@ Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15136,7 +15136,7 @@ Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15151,7 +15151,7 @@ Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15163,7 +15163,7 @@ Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15176,7 +15176,7 @@ Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15191,7 +15191,7 @@ Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15203,7 +15203,7 @@ Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15216,7 +15216,7 @@ Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15231,7 +15231,7 @@ Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15243,7 +15243,7 @@ Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15256,7 +15256,7 @@ Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15271,7 +15271,7 @@ Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15303,7 +15303,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15370,7 +15370,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15385,7 +15385,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15398,7 +15398,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15413,19 +15413,18 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-</pre>
+<pre></pre>
 </div>
 </div>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15440,7 +15439,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15455,19 +15454,18 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-</pre>
+<pre></pre>
 </div>
 </div>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15482,7 +15480,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15497,19 +15495,18 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-</pre>
+<pre></pre>
 </div>
 </div>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15524,7 +15521,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15539,19 +15536,18 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-</pre>
+<pre></pre>
 </div>
 </div>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15566,7 +15562,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15581,19 +15577,18 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-</pre>
+<pre></pre>
 </div>
 </div>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15608,7 +15603,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15623,19 +15618,18 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-</pre>
+<pre></pre>
 </div>
 </div>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15650,7 +15644,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15665,19 +15659,18 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-</pre>
+<pre></pre>
 </div>
 </div>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15692,7 +15685,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15707,19 +15700,18 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-</pre>
+<pre></pre>
 </div>
 </div>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15734,7 +15726,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15749,13 +15741,12 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-</pre>
+<pre></pre>
 </div>
 </div>
 
@@ -15792,7 +15783,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
 
@@ -15847,7 +15838,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15862,7 +15853,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15875,7 +15866,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15890,7 +15881,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15905,7 +15896,7 @@ Na 0.0 160000.0 12159.811 7.597518 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15918,7 +15909,7 @@ Quartz: Min -50.870045 Max 273.2438 StdDev 34.105637 Skewness 0.6946969 Count 86
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15933,7 +15924,7 @@ Quartz: Min -50.870045 Max 273.2438 StdDev 34.105637 Skewness 0.6946969 Count 86
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15948,7 +15939,7 @@ Quartz: Min -50.870045 Max 273.2438 StdDev 34.105637 Skewness 0.6946969 Count 86
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15963,7 +15954,7 @@ Quartz: Min -50.870045 Max 273.2438 StdDev 34.105637 Skewness 0.6946969 Count 86
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15976,7 +15967,7 @@ pH: Min 1.0 Max 11.7 StdDev 0.55800503 Skewness -0.5521828 Count 9261
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15991,7 +15982,7 @@ pH: Min 1.0 Max 11.7 StdDev 0.55800503 Skewness -0.5521828 Count 9261
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16006,7 +15997,7 @@ pH: Min 1.0 Max 11.7 StdDev 0.55800503 Skewness -0.5521828 Count 9261
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16021,7 +16012,7 @@ pH: Min 1.0 Max 11.7 StdDev 0.55800503 Skewness -0.5521828 Count 9261
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16034,7 +16025,7 @@ Al: Min -5.8860564 Max 3.80618 StdDev 1.2161667 Skewness -0.44271475 Count 1362
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16049,7 +16040,7 @@ Al: Min -5.8860564 Max 3.80618 StdDev 1.2161667 Skewness -0.44271475 Count 1362
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16064,7 +16055,7 @@ Al: Min -5.8860564 Max 3.80618 StdDev 1.2161667 Skewness -0.44271475 Count 1362
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16076,7 +16067,7 @@ Al: Min -5.8860564 Max 3.80618 StdDev 1.2161667 Skewness -0.44271475 Count 1362
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16089,7 +16080,7 @@ Al: Min -5.8860564 Max 3.80618 StdDev 1.2161667 Skewness -0.44271475 Count 1362
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16104,7 +16095,7 @@ Al: Min -5.8860564 Max 3.80618 StdDev 1.2161667 Skewness -0.44271475 Count 1362
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16119,7 +16110,7 @@ Al: Min -5.8860564 Max 3.80618 StdDev 1.2161667 Skewness -0.44271475 Count 1362
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16132,7 +16123,7 @@ Be: Min -8.0 Max -0.15490197 StdDev 0.8196359 Skewness -2.5543597 Count 1640
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16147,7 +16138,7 @@ Be: Min -8.0 Max -0.15490197 StdDev 0.8196359 Skewness -2.5543597 Count 1640
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16162,7 +16153,7 @@ Be: Min -8.0 Max -0.15490197 StdDev 0.8196359 Skewness -2.5543597 Count 1640
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16174,7 +16165,7 @@ Be: Min -8.0 Max -0.15490197 StdDev 0.8196359 Skewness -2.5543597 Count 1640
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16187,7 +16178,7 @@ Be: Min -8.0 Max -0.15490197 StdDev 0.8196359 Skewness -2.5543597 Count 1640
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16202,7 +16193,7 @@ Be: Min -8.0 Max -0.15490197 StdDev 0.8196359 Skewness -2.5543597 Count 1640
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16214,7 +16205,7 @@ Be: Min -8.0 Max -0.15490197 StdDev 0.8196359 Skewness -2.5543597 Count 1640
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16227,7 +16218,7 @@ Be: Min -8.0 Max -0.15490197 StdDev 0.8196359 Skewness -2.5543597 Count 1640
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16242,7 +16233,7 @@ Be: Min -8.0 Max -0.15490197 StdDev 0.8196359 Skewness -2.5543597 Count 1640
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16257,7 +16248,7 @@ Be: Min -8.0 Max -0.15490197 StdDev 0.8196359 Skewness -2.5543597 Count 1640
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16270,7 +16261,7 @@ HCO3: Min -1.0 Max 4.5682015 StdDev 0.36140293 Skewness -0.94632554 Count 3413
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16285,7 +16276,7 @@ HCO3: Min -1.0 Max 4.5682015 StdDev 0.36140293 Skewness -0.94632554 Count 3413
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16300,7 +16291,7 @@ HCO3: Min -1.0 Max 4.5682015 StdDev 0.36140293 Skewness -0.94632554 Count 3413
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16312,7 +16303,7 @@ HCO3: Min -1.0 Max 4.5682015 StdDev 0.36140293 Skewness -0.94632554 Count 3413
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16325,7 +16316,7 @@ HCO3: Min -1.0 Max 4.5682015 StdDev 0.36140293 Skewness -0.94632554 Count 3413
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16340,7 +16331,7 @@ HCO3: Min -1.0 Max 4.5682015 StdDev 0.36140293 Skewness -0.94632554 Count 3413
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16355,7 +16346,7 @@ HCO3: Min -1.0 Max 4.5682015 StdDev 0.36140293 Skewness -0.94632554 Count 3413
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16368,7 +16359,7 @@ Mg: Min -3.69897 Max 3.929419 StdDev 0.79547274 Skewness -1.0883808 Count 9296
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16383,7 +16374,7 @@ Mg: Min -3.69897 Max 3.929419 StdDev 0.79547274 Skewness -1.0883808 Count 9296
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16398,7 +16389,7 @@ Mg: Min -3.69897 Max 3.929419 StdDev 0.79547274 Skewness -1.0883808 Count 9296
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16430,7 +16421,7 @@ Na -1.6989701 5.20412 0.8328025 1.1553397 8814
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16554,7 +16545,7 @@ For more information, check out the <a href="https://github.com/SmartTensors/NMF
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16583,7 +16574,7 @@ Signals: 10 Fit:     33.40136 Silhouette:  -0.08453866 AIC:    -596199.8
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16598,7 +16589,7 @@ Signals: 10 Fit:     33.40136 Silhouette:  -0.08453866 AIC:    -596199.8
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16618,7 +16609,7 @@ Signals: 10 Fit:     33.40136 Silhouette:  -0.08453866 AIC:    -596199.8
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16664,7 +16655,7 @@ Signals: 10 Fit:     33.40136 Silhouette:  -0.08453866 AIC:    -596199.8
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 
 
@@ -16730,7 +16721,7 @@ Signals: 10 Fit:     33.40136 Silhouette:  -0.08453866 AIC:    -596199.8
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16745,13 +16736,12 @@ Signals: 10 Fit:     33.40136 Silhouette:  -0.08453866 AIC:    -596199.8
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-</pre>
+<pre></pre>
 </div>
 </div>
 
@@ -16788,7 +16778,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16801,7 +16791,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16813,7 +16803,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16844,7 +16834,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16866,7 +16856,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16881,7 +16871,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16905,7 +16895,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16920,7 +16910,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16933,7 +16923,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16948,19 +16938,18 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-</pre>
+<pre></pre>
 </div>
 </div>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16975,7 +16964,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -16990,19 +16979,18 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-</pre>
+<pre></pre>
 </div>
 </div>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -17017,19 +17005,18 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-</pre>
+<pre></pre>
 </div>
 </div>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -17050,7 +17037,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
  &#34;6748&#34;   0.86425
  &#34;6672&#34;   0.860871
  &#34;6743&#34;   0.857552
- ⋮
+ ⋮        
  &#34;13228&#34;  0.0
  &#34;13282&#34;  0.0
  &#34;13373&#34;  0.0
@@ -17069,7 +17056,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -17090,7 +17077,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
  &#34;12897&#34;  0.949163
  &#34;11848&#34;  0.948021
  &#34;10488&#34;  0.94737
- ⋮
+ ⋮        
  &#34;4110&#34;   0.350342
  &#34;529&#34;    0.348303
  &#34;326&#34;    0.344399
@@ -17109,7 +17096,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -17124,7 +17111,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -17149,7 +17136,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -17164,19 +17151,18 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-</pre>
+<pre></pre>
 </div>
 </div>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -17191,7 +17177,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -17203,7 +17189,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -17216,7 +17202,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -17231,19 +17217,18 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-</pre>
+<pre></pre>
 </div>
 </div>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -17258,7 +17243,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -17273,19 +17258,18 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-</pre>
+<pre></pre>
 </div>
 </div>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 
 
@@ -17328,7 +17312,7 @@ Note, a solution is accepted if the robustness &gt;0.25.</p>
 
 <div class="jp-OutputArea-child">
 
-
+    
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -17424,7 +17408,7 @@ These uncertainties can be evaluated as well.</p>
     </div>
     <div style="text-align: left; padding-bottom: 30px;">
         <img src="../figures-postprocessing-nl-640/Signature_B_map_inversedistance.png" alt="Signature_B_map_inversedistance" max-width=125px;/>
-    </div>
+    </div>    
     <div style="text-align: left; padding-bottom: 30px;">
         <img src="../figures-postprocessing-nl-640/Signature_C_map_inversedistance.png" alt="Signature_C_map_inversedistance" max-width=125px;/>
     </div>
