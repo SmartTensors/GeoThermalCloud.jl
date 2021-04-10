@@ -33,16 +33,15 @@ To install the most recent version of Julia, follow the instructions at https://
 
 ## GeoThermalCloud installation
 
-To install required all the modules, execute in the Julia REPL:
+To install all required the modules, execute in the Julia REPL:
 
 ```julia
 import Pkg
 Pkg.add("GeoThermalCloud")
 ```
-
 ## GeoThermalCloud examples
 
-GeoThermalCloud analyses can be executed as follows:
+GeoThermalCloud machine learning analyses can be executed as follows:
 
 ```julia
 import Pkg
@@ -54,7 +53,7 @@ GeoThermalCloud.GreatBasin() # performs analyses of the Great Basin region
 GeoThermalCloud.Brady() # performs analyses of the Brady site, Nevada
 ```
 
-GeoThermalCloud analyses can be also executed as Jupyter notebooks as well
+GeoThermalCloud machine learning analyses can be also executed as Jupyter notebooks as well
 
 ```julia
 GeoThermalCloud.SWNM(notebook=true) # opens Jupyter notebook for analyses of the Sounthwest New Mexico region
@@ -63,7 +62,7 @@ GeoThermalCloud.Brady(notebook=true) # opens Jupyter notebook for analyses of th
 ```
 ## SmartTensors
 
-GeoThermalCloud Machine Learning analyses are performed using the [**SmartTensors**](https://github.com/SmartTensors) machine learning framework.
+GeoThermalCloud analyses are performed using the [**SmartTensors**](https://github.com/SmartTensors) machine learning framework.
 
 <div style="text-align: left; padding-bottom: 30px;">
 	<a href="https://github.com/SmartTensors">

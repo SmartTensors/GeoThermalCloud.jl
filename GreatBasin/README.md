@@ -8,19 +8,13 @@
 
 # Great Basin, USA
 
-Brady geothermal field is located in northwestern, Nevada, USA. It is located in the Basin and Range physiographic province.
+Great Basin includes multiple geothermal reservoirs ranging from low- to high-temperature.
 
-It has seen geothermal electricity production since 1992 and research or exploration since at least 1959.
+Great Basin has huge potential geothermal potential.
 
-The existing hydrothermal system supplies hot fluid to two power stations and a direct-use vegetable drying facility.
+Further explorations require a better understanding of the local/regional patterns in various geothermal-related attributes observed in the region.
 
-Electricity production capacity at Brady is 26.1 MWe, and ~7 MWth is supplied to the drying facility.
-
-Temperatures of produced fluid have been ~130-185°C, though temperatures as high as 219°C have been measured as well.
-
-These relatively high temperatures at relatively shallow levels (300-600 depth for some production wells) occur as a result of either convective upwelling driven by temperature control differences in fluid density, or hydraulic head driven circulation through the hot rock.
-
-In either case, relatively high heat flow at the site is associated with crustal thinning provides the heat.
+Here, we applied SmartTensors machine learning methods to analyze the available geothermal/geochemical data and to better understand/predict the spatial distribution of the geothermal resources
 
 # Great Basin Machine Learning Repository
 
@@ -78,37 +72,34 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 	</a>
 </div>
 
-## SmartTensors Installation
+## GeoThermalCloud installation
 
-To install required [**SmartTensors**](https://github.com/SmartTensors) modules, execute in the Julia REPL:
+To install all required GeoThermalCloud and SmartTensors modules, execute in the Julia REPL:
 
 ```julia
 import Pkg
-Pkg.add("NMFk")
-Pkg.add("DelimitedFiles")
-Pkg.add("JLD")
-Pkg.add("JLD2")
-Pkg.add("Gadfly")
-Pkg.add("Cairo")
-Pkg.add("Fontconfig")
-Pkg.add("Mads")
+Pkg.add("GeoThermalCloud")
 ```
-
-## SmartTensors Machine Learning Analyses
+## GeoThermalCloud Machine Learning Analyses
 
 ### Julia script
 
-To execute the machine learning analyses, run the following command:
+GeoThermalCloud machine learning analyses can be executed as follows:
 
 ```julia
-include("notebook/GreatBasin.jl")
+import GeoThermalCloud
+GeoThermalCloud.GreatBasin() # performs analyses of the Great Basin region
 ```
-
-Note that the **Great Basin** repository should be the current working directory.
-
 ### Jupyter notebook
 
-To execute the machine learning analyses, open the jupyter notebook `notebook/Brady.ipynb`.
+GeoThermalCloud machine learning analyses can be also executed as Jupyter notebooks as well
+
+```julia
+import GeoThermalCloud
+GeoThermalCloud.GreatBasin(notebook=true) # opens Jupyter notebook for analyses of the Great Basin region
+```
+
+To execute the machine learning analyses, you can also open the jupyter notebook `notebook/GreatBasin.ipynb`.
 
 The jupyter notebook is also saved in `html`, `latex`, `txt`, `pdf` and `markdown` formats.
 

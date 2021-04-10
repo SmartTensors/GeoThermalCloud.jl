@@ -78,37 +78,34 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 	</a>
 </div>
 
-## SmartTensors Installation
+## GeoThermalCloud installation
 
-To install required [**SmartTensors**](https://github.com/SmartTensors) modules, execute in the Julia REPL:
+To install all required GeoThermalCloud and SmartTensors modules, execute in the Julia REPL:
 
 ```julia
 import Pkg
-Pkg.add("NMFk")
-Pkg.add("DelimitedFiles")
-Pkg.add("JLD")
-Pkg.add("JLD2")
-Pkg.add("Gadfly")
-Pkg.add("Cairo")
-Pkg.add("Fontconfig")
-Pkg.add("Mads")
+Pkg.add("GeoThermalCloud")
 ```
-
-## SmartTensors Machine Learning Analyses
+## GeoThermalCloud Machine Learning Analyses
 
 ### Julia script
 
-To execute the machine learning analyses, run the following command:
+GeoThermalCloud machine learning analyses can be executed as follows:
 
 ```julia
-include("notebook/SWNM.jl")
+import GeoThermalCloud
+GeoThermalCloud.SWNM() # performs analyses of the SWNM region
 ```
-
-Note that the **SWNM** repository should be the current working directory.
-
 ### Jupyter notebook
 
-To execute the machine learning analyses, open the jupyter notebook `notebook/SWNM.ipynb`.
+GeoThermalCloud machine learning analyses can be also executed as Jupyter notebooks as well
+
+```julia
+import GeoThermalCloud
+GeoThermalCloud.SWNM(notebook=true) # opens Jupyter notebook for analyses of the SWNM region
+```
+
+To execute the machine learning analyses, you can also open the jupyter notebook `notebook/SWNM.ipynb`.
 
 The jupyter notebook is also saved in `html`, `latex`, `txt`, `pdf` and `markdown` formats.
 

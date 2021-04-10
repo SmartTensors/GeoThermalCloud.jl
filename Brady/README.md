@@ -18,7 +18,7 @@ Electricity production capacity at Brady is 26.1 MWe, and ~7 MWth is supplied to
 
 Temperatures of produced fluid have been ~130-185°C, though temperatures as high as 219°C have been measured as well.
 
-These relatively high temperatures at relatively shallow levels (300-600 depth for some production wells) occur as a result of either convective upwelling driven by temperature control differences in fluid density, or hydraulic head driven circulation through the hot rock.
+These relatively high temperatures at relatively shallow levels (300-600 depth for some production wells) occur as a result of either convective upwelling driven by temperature control differences in fluid density, or hydraulic head-driven circulation through the hot rock.
 
 In either case, relatively high heat flow at the site is associated with crustal thinning provides the heat.
 
@@ -79,37 +79,34 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 	</a>
 </div>
 
-## SmartTensors Installation
+## GeoThermalCloud installation
 
-To install required [**SmartTensors**](https://github.com/SmartTensors) modules, execute in the Julia REPL:
+To install all required GeoThermalCloud and SmartTensors modules, execute in the Julia REPL:
 
 ```julia
 import Pkg
-Pkg.add("NMFk")
-Pkg.add("DelimitedFiles")
-Pkg.add("JLD")
-Pkg.add("JLD2")
-Pkg.add("Gadfly")
-Pkg.add("Cairo")
-Pkg.add("Fontconfig")
-Pkg.add("Mads")
+Pkg.add("GeoThermalCloud")
 ```
-
-## SmartTensors Machine Learning Analyses
+## GeoThermalCloud Machine Learning Analyses
 
 ### Julia script
 
-To execute the machine learning analyses, run the following command:
+GeoThermalCloud machine learning analyses can be executed as follows:
 
 ```julia
-include("notebook/Brady.jl")
+import GeoThermalCloud
+GeoThermalCloud.Brady() # performs analyses of the Brady site
 ```
-
-Note that the **Brady** repository should be the current working directory.
-
 ### Jupyter notebook
 
-To execute the machine learning analyses, open the jupyter notebook `notebook/Brady.ipynb`.
+GeoThermalCloud machine learning analyses can be also executed as Jupyter notebooks as well
+
+```julia
+import GeoThermalCloud
+GeoThermalCloud.Brady(notebook=true) # opens Jupyter notebook for analyses of the Brady site
+```
+
+To execute the machine learning analyses, you can also open the jupyter notebook `notebook/Brady.ipynb`.
 
 The jupyter notebook is also saved in `html`, `latex`, `txt`, `pdf` and `markdown` formats.
 
