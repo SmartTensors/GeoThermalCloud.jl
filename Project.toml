@@ -1,7 +1,7 @@
 name = "GeoThermalCloud"
 uuid = "9b555b37-faa4-4dca-b31f-51f0aad2d23b"
 authors = ["Velimir V Vesselinov (monty) <velimir.vesselinov@gmail.com>"]
-version = "0.1.1"
+version = "0.1.2"
 
 [deps]
 Cairo = "159f3aea-2a34-519c-b102-8c37f9878175"
@@ -31,7 +31,7 @@ FileIO = "1"
 Fontconfig = "0.4, 0.5"
 Gadfly = "1"
 Geodesy = "1"
-Kriging = "1"
+Kriging = "1.1"
 JLD = "0.10, 0.11, 0.12, 0.13"
 JLD2 = "0.2, 0.3, 0.4, 0.5"
 IJulia = "1"
