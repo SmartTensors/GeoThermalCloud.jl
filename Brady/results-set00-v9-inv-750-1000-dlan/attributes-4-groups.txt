@@ -1,22 +1,22 @@
-Signal A (S1)
-Unit thickness                	1.0
-Normal stress                 	0.753
-Coulomb shear stress          	0.738
-Inverse distance from faults  	0.643
-Dilation                      	0.584
-Faulting                      	0.518
-
-Signal B (S2)
-Fault dilation tendency       	1.0
-Fault curvature               	0.891
-Fault slip tendency           	0.706
-Temperature                   	0.239
-
-Signal C (S3)
+Signal A (S3)
 Fault density                 	1.0
 Fault intersection density    	0.736
-Inverse distance from contacts	0.6
+Dilation                      	0.484
+Inverse distance from faults  	0.417
+
+Signal B (S2)
+Modeled temperature           	0.239
+
+Signal C (S1)
+Normal stress                 	0.753
+Coulomb shear stress          	0.738
+Inverse distance from contacts	5.69e-6
 
 Signal D (S4)
-Lithology                     	1.0
+Good lithology                	1.0
+Faulting                      	0.337
+Unit thickness                	0.0506
+Fault curvature               	3.65e-16
+Fault dilation tendency       	3.65e-16
+Fault slip tendency           	3.65e-16
 
