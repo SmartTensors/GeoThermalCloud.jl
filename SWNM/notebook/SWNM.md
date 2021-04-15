@@ -142,7 +142,7 @@ import Fontconfig
 
 
 ```julia
-cd("/Users/vvv/Julia/GeoThermalCloud.jl/SWNM/");
+cd(joinpath(GeoThermalCloud.dir, "SWNM"))
 ```
 
 ### Load the SWNM data file
@@ -461,7 +461,7 @@ The ML solutions containing an acceptable number of signatures are further analy
 
 
 ```julia
-NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, locations; lat=lat, lon=lon, resultdir=resultdir, figuredir=figuredir, Hcasefilename="locations", Wcasefilename="attributes");
+NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, locations; lat=lat, lon=lon, resultdir=resultdir, figuredir=figuredir, ordersignal=:Hcount, Hcasefilename="locations", Wcasefilename="attributes");
 ```
 
     ┌ Info: Number of signals: 2

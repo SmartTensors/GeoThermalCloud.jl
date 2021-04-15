@@ -514,7 +514,7 @@ data}\label{setup-the-working-directory-containing-the-swnm-data}}
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{2}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{cd}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{/}\PY{l+s}{U}\PY{l+s}{s}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{s}\PY{l+s}{/}\PY{l+s}{v}\PY{l+s}{v}\PY{l+s}{v}\PY{l+s}{/}\PY{l+s}{J}\PY{l+s}{u}\PY{l+s}{l}\PY{l+s}{i}\PY{l+s}{a}\PY{l+s}{/}\PY{l+s}{G}\PY{l+s}{e}\PY{l+s}{o}\PY{l+s}{T}\PY{l+s}{h}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{m}\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{C}\PY{l+s}{l}\PY{l+s}{o}\PY{l+s}{u}\PY{l+s}{d}\PY{l+s}{.}\PY{l+s}{j}\PY{l+s}{l}\PY{l+s}{/}\PY{l+s}{S}\PY{l+s}{W}\PY{l+s}{N}\PY{l+s}{M}\PY{l+s}{/}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+\PY{n}{cd}\PY{p}{(}\PY{n}{joinpath}\PY{p}{(}\PY{n}{GeoThermalCloud}\PY{o}{.}\PY{n}{dir}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{S}\PY{l+s}{W}\PY{l+s}{N}\PY{l+s}{M}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
@@ -905,7 +905,7 @@ further analyzed as follows:
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{15}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{NMFk}\PY{o}{.}\PY{n}{clusterresults}\PY{p}{(}\PY{n}{NMFk}\PY{o}{.}\PY{n}{getks}\PY{p}{(}\PY{n}{nkrange}\PY{p}{,} \PY{n}{robustness}\PY{p}{[}\PY{n}{nkrange}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n}{W}\PY{p}{,} \PY{n}{H}\PY{p}{,} \PY{n}{attributes}\PY{p}{,} \PY{n}{locations}\PY{p}{;} \PY{n}{lat}\PY{o}{=}\PY{n}{lat}\PY{p}{,} \PY{n}{lon}\PY{o}{=}\PY{n}{lon}\PY{p}{,} \PY{n}{resultdir}\PY{o}{=}\PY{n}{resultdir}\PY{p}{,} \PY{n}{figuredir}\PY{o}{=}\PY{n}{figuredir}\PY{p}{,} \PY{n}{Hcasefilename}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{l}\PY{l+s}{o}\PY{l+s}{c}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{i}\PY{l+s}{o}\PY{l+s}{n}\PY{l+s}{s}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{Wcasefilename}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{t}\PY{l+s}{r}\PY{l+s}{i}\PY{l+s}{b}\PY{l+s}{u}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+\PY{n}{NMFk}\PY{o}{.}\PY{n}{clusterresults}\PY{p}{(}\PY{n}{NMFk}\PY{o}{.}\PY{n}{getks}\PY{p}{(}\PY{n}{nkrange}\PY{p}{,} \PY{n}{robustness}\PY{p}{[}\PY{n}{nkrange}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n}{W}\PY{p}{,} \PY{n}{H}\PY{p}{,} \PY{n}{attributes}\PY{p}{,} \PY{n}{locations}\PY{p}{;} \PY{n}{lat}\PY{o}{=}\PY{n}{lat}\PY{p}{,} \PY{n}{lon}\PY{o}{=}\PY{n}{lon}\PY{p}{,} \PY{n}{resultdir}\PY{o}{=}\PY{n}{resultdir}\PY{p}{,} \PY{n}{figuredir}\PY{o}{=}\PY{n}{figuredir}\PY{p}{,} \PY{n}{ordersignal}\PY{o}{=}\PY{o}{:}\PY{n}{Hcount}\PY{p}{,} \PY{n}{Hcasefilename}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{l}\PY{l+s}{o}\PY{l+s}{c}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{i}\PY{l+s}{o}\PY{l+s}{n}\PY{l+s}{s}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{Wcasefilename}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{t}\PY{l+s}{r}\PY{l+s}{i}\PY{l+s}{b}\PY{l+s}{u}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
 \end{Verbatim}
 \end{tcolorbox}
 

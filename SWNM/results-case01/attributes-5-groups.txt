@@ -11,18 +11,18 @@ Spring density            	0.0
 Precipitation             	0.0
 
 Signal C
-State map fault density   	0.755
-Hydraulic gradient        	0.743
-Silica geothermometer     	0.554
-
-Signal D
 Crustal thickness         	1.0
 Magnetic intensity        	0.59
 Seismicity                	0.00309
 Gravity anomaly           	0.0
 
-Signal E
+Signal D
 Fault intersection density	0.922
 Drainage density          	0.459
 Heat flow                 	0.184
+
+Signal E
+State map fault density   	0.755
+Hydraulic gradient        	0.743
+Silica geothermometer     	0.554
 

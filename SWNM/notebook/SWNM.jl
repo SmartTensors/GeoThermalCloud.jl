@@ -7,7 +7,7 @@ import Gadfly
 import Cairo
 import Fontconfig
 
-cd("/Users/vvv/Julia/GeoThermalCloud.jl/SWNM/");
+cd(joinpath(GeoThermalCloud.dir, "SWNM"))
 
 d, h = DelimitedFiles.readdlm("data/Pepin_PCA_Input_Data_LANL.csv", ','; header=true);
 
@@ -137,7 +137,7 @@ NMFk.getks(nkrange, robustness[nkrange], 0.5)
 
 NMFk.plot_signal_selecton(nkrange, fitquality, robustness; figuredir=figuredir, xtitle="Number of signatures")
 
-NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, locations; lat=lat, lon=lon, resultdir=resultdir, figuredir=figuredir, Hcasefilename="locations", Wcasefilename="attributes");
+NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]), W, H, attributes, locations; lat=lat, lon=lon, resultdir=resultdir, figuredir=figuredir, ordersignal=:Hcount, Hcasefilename="locations", Wcasefilename="attributes");
 
 Mads.display("results-case01/attributes-5-groups.txt")
 
