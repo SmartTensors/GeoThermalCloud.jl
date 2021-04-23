@@ -5,10 +5,13 @@ import NTFk
 import IJulia
 import JLD
 import JLD2
+import XLSX
 import DelimitedFiles
 import SVR
 import Statistics
 import Clustering
+import GMT
+import Gadfly
 import Mads
 import Kriging
 import Cairo
