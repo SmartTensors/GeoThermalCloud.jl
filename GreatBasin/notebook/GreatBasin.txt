@@ -33,12 +33,12 @@ More information on how the ML results are interpreted to provide geothermal ins
 
 
 <div style="text-align: left; padding-bottom: 30px; padding-top: 30px;">
-	<img src="../img/greatbasin_data_locs_alt.png" alt="greatbasin_data_locs_alt" width=50%  max-width=225px;/>
+	<img src="../maps-data/locations.png" alt="locations" width=50%  max-width=225px;/>
 </div>
 
 ## GeoThermalCloud installation
 
-If **GeoThermalCloud** is not installed, first execute in the Julia REPL `import Pkg; Pkg.add("GeoThermalCloud"); import Pkg; Pkg.add("NMFk"); Pkg.add("Mads"); Pkg.add("DelimitedFiles"); Pkg.add("JLD"); Pkg.add("Gadfly"); Pkg.add("Cairo"); Pkg.add("Fontconfig"); Pkg.add("Kriging")`.
+If **GeoThermalCloud** is not installed, first execute in the Julia REPL `import Pkg; Pkg.add("GeoThermalCloud"); import Pkg; Pkg.add("NMFk"); Pkg.add("Mads"); Pkg.add("DelimitedFiles"); Pkg.add("JLD"); Pkg.add("Gadfly"); Pkg.add("Cairo"); Pkg.add("Fontconfig"); Pkg.add("Kriging"); Pkg.add("GMT");`.
 
 ## Load and pre-process the data
 
@@ -53,6 +53,8 @@ Short attribute names are used for coding.
 Long attribute names are used for plotting and visualization.
 
 ### Define location coordinates
+
+### Map locations
 
 ### Pre-processing
 
@@ -130,9 +132,13 @@ The grouping is based on analyses of the location matrix `H`.
 
 A spatial map of the locations is obtained:
 
-![locations-3-map](../figures-postprocessing-nl-640/locations-3-map.png)
+![locations-3-map](../maps-results-postprocessing-nl-640/locations-3.png)
 
-The map [../figures-postprocessing-nl-640/locations-3-map.html](../figures-postprocessing-nl-640/locations-3-map.html) provides interactive visualization of the extracted location groups (the html file can also be opened with any browser).
+The map [../figures-postprocessing-nl-640/locations-3-map.html](../figures-postprocessing-nl-640/locations-3-map.html) provides interactive visualization of the extracted location groups (the html file can also be opened with any browser). The interactive map will look like this:
+
+<div style="text-align: left; padding-bottom: 30px;">
+    <img src="../figures-postprocessing-nl-640/locations-3-map.png" alt="signatures-3.png" width=50%  max-width=200px;/>
+</div>
 
 ### Discussion of NMFk results
 
@@ -196,13 +202,13 @@ These uncertainties can be evaluated as well.
 
 <div style="display: flex;">
     <div style="text-align: left; padding-bottom: 30px;">
-        <img src="../figures-postprocessing-nl-640/Signature_A_map_inversedistance.png" alt="Signature_A_map_inversedistance" max-width=125px;/>
+        <img src="../map-postprocessing-nl-640/signatures-3-A.png" alt="signatures-3-A.png" max-width=125px;/>
     </div>
     <div style="text-align: left; padding-bottom: 30px;">
-        <img src="../figures-postprocessing-nl-640/Signature_B_map_inversedistance.png" alt="Signature_B_map_inversedistance" max-width=125px;/>
+        <img src="../map-postprocessing-nl-640/signatures-3-B.png" alt="signatures-3-B.png" max-width=125px;/>
     </div>    
     <div style="text-align: left; padding-bottom: 30px;">
-        <img src="../figures-postprocessing-nl-640/Signature_C_map_inversedistance.png" alt="Signature_C_map_inversedistance" max-width=125px;/>
+        <img src="../map-postprocessing-nl-640/signatures-3-C.png" alt="signatures-3-C.png" max-width=125px;/>
     </div>
 </div>
 
@@ -212,18 +218,18 @@ This is true even though some of the analyzed data provides partial or very limi
 ##### Signature A: low geothermal prospectivty
 
 <div style="text-align: left; padding-bottom: 30px;">
-    <img src="../figures-postprocessing-nl-640/Signature_A_map_inversedistance.png" alt="Signature_A_map_inversedistance" width=25%  max-width=125px;/>
+    <img src="../map-postprocessing-nl-640/signatures-3-A.png" alt="signatures-3-A.png" width=25%  max-width=125px;/>
 </div>
 
 ##### Signature B:  high geothermal prospectivty
 
 <div style="text-align: left; padding-bottom: 30px;">
-    <img src="../figures-postprocessing-nl-640/Signature_B_map_inversedistance.png" alt="Signature_B_map_inversedistance" width=25%  max-width=125px;/>
+    <img src="../map-postprocessing-nl-640/signatures-3-B.png" alt="signatures-3-B.png" width=25%  max-width=125px;/>
 </div>
 
 ##### Signature C:  intermediate geothermal prospectivty
 
 <div style="text-align: left; padding-bottom: 30px;">
-    <img src="../figures-postprocessing-nl-640/Signature_C_map_inversedistance.png" alt="Signature_C_map_inversedistance" width=25%  max-width=125px;/>
-</div>
+    <img src="../map-postprocessing-nl-640/signatures-3-C.png" alt="signatures-3-C.png" width=25%  max-width=125px;/>
+</div
 

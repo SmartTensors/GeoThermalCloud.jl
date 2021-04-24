@@ -437,7 +437,7 @@ geothermal insights is discussed in our research paper.
 \end{itemize}
 
 \begin{verbatim}
-<img src="../img/greatbasin_data_locs_alt.png" alt="greatbasin_data_locs_alt" width=50%  max-width=225px;/>
+<img src="../maps-data/locations.png" alt="locations" width=50%  max-width=225px;/>
 \end{verbatim}
 
     \hypertarget{geothermalcloud-installation}{%
@@ -446,7 +446,7 @@ installation}\label{geothermalcloud-installation}}
 
 If \textbf{GeoThermalCloud} is not installed, first execute in the Julia
 REPL
-\texttt{import\ Pkg;\ Pkg.add("GeoThermalCloud");\ import\ Pkg;\ Pkg.add("NMFk");\ Pkg.add("Mads");\ Pkg.add("DelimitedFiles");\ Pkg.add("JLD");\ Pkg.add("Gadfly");\ Pkg.add("Cairo");\ Pkg.add("Fontconfig");\ Pkg.add("Kriging")}.
+\texttt{import\ Pkg;\ Pkg.add("GeoThermalCloud");\ import\ Pkg;\ Pkg.add("NMFk");\ Pkg.add("Mads");\ Pkg.add("DelimitedFiles");\ Pkg.add("JLD");\ Pkg.add("Gadfly");\ Pkg.add("Cairo");\ Pkg.add("Fontconfig");\ Pkg.add("Kriging");\ Pkg.add("GMT");}.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{1}{\boxspacing}
@@ -460,11 +460,12 @@ REPL
 \PY{k}{import} \PY{n}{Cairo}
 \PY{k}{import} \PY{n}{Fontconfig}
 \PY{k}{import} \PY{n}{Kriging}
+\PY{k}{import} \PY{n}{GMT}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-┌ Info: Precompiling NMFk [e40cd9e2-a1df-5d90-a1fa-603fdc3dbdd8]
+┌ Info: Precompiling GeoThermalCloud [9b555b37-faa4-4dca-b31f-51f0aad2d23b]
 └ @ Base loading.jl:1317
     \end{Verbatim}
 
@@ -505,6 +506,8 @@ Analysis and Support.
 \textcolor{ansi-green-intense}{\textbf{    Updating}} registry at `\textasciitilde{}/.julia/registries/General`
 \textcolor{ansi-green-intense}{\textbf{   Resolving}} package versions{\ldots}
 \textcolor{ansi-cyan-intense}{\textbf{[ }}\textcolor{ansi-cyan-intense}{\textbf{Info: }}Module BIGUQ is not available!
+WARNING: could not import Printf.ini\_hex into DoubleFloats
+WARNING: could not import Printf.ini\_HEX into DoubleFloats
     \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
@@ -527,15 +530,48 @@ NMFk provides automatic identification of the optimal number of signals
 NMFk offers visualization, pre-, and post-processing capabilities.
     \end{Verbatim}
 
+    \begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{ansi-cyan-intense}{\textbf{[ }}\textcolor{ansi-cyan-intense}{\textbf{Info: }}MATLAB\_HOME environmental variable
+is not defined!
+\textcolor{ansi-cyan-intense}{\textbf{[ }}\textcolor{ansi-cyan-intense}{\textbf{Info: }}MATLAB is not installed!
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\textbf{NTFk: Nonnegative Tensor Factorization + k-means clustering}
+====
+
+\textcolor{ansi-blue-intense}{\textbf{  \_     \_  }}\textcolor{ansi-red-intense}{\textbf{ \_\_\_\_\_\_\_\_\_ }}\textcolor{ansi-green-intense}{\textbf{  \_\_\_\_\_\_\_   }}\textcolor{ansi-magenta-intense}{\textbf{\_}}
+\textcolor{ansi-blue-intense}{\textbf{ |  \textbackslash{}  | | }}\textcolor{ansi-red-intense}{\textbf{|\_\_\_   \_\_\_| }}\textcolor{ansi-green-intense}{\textbf{|  \_\_\_\_\_| }}\textcolor{ansi-magenta-intense}{\textbf{| |  \_}}
+\textcolor{ansi-blue-intense}{\textbf{ | . \textbackslash{} | | }}\textcolor{ansi-red-intense}{\textbf{    | |     }}\textcolor{ansi-green-intense}{\textbf{| |\_\_\_    }}\textcolor{ansi-magenta-intense}{\textbf{| | / /}}
+\textcolor{ansi-blue-intense}{\textbf{ | |\textbackslash{} \textbackslash{}| | }}\textcolor{ansi-red-intense}{\textbf{    | |     }}\textcolor{ansi-green-intense}{\textbf{|  \_\_\_|   }}\textcolor{ansi-magenta-intense}{\textbf{| |/ /}}
+\textcolor{ansi-blue-intense}{\textbf{ | | \textbackslash{} ' | }}\textcolor{ansi-red-intense}{\textbf{    | |     }}\textcolor{ansi-green-intense}{\textbf{| |       }}\textcolor{ansi-magenta-intense}{\textbf{|   (}}
+\textcolor{ansi-blue-intense}{\textbf{ | |  \textbackslash{}  | }}\textcolor{ansi-red-intense}{\textbf{    | |     }}\textcolor{ansi-green-intense}{\textbf{| |       }}\textcolor{ansi-magenta-intense}{\textbf{| |\textbackslash{} \textbackslash{}}}
+\textcolor{ansi-blue-intense}{\textbf{ |\_|   \textbackslash{}\_| }}\textcolor{ansi-red-intense}{\textbf{    |\_|     }}\textcolor{ansi-green-intense}{\textbf{|\_|       }}\textcolor{ansi-magenta-intense}{\textbf{|\_| \textbackslash{}\_\textbackslash{}}}
+
+NTFk performs unsupervised machine learning based on tensor decomposition
+coupled with sparsity and nonnegativity constraints.
+NTFk methodology allows for automatic identification of the optimal number of
+features (signals) present in multi-dimensional data arrays (tensors).
+The number of features (tensor "rank") along different dimensions can be
+estimated jointly and independently.
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{ansi-yellow-intense}{\textbf{┌ }}\textcolor{ansi-yellow-intense}{\textbf{Warning: }}TensorLy is not available
+\textcolor{ansi-yellow-intense}{\textbf{└ }}\textcolor{ansi-black-intense}{@ NTFk \textasciitilde{}/.julia/dev/NTFk/src/NTFkTensorly.jl:10}
+    \end{Verbatim}
+
     
     \begin{Verbatim}[commandchars=\\\{\}]
-HTML\{String\}("<script>\textbackslash{}n// Immediately-invoked-function-expression to avoid global variables.\textbackslash{}n(function() \{\textbackslash{}n    var warning\_div = document.getElementById(\textbackslash{}"webio-warning-6297181692748984827\textbackslash{}");\textbackslash{}n    var hide = function () \{\textbackslash{}n        var script = document.getElementById(\textbackslash{}"webio-setup-12440862489099057575\textbackslash{}");\textbackslash{}n        var parent = script \&\& script.parentElement;\textbackslash{}n        var grandparent = parent \&\& parent.parentElement;\textbackslash{}n        if (grandparent) \{\textbackslash{}n            grandparent.style.display = \textbackslash{}"none\textbackslash{}";\textbackslash{}n        \}\textbackslash{}n        warning\_div.style.display = \textbackslash{}"none\textbackslash{}";\textbackslash{}n    \};\textbackslash{}n    if (typeof Jupyter !== \textbackslash{}"undefined\textbackslash{}") \{\textbackslash{}n        console.log(\textbackslash{}"WebIO detected Jupyter notebook environment.\textbackslash{}");\textbackslash{}n        // Jupyter notebook.\textbackslash{}n        var extensions = (\textbackslash{}n            Jupyter\textbackslash{}n            \&\& Jupyter.notebook.config.data\textbackslash{}n            \&\& Jupyter.notebook.config.data.load\_extensions\textbackslash{}n        );\textbackslash{}n        if (extensions \&\& extensions[\textbackslash{}"webio-jupyter-notebook\textbackslash{}"]) \{\textbackslash{}n            // Extension already loaded.\textbackslash{}n            console.log(\textbackslash{}"Jupyter WebIO nbextension detected; not loading ad-hoc.\textbackslash{}");\textbackslash{}n            hide();\textbackslash{}n            return;\textbackslash{}n        \}\textbackslash{}n    \} else if (window.location.pathname.includes(\textbackslash{}"/lab\textbackslash{}")) \{\textbackslash{}n        // Guessing JupyterLa\textbackslash{}n        console.log(\textbackslash{}"Jupyter Lab detected; make sure the @webio/jupyter-lab-provider labextension is installed.\textbackslash{}");\textbackslash{}n        hide();\textbackslash{}n        return;\textbackslash{}n    \}\textbackslash{}n\})();\textbackslash{}n\textbackslash{}n</script>\textbackslash{}n<p\textbackslash{}n    id=\textbackslash{}"webio-warning-6297181692748984827\textbackslash{}"\textbackslash{}n    class=\textbackslash{}"output\_text output\_stderr\textbackslash{}"\textbackslash{}n    style=\textbackslash{}"padding: 1em; font-weight: bold;\textbackslash{}"\textbackslash{}n>\textbackslash{}n    Unable to load WebIO. Please make sure WebIO works for your Jupyter client.\textbackslash{}n    For troubleshooting, please see <a href=\textbackslash{}"https://juliagizmos.github.io/WebIO.jl/latest/providers/ijulia/\textbackslash{}">\textbackslash{}n    the WebIO/IJulia documentation</a>.\textbackslash{}n    <!-- TODO: link to installation docs. -->\textbackslash{}n</p>\textbackslash{}n")
+HTML\{String\}("<script>\textbackslash{}n// Immediately-invoked-function-expression to avoid global variables.\textbackslash{}n(function() \{\textbackslash{}n    var warning\_div = document.getElementById(\textbackslash{}"webio-warning-17599414421330750393\textbackslash{}");\textbackslash{}n    var hide = function () \{\textbackslash{}n        var script = document.getElementById(\textbackslash{}"webio-setup-8741207074056421523\textbackslash{}");\textbackslash{}n        var parent = script \&\& script.parentElement;\textbackslash{}n        var grandparent = parent \&\& parent.parentElement;\textbackslash{}n        if (grandparent) \{\textbackslash{}n            grandparent.style.display = \textbackslash{}"none\textbackslash{}";\textbackslash{}n        \}\textbackslash{}n        warning\_div.style.display = \textbackslash{}"none\textbackslash{}";\textbackslash{}n    \};\textbackslash{}n    if (typeof Jupyter !== \textbackslash{}"undefined\textbackslash{}") \{\textbackslash{}n        console.log(\textbackslash{}"WebIO detected Jupyter notebook environment.\textbackslash{}");\textbackslash{}n        // Jupyter notebook.\textbackslash{}n        var extensions = (\textbackslash{}n            Jupyter\textbackslash{}n            \&\& Jupyter.notebook.config.data\textbackslash{}n            \&\& Jupyter.notebook.config.data.load\_extensions\textbackslash{}n        );\textbackslash{}n        if (extensions \&\& extensions[\textbackslash{}"webio-jupyter-notebook\textbackslash{}"]) \{\textbackslash{}n            // Extension already loaded.\textbackslash{}n            console.log(\textbackslash{}"Jupyter WebIO nbextension detected; not loading ad-hoc.\textbackslash{}");\textbackslash{}n            hide();\textbackslash{}n            return;\textbackslash{}n        \}\textbackslash{}n    \} else if (window.location.pathname.includes(\textbackslash{}"/lab\textbackslash{}")) \{\textbackslash{}n        // Guessing JupyterLa\textbackslash{}n        console.log(\textbackslash{}"Jupyter Lab detected; make sure the @webio/jupyter-lab-provider labextension is installed.\textbackslash{}");\textbackslash{}n        hide();\textbackslash{}n        return;\textbackslash{}n    \}\textbackslash{}n\})();\textbackslash{}n\textbackslash{}n</script>\textbackslash{}n<p\textbackslash{}n    id=\textbackslash{}"webio-warning-17599414421330750393\textbackslash{}"\textbackslash{}n    class=\textbackslash{}"output\_text output\_stderr\textbackslash{}"\textbackslash{}n    style=\textbackslash{}"padding: 1em; font-weight: bold;\textbackslash{}"\textbackslash{}n>\textbackslash{}n    Unable to load WebIO. Please make sure WebIO works for your Jupyter client.\textbackslash{}n    For troubleshooting, please see <a href=\textbackslash{}"https://juliagizmos.github.io/WebIO.jl/latest/providers/ijulia/\textbackslash{}">\textbackslash{}n    the WebIO/IJulia documentation</a>.\textbackslash{}n    <!-- TODO: link to installation docs. -->\textbackslash{}n</p>\textbackslash{}n")
     \end{Verbatim}
 
     
     \begin{Verbatim}[commandchars=\\\{\}]
 ┌ Info: Installing pyqt package to avoid buggy tkagg backend.
 └ @ PyPlot /Users/vvv/.julia/packages/PyPlot/XHEG0/src/init.jl:118
+┌ Warning: TensorLy is not available
+└ @ NTFk /Users/vvv/.julia/dev/NTFk/src/NTFkTensorly.jl:10
     \end{Verbatim}
 
     \hypertarget{load-and-pre-process-the-data}{%
@@ -550,6 +586,7 @@ data}\label{setup-the-working-directory-containing-the-great-basin-data}}
 \prompt{In}{incolor}{2}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{cd}\PY{p}{(}\PY{n}{joinpath}\PY{p}{(}\PY{n}{GeoThermalCloud}\PY{o}{.}\PY{n}{dir}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{G}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{B}\PY{l+s}{a}\PY{l+s}{s}\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\PY{n}{include}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{g}\PY{l+s}{m}\PY{l+s}{t}\PY{l+s}{p}\PY{l+s}{l}\PY{l+s}{o}\PY{l+s}{t}\PY{l+s}{\PYZus{}}\PY{l+s}{g}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{b}\PY{l+s}{a}\PY{l+s}{s}\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{.}\PY{l+s}{j}\PY{l+s}{l}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
 \end{Verbatim}
 \end{tcolorbox}
 
@@ -591,11 +628,58 @@ coordinates}\label{define-location-coordinates}}
 \end{Verbatim}
 \end{tcolorbox}
 
+    \hypertarget{map-locations}{%
+\subsubsection{Map locations}\label{map-locations}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{6}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{GMT}\PY{o}{.}\PY{n}{grdimage}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{m}\PY{l+s}{a}\PY{l+s}{p}\PY{l+s}{s}\PY{l+s}{/}\PY{l+s}{g}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{b}\PY{l+s}{a}\PY{l+s}{s}\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{\PYZhy{}}\PY{l+s}{v}\PY{l+s}{3}\PY{l+s}{.}\PY{l+s}{n}\PY{l+s}{c}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{proj}\PY{o}{=}\PY{o}{:}\PY{n}{Mercator}\PY{p}{,} \PY{n}{shade}\PY{o}{=}\PY{p}{(}\PY{n}{azimuth}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{,} \PY{n}{norm}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{e}\PY{l+s}{0}\PY{l+s}{.}\PY{l+s}{8}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{,}
+	\PY{n}{color}\PY{o}{=}\PY{n}{GMT}\PY{o}{.}\PY{n}{makecpt}\PY{p}{(}\PY{n}{color}\PY{o}{=}\PY{o}{:}\PY{n}{grayC}\PY{p}{,} \PY{n}{transparency}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{,} \PY{n}{range}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{5000}\PY{p}{,}\PY{l+m+mi}{500}\PY{p}{)}\PY{p}{,} \PY{n}{continuous}\PY{o}{=}\PY{k+kc}{true}\PY{p}{)}\PY{p}{,}
+	\PY{n}{figsize}\PY{o}{=}\PY{l+m+mi}{8}\PY{p}{,} \PY{n}{conf}\PY{o}{=}\PY{p}{(}\PY{n}{MAP\PYZus{}FRAME\PYZus{}TYPE}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{p}\PY{l+s}{l}\PY{l+s}{a}\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{MAP\PYZus{}GRID\PYZus{}PEN\PYZus{}PRIMARY}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{t}\PY{l+s}{h}\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{n}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{t}\PY{l+s}{,}\PY{l+s}{g}\PY{l+s}{r}\PY{l+s}{a}\PY{l+s}{y}\PY{l+s}{,}\PY{l+s}{.}\PY{l+s}{\PYZdq{}}\PY{p}{,}
+	\PY{n}{MAP\PYZus{}GRID\PYZus{}CROSS\PYZus{}SIZE\PYZus{}SECONDARY}\PY{o}{=}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{n}{MAP\PYZus{}FRAME\PYZus{}PEN}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{n}{MAP\PYZus{}TICK\PYZus{}PEN\PYZus{}PRIMARY}\PY{o}{=}\PY{l+m+mf}{0.1}\PY{p}{,}
+	\PY{n}{MAP\PYZus{}TICK\PYZus{}LENGTH\PYZus{}PRIMARY}\PY{o}{=}\PY{l+m+mf}{0.01}\PY{p}{)}\PY{p}{,} \PY{n}{frame}\PY{o}{=}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{l}\PY{l+s}{r}\PY{l+s}{t}\PY{l+s}{b}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
+\PY{n}{GMT}\PY{o}{.}\PY{n}{plot!}\PY{p}{(}\PY{n}{xcoord}\PY{p}{,} \PY{n}{ycoord}\PY{p}{,} \PY{n}{fill}\PY{o}{=}\PY{o}{:}\PY{n}{cyan}\PY{p}{,} \PY{n}{marker}\PY{o}{=}\PY{o}{:}\PY{n}{c}\PY{p}{,} \PY{n}{markersize}\PY{o}{=}\PY{l+m+mf}{0.075}\PY{p}{,} \PY{n}{coast}\PY{o}{=}\PY{p}{(}\PY{n}{proj}\PY{o}{=}\PY{o}{:}\PY{n}{Mercator}\PY{p}{,} 
+    \PY{n}{DCW}\PY{o}{=}\PY{p}{(}\PY{n}{country}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{U}\PY{l+s}{S}\PY{l+s}{.}\PY{l+s}{U}\PY{l+s}{T}\PY{l+s}{,}\PY{l+s}{U}\PY{l+s}{S}\PY{l+s}{.}\PY{l+s}{N}\PY{l+s}{V}\PY{l+s}{,}\PY{l+s}{U}\PY{l+s}{S}\PY{l+s}{.}\PY{l+s}{C}\PY{l+s}{A}\PY{l+s}{,}\PY{l+s}{U}\PY{l+s}{S}\PY{l+s}{.}\PY{l+s}{A}\PY{l+s}{Z}\PY{l+s}{,}\PY{l+s}{U}\PY{l+s}{S}\PY{l+s}{.}\PY{l+s}{O}\PY{l+s}{R}\PY{l+s}{,}\PY{l+s}{U}\PY{l+s}{S}\PY{l+s}{.}\PY{l+s}{I}\PY{l+s}{D}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{pen}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,}\PY{o}{:}\PY{n}{black}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+    \PY{n}{fmt}\PY{o}{=}\PY{o}{:}\PY{n}{png}\PY{p}{,} \PY{n}{savefig}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{m}\PY{l+s}{a}\PY{l+s}{p}\PY{l+s}{s}\PY{l+s}{\PYZhy{}}\PY{l+s}{d}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{/}\PY{l+s}{l}\PY{l+s}{o}\PY{l+s}{c}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{i}\PY{l+s}{o}\PY{l+s}{n}\PY{l+s}{s}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{show}\PY{o}{=}\PY{k+kc}{true}\PY{p}{)}\PY{p}{;}
+\PY{n}{Mads}\PY{o}{.}\PY{n}{display}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{m}\PY{l+s}{a}\PY{l+s}{p}\PY{l+s}{s}\PY{l+s}{\PYZhy{}}\PY{l+s}{d}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{/}\PY{l+s}{l}\PY{l+s}{o}\PY{l+s}{c}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{i}\PY{l+s}{o}\PY{l+s}{n}\PY{l+s}{s}\PY{l+s}{.}\PY{l+s}{p}\PY{l+s}{n}\PY{l+s}{g}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+┌ Warning: In Jupyter you can only visualize png files. File maps-
+data/locations.png was saved in disk though.
+└ @ GMT /Users/vvv/.julia/packages/GMT/dCcJn/src/common\_options.jl:2950
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}, frame=single, framerule=2mm, rulecolor=\color{outerrorbackground}]
+UndefVarError: trytoopen not defined
+
+Stacktrace:
+ [1] display(filename::String)
+   @ Mads \textasciitilde{}/.julia/dev/Mads/src-interactive/MadsDisplay.jl:49
+ [2] top-level scope
+   @ In[12]:9
+ [3] eval
+   @ ./boot.jl:360 [inlined]
+ [4] include\_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)
+   @ Base ./loading.jl:1094
+    \end{Verbatim}
+
     \hypertarget{pre-processing}{%
 \subsubsection{Pre-processing}\label{pre-processing}}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{6}{\boxspacing}
+\prompt{In}{incolor}{7}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{Xdat}\PY{p}{[}\PY{n}{Xdat} \PY{o}{.==} \PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZdq{}}\PY{p}{]} \PY{o}{.=} \PY{n+nb}{NaN}
 \PY{n}{X} \PY{o}{=} \PY{n}{convert}\PY{o}{.}\PY{p}{(}\PY{k+kt}{Float32}\PY{p}{,} \PY{n}{Xdat}\PY{p}{[}\PY{o}{:}\PY{p}{,}\PY{l+m+mi}{3}\PY{o}{:}\PY{k}{end}\PY{p}{]}\PY{p}{)}
@@ -610,7 +694,7 @@ coordinates}\label{define-location-coordinates}}
 \end{tcolorbox}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -624,7 +708,7 @@ Temperature: Min 0.1 Max 275.0 StdDev 25.12217 Skewness 4.087667 Count 13894
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_3.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_3.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -638,7 +722,7 @@ Temperature: Min 0.1 Max 275.0 StdDev 25.12217 Skewness 4.087667 Count 13894
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_6.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_6.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -653,7 +737,7 @@ Quartz: Min -50.870045 Max 273.2438 StdDev 34.105637 Skewness 0.6946969 Count
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_9.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_9.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -668,7 +752,7 @@ Count 8683
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_12.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_12.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -682,7 +766,7 @@ pH: Min 1.0 Max 11.7 StdDev 0.55800503 Skewness -0.5521828 Count 9261
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_15.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_15.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -696,7 +780,7 @@ TDS: Min 0.0 Max 329000.0 StdDev 34939.605 Skewness 7.7629066 Count 1740
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_18.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_18.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -710,7 +794,7 @@ Al: Min 0.0 Max 6400.0 StdDev 175.44391 Skewness 35.600906 Count 1362
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_21.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_21.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -724,7 +808,7 @@ B: Min 0.0 Max 590.0 StdDev 19.017153 Skewness 19.091574 Count 5462
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_24.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_24.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -738,7 +822,7 @@ Ba: Min 0.0 Max 27.430857 StdDev 0.58066297 Skewness 41.943157 Count 2516
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_27.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_27.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -752,7 +836,7 @@ Be: Min 0.0 Max 0.7 StdDev 0.020862982 Skewness 26.046818 Count 1640
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_30.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_30.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -766,12 +850,12 @@ Br: Min 0.0 Max 84.0 StdDev 7.721104 Skewness 5.398518 Count 1935
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_33.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_33.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_34.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_34.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -788,7 +872,7 @@ Cl: Min 0.0 Max 240000.0 StdDev 19115.326 Skewness 8.088112 Count 10091
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_37.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_37.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -802,7 +886,7 @@ HCO3: Min 0.0 Max 37000.0 StdDev 740.00256 Skewness 37.66232 Count 3413
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_40.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_40.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -816,7 +900,7 @@ K: Min 0.0 Max 13000.0 StdDev 692.70734 Skewness 9.866844 Count 8446
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_43.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_43.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -830,7 +914,7 @@ Li: Min 0.0 Max 970.0 StdDev 41.178646 Skewness 15.181558 Count 2809
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_46.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_46.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -844,7 +928,7 @@ Mg: Min 0.0 Max 8500.0 StdDev 454.54953 Skewness 9.703973 Count 9296
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_15_49.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_49.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -904,7 +988,7 @@ different areas.
 This is demonstrated in the maps generated below.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{7}{\boxspacing}
+\prompt{In}{incolor}{8}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{coord} \PY{o}{=} \PY{n}{permutedims}\PY{p}{(}\PY{p}{[}\PY{n}{xcoord} \PY{n}{ycoord}\PY{p}{]}\PY{p}{)}
 
@@ -927,7 +1011,7 @@ This is demonstrated in the maps generated below.
 \end{tcolorbox}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -937,7 +1021,7 @@ This is demonstrated in the maps generated below.
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_2.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_2.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -946,26 +1030,12 @@ This is demonstrated in the maps generated below.
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_4.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_4.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_5.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_7.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_8.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_5.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -974,26 +1044,12 @@ This is demonstrated in the maps generated below.
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_10.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_7.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_11.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_13.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_14.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_8.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1002,26 +1058,12 @@ This is demonstrated in the maps generated below.
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_16.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_10.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_17.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_19.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_20.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_11.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1030,12 +1072,12 @@ This is demonstrated in the maps generated below.
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_22.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_13.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_23.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_14.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1044,12 +1086,54 @@ This is demonstrated in the maps generated below.
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_25.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_16.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_17_26.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_17.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_19.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_20.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_22.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_23.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_25.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_19_26.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1067,7 +1151,7 @@ All attributes except for \texttt{Quartz}, \texttt{Chalcedony} and
 \texttt{pH} are log-transformed.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{8}{\boxspacing}
+\prompt{In}{incolor}{9}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{logv} \PY{o}{=} \PY{p}{[}\PY{k+kc}{true}\PY{p}{,} \PY{k+kc}{false}\PY{p}{,} \PY{k+kc}{false}\PY{p}{,} \PY{k+kc}{false}\PY{p}{,}  \PY{k+kc}{true}\PY{p}{,} \PY{k+kc}{true}\PY{p}{,} \PY{k+kc}{true}\PY{p}{,} \PY{k+kc}{true}\PY{p}{,} \PY{k+kc}{true}\PY{p}{,} \PY{k+kc}{true}\PY{p}{,} \PY{k+kc}{true}\PY{p}{,} \PY{k+kc}{true}\PY{p}{,} \PY{k+kc}{true}\PY{p}{,} \PY{k+kc}{true}\PY{p}{,} \PY{k+kc}{true}\PY{p}{,} \PY{k+kc}{true}\PY{p}{,} \PY{k+kc}{true}\PY{p}{,} \PY{k+kc}{true}\PY{p}{]}
 \PY{p}{[}\PY{n}{attributes} \PY{n}{logv}\PY{p}{]}
@@ -1075,7 +1159,7 @@ All attributes except for \texttt{Quartz}, \texttt{Chalcedony} and
 \end{tcolorbox}
 
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{8}{\boxspacing}
+\prompt{Out}{outcolor}{9}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 18×2 Matrix\{Any\}:
  "Temperature"   true
@@ -1100,14 +1184,14 @@ All attributes except for \texttt{Quartz}, \texttt{Chalcedony} and
 \end{tcolorbox}
         
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{9}{\boxspacing}
+\prompt{In}{incolor}{10}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{NMFk}\PY{o}{.}\PY{n}{datanalytics}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{attributes}\PY{p}{;} \PY{n}{dims}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{logv}\PY{o}{=}\PY{n}{logv}\PY{p}{)}\PY{p}{;}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1117,12 +1201,12 @@ All attributes except for \texttt{Quartz}, \texttt{Chalcedony} and
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_2.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_2.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_3.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_3.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1141,12 +1225,12 @@ Quartz: Min -50.870045 Max 273.2438 StdDev 34.105637 Skewness 0.6946969 Count
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_6.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_6.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_7.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_7.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1164,12 +1248,12 @@ pH: Min 1.0 Max 11.7 StdDev 0.55800503 Skewness -0.5521828 Count 9261
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_10.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_10.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_11.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_11.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1187,7 +1271,7 @@ Al: Min -5.8860564 Max 3.80618 StdDev 1.2161667 Skewness -0.44271475 Count 1362
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_14.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_14.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1201,12 +1285,12 @@ B: Min -4.0 Max 2.770852 StdDev 0.99189556 Skewness -0.15991572 Count 5462
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_17.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_17.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_18.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_18.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1223,7 +1307,7 @@ Be: Min -8.0 Max -0.15490197 StdDev 0.8196359 Skewness -2.5543597 Count 1640
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_21.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_21.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1237,7 +1321,7 @@ Br: Min -3.102373 Max 1.9242793 StdDev 0.90064573 Skewness 0.497394 Count 1935
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_24.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_24.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1251,12 +1335,12 @@ Ca: Min -2.0 Max 3.4093695 StdDev 0.51392627 Skewness -0.4936186 Count 9468
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_27.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_27.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_28.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_28.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1273,7 +1357,7 @@ HCO3: Min -1.0 Max 4.5682015 StdDev 0.36140293 Skewness -0.94632554 Count 3413
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_31.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_31.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1287,12 +1371,12 @@ K: Min -2.09691 Max 4.1139436 StdDev 0.686127 Skewness 1.5732428 Count 8446
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_34.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_34.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_35.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_35.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1309,7 +1393,7 @@ Mg: Min -3.69897 Max 3.929419 StdDev 0.79547274 Skewness -1.0883808 Count 9296
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_20_38.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_22_38.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1350,7 +1434,7 @@ Na -1.6989701 5.20412 0.8328025 1.1553397 8814
 matrix}\label{define-and-normalize-the-data-matrix}}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{10}{\boxspacing}
+\prompt{In}{incolor}{11}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{Xnl}\PY{p}{,} \PY{n}{xlmin}\PY{p}{,} \PY{n}{xlmax}\PY{p}{,} \PY{n}{zflag} \PY{o}{=} \PY{n}{NMFk}\PY{o}{.}\PY{n}{normalizematrix\PYZus{}col}\PY{p}{(}\PY{n}{X}\PY{p}{;} \PY{n}{logv}\PY{o}{=}\PY{n}{logv}\PY{p}{)}\PY{p}{;}
 \end{Verbatim}
@@ -1361,7 +1445,7 @@ matrix}\label{define-and-normalize-the-data-matrix}}
 explored}\label{define-a-range-for-the-number-of-signatures-to-be-explored}}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{11}{\boxspacing}
+\prompt{In}{incolor}{12}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{nkrange} \PY{o}{=} \PY{l+m+mi}{2}\PY{o}{:}\PY{l+m+mi}{10}\PY{p}{;}
 \end{Verbatim}
@@ -1372,7 +1456,7 @@ explored}\label{define-a-range-for-the-number-of-signatures-to-be-explored}}
 runs}\label{define-directory-with-exsiting-model-runs}}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{12}{\boxspacing}
+\prompt{In}{incolor}{13}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{resultdir} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{u}\PY{l+s}{l}\PY{l+s}{t}\PY{l+s}{s}\PY{l+s}{\PYZdq{}}\PY{p}{;}
 \end{Verbatim}
@@ -1386,7 +1470,7 @@ The higher the NMF runs, the better. In addition, convergence has
 already been explored using different numbers of NMF runs.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{13}{\boxspacing}
+\prompt{In}{incolor}{14}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{nruns} \PY{o}{=} \PY{l+m+mi}{640}\PY{p}{;}
 \end{Verbatim}
@@ -1401,7 +1485,7 @@ information, check out the
 \href{https://github.com/SmartTensors/NMFk.jl}{\textbf{NMFk} website}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{14}{\boxspacing}
+\prompt{In}{incolor}{15}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{W}\PY{p}{,} \PY{n}{H}\PY{p}{,} \PY{n}{fitquality}\PY{p}{,} \PY{n}{robustness}\PY{p}{,} \PY{n}{aic} \PY{o}{=} \PY{n}{NMFk}\PY{o}{.}\PY{n}{execute}\PY{p}{(}\PY{n}{Xnl}\PY{p}{,} \PY{n}{nkrange}\PY{p}{,} \PY{n}{nruns}\PY{p}{;} \PY{n}{cutoff}\PY{o}{=}\PY{l+m+mf}{0.4}\PY{p}{,} \PY{n}{resultdir}\PY{o}{=}\PY{n}{resultdir}\PY{p}{,} \PY{n}{casefilename}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{n}\PY{l+s}{m}\PY{l+s}{f}\PY{l+s}{k}\PY{l+s}{\PYZhy{}}\PY{l+s}{n}\PY{l+s}{l}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{load}\PY{o}{=}\PY{k+kc}{true}\PY{p}{)}
 \PY{n}{W}\PY{p}{,} \PY{n}{H}\PY{p}{,} \PY{n}{fitquality}\PY{p}{,} \PY{n}{robustness}\PY{p}{,} \PY{n}{aic} \PY{o}{=} \PY{n}{NMFk}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{n}{nkrange}\PY{p}{,} \PY{n}{nruns}\PY{p}{;} \PY{n}{cutoff}\PY{o}{=}\PY{l+m+mf}{0.4}\PY{p}{,} \PY{n}{resultdir}\PY{o}{=}\PY{n}{resultdir}\PY{p}{,} \PY{n}{casefilename}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{n}\PY{l+s}{m}\PY{l+s}{f}\PY{l+s}{k}\PY{l+s}{\PYZhy{}}\PY{l+s}{n}\PY{l+s}{l}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
@@ -1468,14 +1552,14 @@ The set of acceptable solutions are defined by the \textbf{NMFk}
 algorithm as follows:
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{15}{\boxspacing}
+\prompt{In}{incolor}{16}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{NMFk}\PY{o}{.}\PY{n}{getks}\PY{p}{(}\PY{n}{nkrange}\PY{p}{,} \PY{n}{robustness}\PY{p}{[}\PY{n}{nkrange}\PY{p}{]}\PY{p}{,} \PY{l+m+mf}{0.4}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{15}{\boxspacing}
+\prompt{Out}{outcolor}{16}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 2-element Vector\{Int64\}:
  2
@@ -1496,7 +1580,7 @@ Below is a plot representing solution quality (fit) and silhouette width
 (robustness) for different numbers of signatures \texttt{k}:
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{16}{\boxspacing}
+\prompt{In}{incolor}{17}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{resultdirpost} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{u}\PY{l+s}{l}\PY{l+s}{t}\PY{l+s}{s}\PY{l+s}{\PYZhy{}}\PY{l+s}{p}\PY{l+s}{o}\PY{l+s}{s}\PY{l+s}{t}\PY{l+s}{p}\PY{l+s}{r}\PY{l+s}{o}\PY{l+s}{c}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{s}\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{g}\PY{l+s}{\PYZhy{}}\PY{l+s}{n}\PY{l+s}{l}\PY{l+s}{\PYZhy{}}\PY{l+s+si}{\PYZdl{}}\PY{p}{(}\PY{n}{nruns}\PY{p}{)}\PY{l+s}{\PYZdq{}}
 \PY{n}{figuredirpost} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{f}\PY{l+s}{i}\PY{l+s}{g}\PY{l+s}{u}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{\PYZhy{}}\PY{l+s}{p}\PY{l+s}{o}\PY{l+s}{s}\PY{l+s}{t}\PY{l+s}{p}\PY{l+s}{r}\PY{l+s}{o}\PY{l+s}{c}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{s}\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{g}\PY{l+s}{\PYZhy{}}\PY{l+s}{n}\PY{l+s}{l}\PY{l+s}{\PYZhy{}}\PY{l+s+si}{\PYZdl{}}\PY{p}{(}\PY{n}{nruns}\PY{p}{)}\PY{l+s}{\PYZdq{}}\PY{p}{;}
@@ -1504,14 +1588,14 @@ Below is a plot representing solution quality (fit) and silhouette width
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{17}{\boxspacing}
+\prompt{In}{incolor}{18}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{NMFk}\PY{o}{.}\PY{n}{plot\PYZus{}feature\PYZus{}selecton}\PY{p}{(}\PY{n}{nkrange}\PY{p}{,} \PY{n}{fitquality}\PY{p}{,} \PY{n}{robustness}\PY{p}{;} \PY{n}{figuredir}\PY{o}{=}\PY{n}{figuredirpost}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_36_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1531,7 +1615,7 @@ The ML solution with the optimal number of signatures (3) is further
 analyzed as follows:
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{18}{\boxspacing}
+\prompt{In}{incolor}{19}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{Sorder}\PY{p}{,} \PY{n}{Wclusters}\PY{p}{,} \PY{n}{Hclusters} \PY{o}{=} \PY{n}{NMFk}\PY{o}{.}\PY{n}{clusterresults}\PY{p}{(}\PY{n}{NMFk}\PY{o}{.}\PY{n}{getk}\PY{p}{(}\PY{n}{nkrange}\PY{p}{,} \PY{n}{robustness}\PY{p}{[}\PY{n}{nkrange}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n}{W}\PY{p}{,} \PY{n}{H}\PY{p}{,} \PY{n}{string}\PY{o}{.}\PY{p}{(}\PY{n}{collect}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{:}\PY{n}{npoints}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{attributes}\PY{p}{;} \PY{n}{lon}\PY{o}{=}\PY{n}{xcoord}\PY{p}{,} \PY{n}{lat}\PY{o}{=}\PY{n}{ycoord}\PY{p}{,} \PY{n}{resultdir}\PY{o}{=}\PY{n}{resultdirpost}\PY{p}{,} \PY{n}{figuredir}\PY{o}{=}\PY{n}{figuredirpost}\PY{p}{,} \PY{n}{ordersignal}\PY{o}{=}\PY{o}{:}\PY{n}{Wcount}\PY{p}{,} \PY{n}{Hcasefilename}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{t}\PY{l+s}{r}\PY{l+s}{i}\PY{l+s}{b}\PY{l+s}{u}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{Wcasefilename}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{l}\PY{l+s}{o}\PY{l+s}{c}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{i}\PY{l+s}{o}\PY{l+s}{n}\PY{l+s}{s}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{biplotcolor}\PY{o}{=}\PY{o}{:}\PY{n}{WH}\PY{p}{,} \PY{n}{sortmag}\PY{o}{=}\PY{k+kc}{false}\PY{p}{,} \PY{n}{biplotlabel}\PY{o}{=}\PY{o}{:}\PY{n}{H}\PY{p}{,} \PY{n}{point\PYZus{}size\PYZus{}nolabel}\PY{o}{=}\PY{l+m+mi}{2}\PY{n}{Gadfly}\PY{o}{.}\PY{n}{pt}\PY{p}{,} \PY{n}{point\PYZus{}size\PYZus{}label}\PY{o}{=}\PY{l+m+mi}{4}\PY{n}{Gadfly}\PY{o}{.}\PY{n}{pt}\PY{p}{)}
 \end{Verbatim}
@@ -1612,7 +1696,7 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
 
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_6.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_40_6.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1622,7 +1706,7 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_8.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_40_8.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1631,12 +1715,12 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_10.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_40_10.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_11.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_40_11.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1645,7 +1729,7 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_13.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_40_13.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1718,7 +1802,7 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
 
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_17.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_40_17.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1740,7 +1824,7 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_19.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_40_19.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1749,7 +1833,7 @@ postprocessing-nl-640/Wmatrix-2-2\_14258-1000.jld!
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_21.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_40_21.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1763,7 +1847,7 @@ ArgumentError("Distance matrix should be symmetric.")
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_24.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_40_24.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1772,12 +1856,12 @@ ArgumentError("Distance matrix should be symmetric.")
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_26.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_40_26.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_38_27.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{GreatBasin_files/GreatBasin_40_27.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1786,7 +1870,7 @@ ArgumentError("Distance matrix should be symmetric.")
     \end{Verbatim}
 
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{18}{\boxspacing}
+\prompt{Out}{outcolor}{19}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 ([[1, 2]], [['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'  …  'A', 'A', 'A',
 'B', 'A', 'A', 'A', 'B', 'A', 'A']], [['B', 'B', 'B', 'A', 'A', 'B', 'B', 'A',
@@ -1797,7 +1881,7 @@ ArgumentError("Distance matrix should be symmetric.")
     The geothermal attributes are clustered into \textbf{3} groups:
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{19}{\boxspacing}
+\prompt{In}{incolor}{20}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{Mads}\PY{o}{.}\PY{n}{display}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{u}\PY{l+s}{l}\PY{l+s}{t}\PY{l+s}{s}\PY{l+s}{\PYZhy{}}\PY{l+s}{p}\PY{l+s}{o}\PY{l+s}{s}\PY{l+s}{t}\PY{l+s}{p}\PY{l+s}{r}\PY{l+s}{o}\PY{l+s}{c}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{s}\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{g}\PY{l+s}{\PYZhy{}}\PY{l+s}{n}\PY{l+s}{l}\PY{l+s}{\PYZhy{}}\PY{l+s}{6}\PY{l+s}{4}\PY{l+s}{0}\PY{l+s}{/}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{t}\PY{l+s}{r}\PY{l+s}{i}\PY{l+s}{b}\PY{l+s}{u}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{\PYZhy{}}\PY{l+s}{3}\PY{l+s}{\PYZhy{}}\PY{l+s}{g}\PY{l+s}{r}\PY{l+s}{o}\PY{l+s}{u}\PY{l+s}{p}\PY{l+s}{s}\PY{l+s}{.}\PY{l+s}{t}\PY{l+s}{x}\PY{l+s}{t}\PY{l+s}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
@@ -1845,13 +1929,18 @@ A spatial map of the locations is obtained:
 
 \begin{figure}
 \centering
-\includegraphics{../figures-postprocessing-nl-640/locations-3-map.png}
+\includegraphics{../maps-results-postprocessing-nl-640/locations-3.png}
 \caption{locations-3-map}
 \end{figure}
 
 The map \url{../figures-postprocessing-nl-640/locations-3-map.html}
 provides interactive visualization of the extracted location groups (the
-html file can also be opened with any browser).
+html file can also be opened with any browser). The interactive map will
+look like this:
+
+\begin{verbatim}
+<img src="../figures-postprocessing-nl-640/locations-3-map.png" alt="signatures-3.png" width=50%  max-width=200px;/>
+\end{verbatim}
 
     \hypertarget{discussion-of-nmfk-results}{%
 \subsubsection{Discussion of NMFk
@@ -1952,13 +2041,13 @@ be evaluated as well.
 
 \begin{verbatim}
 <div style="text-align: left; padding-bottom: 30px;">
-    <img src="../figures-postprocessing-nl-640/Signature_A_map_inversedistance.png" alt="Signature_A_map_inversedistance" max-width=125px;/>
+    <img src="../map-postprocessing-nl-640/signatures-3-A.png" alt="signatures-3-A.png" max-width=125px;/>
 </div>
 <div style="text-align: left; padding-bottom: 30px;">
-    <img src="../figures-postprocessing-nl-640/Signature_B_map_inversedistance.png" alt="Signature_B_map_inversedistance" max-width=125px;/>
+    <img src="../map-postprocessing-nl-640/signatures-3-B.png" alt="signatures-3-B.png" max-width=125px;/>
 </div>    
 <div style="text-align: left; padding-bottom: 30px;">
-    <img src="../figures-postprocessing-nl-640/Signature_C_map_inversedistance.png" alt="Signature_C_map_inversedistance" max-width=125px;/>
+    <img src="../map-postprocessing-nl-640/signatures-3-C.png" alt="signatures-3-C.png" max-width=125px;/>
 </div>
 \end{verbatim}
 
@@ -1973,7 +2062,7 @@ above).
 prospectivty}\label{signature-a-low-geothermal-prospectivty}}
 
 \begin{verbatim}
-<img src="../figures-postprocessing-nl-640/Signature_A_map_inversedistance.png" alt="Signature_A_map_inversedistance" width=25%  max-width=125px;/>
+<img src="../map-postprocessing-nl-640/signatures-3-A.png" alt="signatures-3-A.png" width=25%  max-width=125px;/>
 \end{verbatim}
 
 \hypertarget{signature-b-high-geothermal-prospectivty}{%
@@ -1981,7 +2070,7 @@ prospectivty}\label{signature-a-low-geothermal-prospectivty}}
 prospectivty}\label{signature-b-high-geothermal-prospectivty}}
 
 \begin{verbatim}
-<img src="../figures-postprocessing-nl-640/Signature_B_map_inversedistance.png" alt="Signature_B_map_inversedistance" width=25%  max-width=125px;/>
+<img src="../map-postprocessing-nl-640/signatures-3-B.png" alt="signatures-3-B.png" width=25%  max-width=125px;/>
 \end{verbatim}
 
 \hypertarget{signature-c-intermediate-geothermal-prospectivty}{%
@@ -1989,8 +2078,10 @@ prospectivty}\label{signature-b-high-geothermal-prospectivty}}
 prospectivty}\label{signature-c-intermediate-geothermal-prospectivty}}
 
 \begin{verbatim}
-<img src="../figures-postprocessing-nl-640/Signature_C_map_inversedistance.png" alt="Signature_C_map_inversedistance" width=25%  max-width=125px;/>
+<img src="../map-postprocessing-nl-640/signatures-3-C.png" alt="signatures-3-C.png" width=25%  max-width=125px;/>
 \end{verbatim}
+
+\textless/div
 
 
     % Add a bibliography block to the postdoc

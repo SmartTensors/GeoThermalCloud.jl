@@ -33,12 +33,12 @@ More information on how the ML results are interpreted to provide geothermal ins
 
 
 <div style="text-align: left; padding-bottom: 30px; padding-top: 30px;">
-	<img src="../img/greatbasin_data_locs_alt.png" alt="greatbasin_data_locs_alt" width=50%  max-width=225px;/>
+	<img src="../maps-data/locations.png" alt="locations" width=50%  max-width=225px;/>
 </div>
 
 ## GeoThermalCloud installation
 
-If **GeoThermalCloud** is not installed, first execute in the Julia REPL `import Pkg; Pkg.add("GeoThermalCloud"); import Pkg; Pkg.add("NMFk"); Pkg.add("Mads"); Pkg.add("DelimitedFiles"); Pkg.add("JLD"); Pkg.add("Gadfly"); Pkg.add("Cairo"); Pkg.add("Fontconfig"); Pkg.add("Kriging")`.
+If **GeoThermalCloud** is not installed, first execute in the Julia REPL `import Pkg; Pkg.add("GeoThermalCloud"); import Pkg; Pkg.add("NMFk"); Pkg.add("Mads"); Pkg.add("DelimitedFiles"); Pkg.add("JLD"); Pkg.add("Gadfly"); Pkg.add("Cairo"); Pkg.add("Fontconfig"); Pkg.add("Kriging"); Pkg.add("GMT");`.
 
 
 ```julia
@@ -51,9 +51,10 @@ import Gadfly
 import Cairo
 import Fontconfig
 import Kriging
+import GMT
 ```
 
-    ┌ Info: Precompiling NMFk [e40cd9e2-a1df-5d90-a1fa-603fdc3dbdd8]
+    ┌ Info: Precompiling GeoThermalCloud [9b555b37-faa4-4dca-b31f-51f0aad2d23b]
     └ @ Base loading.jl:1317
 
 
@@ -78,6 +79,8 @@ import Kriging
     [32m[1m    Updating[22m[39m registry at `~/.julia/registries/General`
     [32m[1m   Resolving[22m[39m package versions...
     [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mModule BIGUQ is not available!
+    WARNING: could not import Printf.ini_hex into DoubleFloats
+    WARNING: could not import Printf.ini_HEX into DoubleFloats
 
 
     [1mNMFk: Nonnegative Matrix Factorization + k-means clustering and physics constraints[0m
@@ -96,13 +99,37 @@ import Kriging
     NMFk offers visualization, pre-, and post-processing capabilities.
 
 
+    [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mMATLAB_HOME environmental variable is not defined!
+    [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mMATLAB is not installed!
+
+
+    [1mNTFk: Nonnegative Tensor Factorization + k-means clustering[0m
+    ====
+    
+    [1m[34m  _     _  [1m[31m _________ [1m[32m  _______   [1m[35m_[0m
+    [1m[34m |  \  | | [1m[31m|___   ___| [1m[32m|  _____| [1m[35m| |  _[0m
+    [1m[34m | . \ | | [1m[31m    | |     [1m[32m| |___    [1m[35m| | / /[0m
+    [1m[34m | |\ \| | [1m[31m    | |     [1m[32m|  ___|   [1m[35m| |/ /[0m
+    [1m[34m | | \ ' | [1m[31m    | |     [1m[32m| |       [1m[35m|   ([0m
+    [1m[34m | |  \  | [1m[31m    | |     [1m[32m| |       [1m[35m| |\ \[0m
+    [1m[34m |_|   \_| [1m[31m    |_|     [1m[32m|_|       [1m[35m|_| \_\[0m
+    
+    NTFk performs unsupervised machine learning based on tensor decomposition coupled with sparsity and nonnegativity constraints.
+    NTFk methodology allows for automatic identification of the optimal number of features (signals) present in multi-dimensional data arrays (tensors).
+    The number of features (tensor "rank") along different dimensions can be estimated jointly and independently.
+
+
+    [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mTensorLy is not available
+    [33m[1m└ [22m[39m[90m@ NTFk ~/.julia/dev/NTFk/src/NTFkTensorly.jl:10[39m
+
+
 
 <script>
 // Immediately-invoked-function-expression to avoid global variables.
 (function() {
-    var warning_div = document.getElementById("webio-warning-6297181692748984827");
+    var warning_div = document.getElementById("webio-warning-17599414421330750393");
     var hide = function () {
-        var script = document.getElementById("webio-setup-12440862489099057575");
+        var script = document.getElementById("webio-setup-8741207074056421523");
         var parent = script && script.parentElement;
         var grandparent = parent && parent.parentElement;
         if (grandparent) {
@@ -134,7 +161,7 @@ import Kriging
 
 </script>
 <p
-    id="webio-warning-6297181692748984827"
+    id="webio-warning-17599414421330750393"
     class="output_text output_stderr"
     style="padding: 1em; font-weight: bold;"
 >
@@ -148,6 +175,8 @@ import Kriging
 
     ┌ Info: Installing pyqt package to avoid buggy tkagg backend.
     └ @ PyPlot /Users/vvv/.julia/packages/PyPlot/XHEG0/src/init.jl:118
+    ┌ Warning: TensorLy is not available
+    └ @ NTFk /Users/vvv/.julia/dev/NTFk/src/NTFkTensorly.jl:10
 
 
 ## Load and pre-process the data
@@ -157,6 +186,7 @@ import Kriging
 
 ```julia
 cd(joinpath(GeoThermalCloud.dir, "GreatBasin"));
+include("gmtplot_greatbasin.jl");
 ```
 
 ### Load the data file
@@ -186,6 +216,58 @@ xcoord = Array{Float32}(Xdat[:, 2])
 ycoord = Array{Float32}(Xdat[:, 1]);
 ```
 
+### Map locations
+
+
+```julia
+GMT.grdimage("maps/greatbasin-v3.nc", proj=:Mercator, shade=(azimuth=100, norm="e0.8"),
+	color=GMT.makecpt(color=:grayC, transparency=10, range=(0,5000,500), continuous=true),
+	figsize=8, conf=(MAP_FRAME_TYPE="plain", MAP_GRID_PEN_PRIMARY="thinnest,gray,.",
+	MAP_GRID_CROSS_SIZE_SECONDARY=0.1, MAP_FRAME_PEN=0.5, MAP_TICK_PEN_PRIMARY=0.1,
+	MAP_TICK_LENGTH_PRIMARY=0.01), frame=(axis="lrtb"))
+GMT.plot!(xcoord, ycoord, fill=:cyan, marker=:c, markersize=0.075, coast=(proj=:Mercator, 
+    DCW=(country="US.UT,US.NV,US.CA,US.AZ,US.OR,US.ID", pen=(0.5,:black))),
+    fmt=:png, savefig="maps-data/locations", show=true);
+Mads.display("maps-data/locations.png")
+```
+
+
+    
+![png](GreatBasin_files/GreatBasin_15_0.png)
+    
+
+
+    ┌ Warning: In Jupyter you can only visualize png files. File maps-data/locations.png was saved in disk though.
+    └ @ GMT /Users/vvv/.julia/packages/GMT/dCcJn/src/common_options.jl:2950
+
+
+    
+
+
+
+    UndefVarError: trytoopen not defined
+
+    
+
+    Stacktrace:
+
+     [1] display(filename::String)
+
+       @ Mads ~/.julia/dev/Mads/src-interactive/MadsDisplay.jl:49
+
+     [2] top-level scope
+
+       @ In[12]:9
+
+     [3] eval
+
+       @ ./boot.jl:360 [inlined]
+
+     [4] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)
+
+       @ Base ./loading.jl:1094
+
+
 ### Pre-processing
 
 
@@ -203,7 +285,7 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
     
-![png](GreatBasin_files/GreatBasin_15_0.png)
+![png](GreatBasin_files/GreatBasin_17_0.png)
     
 
 
@@ -215,7 +297,7 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
     
-![png](GreatBasin_files/GreatBasin_15_3.png)
+![png](GreatBasin_files/GreatBasin_17_3.png)
     
 
 
@@ -228,7 +310,7 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
     
-![png](GreatBasin_files/GreatBasin_15_6.png)
+![png](GreatBasin_files/GreatBasin_17_6.png)
     
 
 
@@ -241,7 +323,7 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
     
-![png](GreatBasin_files/GreatBasin_15_9.png)
+![png](GreatBasin_files/GreatBasin_17_9.png)
     
 
 
@@ -254,7 +336,7 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
     
-![png](GreatBasin_files/GreatBasin_15_12.png)
+![png](GreatBasin_files/GreatBasin_17_12.png)
     
 
 
@@ -267,7 +349,7 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
     
-![png](GreatBasin_files/GreatBasin_15_15.png)
+![png](GreatBasin_files/GreatBasin_17_15.png)
     
 
 
@@ -280,7 +362,7 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
     
-![png](GreatBasin_files/GreatBasin_15_18.png)
+![png](GreatBasin_files/GreatBasin_17_18.png)
     
 
 
@@ -293,7 +375,7 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
     
-![png](GreatBasin_files/GreatBasin_15_21.png)
+![png](GreatBasin_files/GreatBasin_17_21.png)
     
 
 
@@ -306,7 +388,7 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
     
-![png](GreatBasin_files/GreatBasin_15_24.png)
+![png](GreatBasin_files/GreatBasin_17_24.png)
     
 
 
@@ -319,7 +401,7 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
     
-![png](GreatBasin_files/GreatBasin_15_27.png)
+![png](GreatBasin_files/GreatBasin_17_27.png)
     
 
 
@@ -332,7 +414,7 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
     
-![png](GreatBasin_files/GreatBasin_15_30.png)
+![png](GreatBasin_files/GreatBasin_17_30.png)
     
 
 
@@ -345,13 +427,13 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
     
-![png](GreatBasin_files/GreatBasin_15_33.png)
+![png](GreatBasin_files/GreatBasin_17_33.png)
     
 
 
 
     
-![png](GreatBasin_files/GreatBasin_15_34.png)
+![png](GreatBasin_files/GreatBasin_17_34.png)
     
 
 
@@ -367,7 +449,7 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
     
-![png](GreatBasin_files/GreatBasin_15_37.png)
+![png](GreatBasin_files/GreatBasin_17_37.png)
     
 
 
@@ -380,7 +462,7 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
     
-![png](GreatBasin_files/GreatBasin_15_40.png)
+![png](GreatBasin_files/GreatBasin_17_40.png)
     
 
 
@@ -393,7 +475,7 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
     
-![png](GreatBasin_files/GreatBasin_15_43.png)
+![png](GreatBasin_files/GreatBasin_17_43.png)
     
 
 
@@ -406,7 +488,7 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
     
-![png](GreatBasin_files/GreatBasin_15_46.png)
+![png](GreatBasin_files/GreatBasin_17_46.png)
     
 
 
@@ -419,7 +501,7 @@ NMFk.datanalytics(X, attributes; dims=2);
 
 
     
-![png](GreatBasin_files/GreatBasin_15_49.png)
+![png](GreatBasin_files/GreatBasin_17_49.png)
     
 
 
@@ -491,7 +573,7 @@ end
 
 
     
-![png](GreatBasin_files/GreatBasin_17_0.png)
+![png](GreatBasin_files/GreatBasin_19_0.png)
     
 
 
@@ -501,7 +583,7 @@ end
 
 
     
-![png](GreatBasin_files/GreatBasin_17_2.png)
+![png](GreatBasin_files/GreatBasin_19_2.png)
     
 
 
@@ -509,27 +591,13 @@ end
 
 
     
-![png](GreatBasin_files/GreatBasin_17_4.png)
+![png](GreatBasin_files/GreatBasin_19_4.png)
     
 
 
 
     
-![png](GreatBasin_files/GreatBasin_17_5.png)
-    
-
-
-    
-
-
-    
-![png](GreatBasin_files/GreatBasin_17_7.png)
-    
-
-
-
-    
-![png](GreatBasin_files/GreatBasin_17_8.png)
+![png](GreatBasin_files/GreatBasin_19_5.png)
     
 
 
@@ -537,27 +605,13 @@ end
 
 
     
-![png](GreatBasin_files/GreatBasin_17_10.png)
+![png](GreatBasin_files/GreatBasin_19_7.png)
     
 
 
 
     
-![png](GreatBasin_files/GreatBasin_17_11.png)
-    
-
-
-    
-
-
-    
-![png](GreatBasin_files/GreatBasin_17_13.png)
-    
-
-
-
-    
-![png](GreatBasin_files/GreatBasin_17_14.png)
+![png](GreatBasin_files/GreatBasin_19_8.png)
     
 
 
@@ -565,27 +619,13 @@ end
 
 
     
-![png](GreatBasin_files/GreatBasin_17_16.png)
+![png](GreatBasin_files/GreatBasin_19_10.png)
     
 
 
 
     
-![png](GreatBasin_files/GreatBasin_17_17.png)
-    
-
-
-    
-
-
-    
-![png](GreatBasin_files/GreatBasin_17_19.png)
-    
-
-
-
-    
-![png](GreatBasin_files/GreatBasin_17_20.png)
+![png](GreatBasin_files/GreatBasin_19_11.png)
     
 
 
@@ -593,13 +633,13 @@ end
 
 
     
-![png](GreatBasin_files/GreatBasin_17_22.png)
+![png](GreatBasin_files/GreatBasin_19_13.png)
     
 
 
 
     
-![png](GreatBasin_files/GreatBasin_17_23.png)
+![png](GreatBasin_files/GreatBasin_19_14.png)
     
 
 
@@ -607,13 +647,55 @@ end
 
 
     
-![png](GreatBasin_files/GreatBasin_17_25.png)
+![png](GreatBasin_files/GreatBasin_19_16.png)
     
 
 
 
     
-![png](GreatBasin_files/GreatBasin_17_26.png)
+![png](GreatBasin_files/GreatBasin_19_17.png)
+    
+
+
+    
+
+
+    
+![png](GreatBasin_files/GreatBasin_19_19.png)
+    
+
+
+
+    
+![png](GreatBasin_files/GreatBasin_19_20.png)
+    
+
+
+    
+
+
+    
+![png](GreatBasin_files/GreatBasin_19_22.png)
+    
+
+
+
+    
+![png](GreatBasin_files/GreatBasin_19_23.png)
+    
+
+
+    
+
+
+    
+![png](GreatBasin_files/GreatBasin_19_25.png)
+    
+
+
+
+    
+![png](GreatBasin_files/GreatBasin_19_26.png)
     
 
 
@@ -663,7 +745,7 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
     
-![png](GreatBasin_files/GreatBasin_20_0.png)
+![png](GreatBasin_files/GreatBasin_22_0.png)
     
 
 
@@ -673,13 +755,13 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
     
-![png](GreatBasin_files/GreatBasin_20_2.png)
+![png](GreatBasin_files/GreatBasin_22_2.png)
     
 
 
 
     
-![png](GreatBasin_files/GreatBasin_20_3.png)
+![png](GreatBasin_files/GreatBasin_22_3.png)
     
 
 
@@ -695,13 +777,13 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
     
-![png](GreatBasin_files/GreatBasin_20_6.png)
+![png](GreatBasin_files/GreatBasin_22_6.png)
     
 
 
 
     
-![png](GreatBasin_files/GreatBasin_20_7.png)
+![png](GreatBasin_files/GreatBasin_22_7.png)
     
 
 
@@ -717,13 +799,13 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
     
-![png](GreatBasin_files/GreatBasin_20_10.png)
+![png](GreatBasin_files/GreatBasin_22_10.png)
     
 
 
 
     
-![png](GreatBasin_files/GreatBasin_20_11.png)
+![png](GreatBasin_files/GreatBasin_22_11.png)
     
 
 
@@ -739,7 +821,7 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
     
-![png](GreatBasin_files/GreatBasin_20_14.png)
+![png](GreatBasin_files/GreatBasin_22_14.png)
     
 
 
@@ -752,13 +834,13 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
     
-![png](GreatBasin_files/GreatBasin_20_17.png)
+![png](GreatBasin_files/GreatBasin_22_17.png)
     
 
 
 
     
-![png](GreatBasin_files/GreatBasin_20_18.png)
+![png](GreatBasin_files/GreatBasin_22_18.png)
     
 
 
@@ -774,7 +856,7 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
     
-![png](GreatBasin_files/GreatBasin_20_21.png)
+![png](GreatBasin_files/GreatBasin_22_21.png)
     
 
 
@@ -787,7 +869,7 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
     
-![png](GreatBasin_files/GreatBasin_20_24.png)
+![png](GreatBasin_files/GreatBasin_22_24.png)
     
 
 
@@ -800,13 +882,13 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
     
-![png](GreatBasin_files/GreatBasin_20_27.png)
+![png](GreatBasin_files/GreatBasin_22_27.png)
     
 
 
 
     
-![png](GreatBasin_files/GreatBasin_20_28.png)
+![png](GreatBasin_files/GreatBasin_22_28.png)
     
 
 
@@ -822,7 +904,7 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
     
-![png](GreatBasin_files/GreatBasin_20_31.png)
+![png](GreatBasin_files/GreatBasin_22_31.png)
     
 
 
@@ -835,13 +917,13 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
     
-![png](GreatBasin_files/GreatBasin_20_34.png)
+![png](GreatBasin_files/GreatBasin_22_34.png)
     
 
 
 
     
-![png](GreatBasin_files/GreatBasin_20_35.png)
+![png](GreatBasin_files/GreatBasin_22_35.png)
     
 
 
@@ -857,7 +939,7 @@ NMFk.datanalytics(X, attributes; dims=2, logv=logv);
 
 
     
-![png](GreatBasin_files/GreatBasin_20_38.png)
+![png](GreatBasin_files/GreatBasin_22_38.png)
     
 
 
@@ -1018,7 +1100,7 @@ NMFk.plot_feature_selecton(nkrange, fitquality, robustness; figuredir=figuredirp
 
 
     
-![png](GreatBasin_files/GreatBasin_36_0.png)
+![png](GreatBasin_files/GreatBasin_38_0.png)
     
 
 
@@ -1099,7 +1181,7 @@ Sorder, Wclusters, Hclusters = NMFk.clusterresults(NMFk.getk(nkrange, robustness
 
 
     
-![png](GreatBasin_files/GreatBasin_38_6.png)
+![png](GreatBasin_files/GreatBasin_40_6.png)
     
 
 
@@ -1109,7 +1191,7 @@ Sorder, Wclusters, Hclusters = NMFk.clusterresults(NMFk.getk(nkrange, robustness
 
 
     
-![png](GreatBasin_files/GreatBasin_38_8.png)
+![png](GreatBasin_files/GreatBasin_40_8.png)
     
 
 
@@ -1117,13 +1199,13 @@ Sorder, Wclusters, Hclusters = NMFk.clusterresults(NMFk.getk(nkrange, robustness
 
 
     
-![png](GreatBasin_files/GreatBasin_38_10.png)
+![png](GreatBasin_files/GreatBasin_40_10.png)
     
 
 
 
     
-![png](GreatBasin_files/GreatBasin_38_11.png)
+![png](GreatBasin_files/GreatBasin_40_11.png)
     
 
 
@@ -1131,7 +1213,7 @@ Sorder, Wclusters, Hclusters = NMFk.clusterresults(NMFk.getk(nkrange, robustness
 
 
     
-![png](GreatBasin_files/GreatBasin_38_13.png)
+![png](GreatBasin_files/GreatBasin_40_13.png)
     
 
 
@@ -1199,7 +1281,7 @@ Sorder, Wclusters, Hclusters = NMFk.clusterresults(NMFk.getk(nkrange, robustness
 
 
     
-![png](GreatBasin_files/GreatBasin_38_17.png)
+![png](GreatBasin_files/GreatBasin_40_17.png)
     
 
 
@@ -1221,7 +1303,7 @@ Sorder, Wclusters, Hclusters = NMFk.clusterresults(NMFk.getk(nkrange, robustness
 
 
     
-![png](GreatBasin_files/GreatBasin_38_19.png)
+![png](GreatBasin_files/GreatBasin_40_19.png)
     
 
 
@@ -1229,7 +1311,7 @@ Sorder, Wclusters, Hclusters = NMFk.clusterresults(NMFk.getk(nkrange, robustness
 
 
     
-![png](GreatBasin_files/GreatBasin_38_21.png)
+![png](GreatBasin_files/GreatBasin_40_21.png)
     
 
 
@@ -1242,7 +1324,7 @@ Sorder, Wclusters, Hclusters = NMFk.clusterresults(NMFk.getk(nkrange, robustness
 
 
     
-![png](GreatBasin_files/GreatBasin_38_24.png)
+![png](GreatBasin_files/GreatBasin_40_24.png)
     
 
 
@@ -1250,13 +1332,13 @@ Sorder, Wclusters, Hclusters = NMFk.clusterresults(NMFk.getk(nkrange, robustness
 
 
     
-![png](GreatBasin_files/GreatBasin_38_26.png)
+![png](GreatBasin_files/GreatBasin_40_26.png)
     
 
 
 
     
-![png](GreatBasin_files/GreatBasin_38_27.png)
+![png](GreatBasin_files/GreatBasin_40_27.png)
     
 
 
@@ -1311,9 +1393,13 @@ The grouping is based on analyses of the location matrix `H`.
 
 A spatial map of the locations is obtained:
 
-![locations-3-map](../figures-postprocessing-nl-640/locations-3-map.png)
+![locations-3-map](../maps-results-postprocessing-nl-640/locations-3.png)
 
-The map [../figures-postprocessing-nl-640/locations-3-map.html](../figures-postprocessing-nl-640/locations-3-map.html) provides interactive visualization of the extracted location groups (the html file can also be opened with any browser).
+The map [../figures-postprocessing-nl-640/locations-3-map.html](../figures-postprocessing-nl-640/locations-3-map.html) provides interactive visualization of the extracted location groups (the html file can also be opened with any browser). The interactive map will look like this:
+
+<div style="text-align: left; padding-bottom: 30px;">
+    <img src="../figures-postprocessing-nl-640/locations-3-map.png" alt="signatures-3.png" width=50%  max-width=200px;/>
+</div>
 
 ### Discussion of NMFk results
 
@@ -1377,13 +1463,13 @@ These uncertainties can be evaluated as well.
 
 <div style="display: flex;">
     <div style="text-align: left; padding-bottom: 30px;">
-        <img src="../figures-postprocessing-nl-640/Signature_A_map_inversedistance.png" alt="Signature_A_map_inversedistance" max-width=125px;/>
+        <img src="../map-postprocessing-nl-640/signatures-3-A.png" alt="signatures-3-A.png" max-width=125px;/>
     </div>
     <div style="text-align: left; padding-bottom: 30px;">
-        <img src="../figures-postprocessing-nl-640/Signature_B_map_inversedistance.png" alt="Signature_B_map_inversedistance" max-width=125px;/>
+        <img src="../map-postprocessing-nl-640/signatures-3-B.png" alt="signatures-3-B.png" max-width=125px;/>
     </div>    
     <div style="text-align: left; padding-bottom: 30px;">
-        <img src="../figures-postprocessing-nl-640/Signature_C_map_inversedistance.png" alt="Signature_C_map_inversedistance" max-width=125px;/>
+        <img src="../map-postprocessing-nl-640/signatures-3-C.png" alt="signatures-3-C.png" max-width=125px;/>
     </div>
 </div>
 
@@ -1393,17 +1479,17 @@ This is true even though some of the analyzed data provides partial or very limi
 ##### Signature A: low geothermal prospectivty
 
 <div style="text-align: left; padding-bottom: 30px;">
-    <img src="../figures-postprocessing-nl-640/Signature_A_map_inversedistance.png" alt="Signature_A_map_inversedistance" width=25%  max-width=125px;/>
+    <img src="../map-postprocessing-nl-640/signatures-3-A.png" alt="signatures-3-A.png" width=25%  max-width=125px;/>
 </div>
 
 ##### Signature B:  high geothermal prospectivty
 
 <div style="text-align: left; padding-bottom: 30px;">
-    <img src="../figures-postprocessing-nl-640/Signature_B_map_inversedistance.png" alt="Signature_B_map_inversedistance" width=25%  max-width=125px;/>
+    <img src="../map-postprocessing-nl-640/signatures-3-B.png" alt="signatures-3-B.png" width=25%  max-width=125px;/>
 </div>
 
 ##### Signature C:  intermediate geothermal prospectivty
 
 <div style="text-align: left; padding-bottom: 30px;">
-    <img src="../figures-postprocessing-nl-640/Signature_C_map_inversedistance.png" alt="Signature_C_map_inversedistance" width=25%  max-width=125px;/>
-</div>
+    <img src="../map-postprocessing-nl-640/signatures-3-C.png" alt="signatures-3-C.png" width=25%  max-width=125px;/>
+</div
