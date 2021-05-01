@@ -13,6 +13,9 @@ Machine learning analyses are performed using the **SmartTensors** machine learn
 	<img src="../logos/SmartTensorsNewSmaller.png" alt="SmartTensors" width=25%  max-width=125px;/>
 </div>
 
+![](../logos/SmartTensorsNewSmaller.png)
+![](../../logos/SmartTensorsNewSmaller.png)
+
 This notebook demonstrates how the **NMFk** module of **SmartTensors** can be applied to perform unsupervised geothermal machine-learning analyses.
 
 <div style="text-align: left; padding-bottom: 30px;">
