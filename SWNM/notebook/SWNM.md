@@ -4,7 +4,7 @@ Geothermal machine learning analysis: Southwest New Mexico
 This notebook is a part of the GeoThermalCloud.jl: Machine Learning framework for Geothermal Exploration.
 
 <div style="text-align: left; padding-bottom: 30px;">
-    <img src="../logos/geothermalcloud-small.png" alt="geothermalcloud" width=25%  max-width=125px;/>
+    <img src="../../logos/geothermalcloud-small.png" alt="geothermalcloud" width=25%  max-width=125px;/>
 </div>
 
 Machine learning analyses are performed using the **SmartTensors** machine learning framework.
