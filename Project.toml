@@ -1,7 +1,7 @@
 name = "GeoThermalCloud"
 uuid = "9b555b37-faa4-4dca-b31f-51f0aad2d23b"
 authors = ["Velimir V Vesselinov (monty) <velimir.vesselinov@gmail.com>"]
-version = "0.1.2"
+version = "0.1.3"
 
 [deps]
 Cairo = "159f3aea-2a34-519c-b102-8c37f9878175"

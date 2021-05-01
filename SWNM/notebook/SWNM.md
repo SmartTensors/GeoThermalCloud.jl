@@ -4,22 +4,22 @@ Geothermal machine learning analysis: Southwest New Mexico
 This notebook is a part of the GeoThermalCloud.jl: Machine Learning framework for Geothermal Exploration.
 
 <div style="text-align: left; padding-bottom: 30px;">
-    <img src="../../logos/geothermalcloud-small.png" alt="geothermalcloud" width=25%  max-width=125px;/>
+    <img src="../logos/geothermalcloud-small.png" alt="geothermalcloud" width=25%  max-width=125px;/>
 </div>
 
 Machine learning analyses are performed using the **SmartTensors** machine learning framework.
 
 <div style="text-align: left; padding-bottom: 30px;">
-	<img src="../../logos/SmartTensorsNewSmaller.png" alt="SmartTensors" width=25%  max-width=125px;/>
+	<img src="../logos/SmartTensorsNewSmaller.png" alt="SmartTensors" width=25%  max-width=125px;/>
 </div>
 
 This notebook demonstrates how the **NMFk** module of **SmartTensors** can be applied to perform unsupervised geothermal machine-learning analyses.
 
 <div style="text-align: left; padding-bottom: 30px;">
-	<img src="../../logos/nmfk-logo.png" alt="nmfk" width=25%  max-width=125px;/>
+	<img src="../logos/nmfk-logo.png" alt="nmfk" width=25%  max-width=125px;/>
 </div>
 
-More information on how the ML results are interpreted to provide geothermal insights is discussed in our research paper.
+More information on how the ML results are interpreted to provide geothermal insights is discussed in <a href="https://github.com/SmartTensors/GeoThermalCloud.jl/blob/master/papers/SouthwestNM%20Paper.pdf" target="_blank">our research paper<a>.
 
 ## Introduction
 
