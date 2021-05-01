@@ -30,6 +30,10 @@ function analysis(problem::AbstractString; notebook::Bool=false)
 	end
 end
 
+function notebooks()
+	analysis("."; notebook=true)
+end
+
 function Brady(; kw...)
 	analysis("Brady"; kw...)
 end
