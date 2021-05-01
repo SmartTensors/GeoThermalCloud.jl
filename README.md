@@ -56,6 +56,7 @@ GeoThermalCloud.Brady() # performs analyses of the Brady site, Nevada
 GeoThermalCloud machine learning analyses can be also executed as Jupyter notebooks as well
 
 ```julia
+GeoThermalCloud.notebooks() # open Jupyter notebook to acccess all GeoThermalCloud notebooks
 GeoThermalCloud.SWNM(notebook=true) # opens Jupyter notebook for analyses of the Sounthwest New Mexico region
 GeoThermalCloud.GreatBasin(notebook=true) # opens Jupyter notebook for analyses of the Great Basin region
 GeoThermalCloud.Brady(notebook=true) # opens Jupyter notebook for analyses of the Brady site, Nevada
