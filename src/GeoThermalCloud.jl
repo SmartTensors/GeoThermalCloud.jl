@@ -17,16 +17,19 @@ import Kriging
 import Cairo
 import Fontconfig
 
-dir = dirname(Base.source_path())
-dir = dirname(dir)
+const dir = splitdir(splitdir(pathof(GeoThermalCloud))[1])[1]
 
 function analysis(problem::AbstractString; notebook::Bool=false)
 	@info("GeoThermalCloud: $problem analysis")
 	if notebook
 		IJulia.notebook(; dir=joinpath(dir, problem), detached=true)
 	else
+		c = pwd()
+		cd(joinpath(dir, problem, "notebook"))
+		Mads.runcmd("jupyter-nbconvert --to script $problem.ipynb")
 		cd(joinpath(dir, problem))
-		include(joinpath("notebook", "$(problem).jl"))
+		Base.include(Main, joinpath("notebook", "$(problem).jl"))
+		cd(c)
 	end
 end
 
