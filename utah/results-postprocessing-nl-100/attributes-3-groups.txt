@@ -1,0 +1,24 @@
+Signal A (S1)
+pH         	1.0
+Temperature	0.859
+Ba         	0.845
+Mg         	0.788
+Ca         	0.768
+HCO3       	0.549
+
+Signal B (S2)
+δO18       	1.0
+Cl         	0.651
+Na         	0.644
+Br         	0.642
+Quartz     	0.62
+Chalcedony 	0.597
+B          	0.587
+K          	0.475
+Li         	0.415
+
+Signal C (S3)
+Be         	1.0
+Al         	0.673
+TDS        	0.333
+
