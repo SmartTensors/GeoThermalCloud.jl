@@ -87,7 +87,7 @@ depth = 750;
 
 Tn = deepcopy(T[1:depth,:,:])
 for a = 1:length(ai)
-	Tn[:,a,:], _, _ = NMFk.normalize!(Tn[:,a,:])
+	Tn[:,a,:], _, _ = NMFk.normalize(Tn[:,a,:])
 end
 
 nruns = 1000 # number of random NMF runs

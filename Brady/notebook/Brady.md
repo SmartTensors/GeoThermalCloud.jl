@@ -847,7 +847,7 @@ for i=1:length(attributes_col); println("$(attributes_col[i]): Column $i Unique 
     goodlith: Column 28 Unique entries:
 
 
-### Get well locations and production 
+### Get well locations and production
 
 
 ```julia
@@ -1304,7 +1304,7 @@ end
     unitthick: 27
 
 
-### Collect the well data into a 3D tensor 
+### Collect the well data into a 3D tensor
 
 Tensor indices (dimensions) define depths, attributes, and wells.
 
@@ -1328,11 +1328,11 @@ for w = 1:length(locations)
 end
 ```
 
-### Define the maximum depth 
+### Define the maximum depth
 
 The maximum depth limits the depth of the data included in the analyses.
 
-The maximum depth is set to 750 m. 
+The maximum depth is set to 750 m.
 
 
 ```julia
@@ -1345,7 +1345,7 @@ depth = 750;
 ```julia
 Tn = deepcopy(T[1:depth,:,:])
 for a = 1:length(ai)
-	Tn[:,a,:], _, _ = NMFk.normalize!(Tn[:,a,:])
+	Tn[:,a,:], _, _ = NMFk.normalize(Tn[:,a,:])
 end
 ```
 
@@ -1375,7 +1375,7 @@ NMFk.plot_wells("map/dataset-$(casename).html", xcoord, ycoord, String.(welltype
 ```
 
 A HTML file named [../map/dataset-set00-v9-inv.html](../map/dataset-set00-v9-inv.html) is generated mapping the site data.
-The map provides interactive visualization of the site data (it can also be opened with any browser). 
+The map provides interactive visualization of the site data (it can also be opened with any browser).
 
 The map below shows the location of the `Dry`, `Injection` and `Production` wells.
 
@@ -1487,16 +1487,16 @@ NMFk.plot_signal_selecton(nkrange, fitquality, robustness; figuredir="$figuredir
 ```
 
 
-    
+
 ![png](Brady_files/Brady_48_0.png)
-    
 
 
-    
+
+
 
 The plot above also demonstrates that the acceptable solutions contain 2, 5 and 6 signatures.
 
-#### Analysis of all the acceptable solutions 
+#### Analysis of all the acceptable solutions
 
 The ML solutions containing an acceptable number of signatures are further analyzed as follows:
 
@@ -1596,9 +1596,9 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=[3,4]), W, H, at
 
 
 
-    
+
 ![png](Brady_files/Brady_50_6.png)
-    
+
 
 
     ┌ Info: Signal B (S2) (k-means clustering)
@@ -1606,34 +1606,34 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=[3,4]), W, H, at
 
 
 
-    
+
 ![png](Brady_files/Brady_50_8.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_50_10.png)
-    
 
 
 
-    
+
+
 ![png](Brady_files/Brady_50_11.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_50_13.png)
-    
 
 
-    
+
+
 
 
     1×2 Array{Any,2}:
@@ -1658,9 +1658,9 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=[3,4]), W, H, at
 
 
 
-    
+
 ![png](Brady_files/Brady_50_17.png)
-    
+
 
 
     ┌ Info: Attributes (signals=2)
@@ -1680,45 +1680,45 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=[3,4]), W, H, at
 
 
 
-    
+
 ![png](Brady_files/Brady_50_19.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_50_21.png)
-    
 
 
 
-    
+
+
 ![png](Brady_files/Brady_50_22.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_50_24.png)
-    
 
 
 
-    
+
+
 ![png](Brady_files/Brady_50_25.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_50_27.png)
-    
+
 
 
     Signal importance (high->low): [1, 3, 5, 4, 2]
@@ -1816,9 +1816,9 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=[3,4]), W, H, at
 
 
 
-    
+
 ![png](Brady_files/Brady_50_35.png)
-    
+
 
 
     ┌ Warning: Procedure to find unique signals could not identify a solution ...
@@ -1850,34 +1850,34 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=[3,4]), W, H, at
 
 
 
-    
+
 ![png](Brady_files/Brady_50_37.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_50_39.png)
-    
 
 
 
-    
+
+
 ![png](Brady_files/Brady_50_40.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_50_42.png)
-    
 
 
-    
+
+
 
 
     7×2 Array{Any,2}:
@@ -1914,9 +1914,9 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=[3,4]), W, H, at
 
 
 
-    
+
 ![png](Brady_files/Brady_50_49.png)
-    
+
 
 
     ┌ Info: Attributes (signals=5)
@@ -1954,45 +1954,45 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=[3,4]), W, H, at
 
 
 
-    
+
 ![png](Brady_files/Brady_50_51.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_50_53.png)
-    
 
 
 
-    
+
+
 ![png](Brady_files/Brady_50_54.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_50_56.png)
-    
 
 
 
-    
+
+
 ![png](Brady_files/Brady_50_57.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_50_59.png)
-    
+
 
 
     Signal importance (high->low): [1, 5, 2, 6, 4, 3]
@@ -2094,9 +2094,9 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=[3,4]), W, H, at
 
 
 
-    
+
 ![png](Brady_files/Brady_50_68.png)
-    
+
 
 
     ┌ Info: Robust k-means analysis results are loaded from file results-set00-v9-inv-750-1000-daln/Wmatrix-6-6_14-1000.jld!
@@ -2130,34 +2130,34 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=[3,4]), W, H, at
 
 
 
-    
+
 ![png](Brady_files/Brady_50_70.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_50_72.png)
-    
 
 
 
-    
+
+
 ![png](Brady_files/Brady_50_73.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_50_75.png)
-    
 
 
-    
+
+
 
 
     1×2 Array{Any,2}:
@@ -2198,9 +2198,9 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=[3,4]), W, H, at
 
 
 
-    
+
 ![png](Brady_files/Brady_50_83.png)
-    
+
 
 
     ┌ Info: Attributes (signals=6)
@@ -2244,48 +2244,48 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=[3,4]), W, H, at
 
 
 
-    
+
 ![png](Brady_files/Brady_50_85.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_50_87.png)
-    
 
 
 
-    
+
+
 ![png](Brady_files/Brady_50_88.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_50_90.png)
-    
 
 
 
-    
+
+
 ![png](Brady_files/Brady_50_91.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_50_93.png)
-    
 
 
-    
+
+
 
 
 
@@ -2331,7 +2331,7 @@ This grouping is based on analyses of the location matrix `H`:
 
 ![locations-6-labeled-sorted](../figures-set00-v9-inv-750-1000-daln/locations-6-labeled-sorted.png)
 
-The map [../figures-set00-v9-inv-750-1000-daln/locations-6-map.html](../figures-set00-v9-inv-750-1000-daln/locations-6-map.html) provides interactive visualization of the extracted well location groups (the html file can also be opened with any browser). 
+The map [../figures-set00-v9-inv-750-1000-daln/locations-6-map.html](../figures-set00-v9-inv-750-1000-daln/locations-6-map.html) provides interactive visualization of the extracted well location groups (the html file can also be opened with any browser).
 
 <div>
     <iframe src="../figures-set00-v9-inv-750-1000-daln/locations-6-map.html" frameborder="0" height="400" width="50%"></iframe>
@@ -2427,16 +2427,16 @@ NMFk.plot_signal_selecton(nkrange, fitquality, robustness; figuredir="$figuredir
 ```
 
 
-    
+
 ![png](Brady_files/Brady_63_0.png)
-    
 
 
-    
+
+
 
 The plot above also demonstrates that the acceptable solutions contain 2 and 3 signatures.
 
-#### Analysis of all the acceptable solutions 
+#### Analysis of all the acceptable solutions
 
 The ML solutions containing an acceptable number of signatures are further analyzed as follows:
 
@@ -2485,9 +2485,9 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=4), W, H, locati
 
 
 
-    
+
 ![png](Brady_files/Brady_65_3.png)
-    
+
 
 
     ┌ Info: Robust k-means analysis results are loaded from file results-set00-v9-inv-750-1000-dlan/Wmatrix-2-2_47-1000.jld!
@@ -2507,31 +2507,31 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=4), W, H, locati
 
 
 
-    
+
 ![png](Brady_files/Brady_65_5.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_65_7.png)
-    
 
 
 
-    
+
+
 ![png](Brady_files/Brady_65_8.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_65_10.png)
-    
+
 
 
 
@@ -2549,7 +2549,7 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=4), W, H, locati
      "18A-1"       0.782265
      "47C-1"       0.745002
      "22-13"       0.734719
-     ⋮             
+     ⋮
      "88-11"       0.659403
      "46A-1"       0.629757
      "B5"          0.614479
@@ -2589,9 +2589,9 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=4), W, H, locati
 
 
 
-    
+
 ![png](Brady_files/Brady_65_13.png)
-    
+
 
 
     ┌ Info: Locations (signals=2)
@@ -2611,45 +2611,45 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=4), W, H, locati
 
 
 
-    
+
 ![png](Brady_files/Brady_65_15.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_65_17.png)
-    
 
 
 
-    
+
+
 ![png](Brady_files/Brady_65_18.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_65_20.png)
-    
 
 
 
-    
+
+
 ![png](Brady_files/Brady_65_21.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_65_23.png)
-    
+
 
 
     Signal importance (high->low): [3, 1, 2]
@@ -2700,9 +2700,9 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=4), W, H, locati
 
 
 
-    
+
 ![png](Brady_files/Brady_65_28.png)
-    
+
 
 
     ┌ Warning: Procedure to find unique signals could not identify a solution ...
@@ -2722,34 +2722,34 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=4), W, H, locati
 
 
 
-    
+
 ![png](Brady_files/Brady_65_30.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_65_32.png)
-    
 
 
 
-    
+
+
 ![png](Brady_files/Brady_65_33.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_65_35.png)
-    
 
 
-    
+
+
 
 
     13×2 Array{Any,2}:
@@ -2811,9 +2811,9 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=4), W, H, locati
 
 
 
-    
+
 ![png](Brady_files/Brady_65_40.png)
-    
+
 
 
     ┌ Info: Locations (signals=3)
@@ -2839,48 +2839,48 @@ NMFk.clusterresults(NMFk.getks(nkrange, robustness[nkrange]; ks=4), W, H, locati
 
 
 
-    
+
 ![png](Brady_files/Brady_65_42.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_65_44.png)
-    
 
 
 
-    
+
+
 ![png](Brady_files/Brady_65_45.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_65_47.png)
-    
 
 
 
-    
+
+
 ![png](Brady_files/Brady_65_48.png)
-    
 
 
-    
 
 
-    
+
+
+
 ![png](Brady_files/Brady_65_50.png)
-    
 
 
-    
+
+
 
 
 
@@ -2919,7 +2919,7 @@ This grouping is based on analyses of the location matrix `H`:
 
 ![locations-3-labeled-sorted](../figures-set00-v9-inv-750-1000-dlan/locations-3-labeled-sorted.png)
 
-The map [../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html](../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html) provides interactive visualization of the extracted well location groups (the html file can also be opened with any browser). 
+The map [../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html](../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html) provides interactive visualization of the extracted well location groups (the html file can also be opened with any browser).
 
 <div>
     <iframe src="../figures-set00-v9-inv-750-1000-dlan/locations-3-map.html" frameborder="0" height="400" width="50%"></iframe>

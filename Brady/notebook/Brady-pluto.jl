@@ -243,7 +243,7 @@ md"""
 begin
 	Tn = deepcopy(T[1:depth,:,:])
 	for a = 1:length(ai)
-		Tn[:,a,:], _, _ = NMFk.normalize!(Tn[:,a,:])
+		Tn[:,a,:], _, _ = NMFk.normalize(Tn[:,a,:])
 	end
 end
 

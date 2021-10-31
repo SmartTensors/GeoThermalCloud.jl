@@ -80,6 +80,6 @@ end
 Tn = deepcopy(T[1:depth,:,:])
 for a = 1:length(ai)
 	# display(NMFk.plotmatrix(T[1:607,a,:]))
-	Tn[:,a,:], _, _ = NMFk.normalize!(Tn[:,a,:])
+	Tn[:,a,:], _, _ = NMFk.normalize(Tn[:,a,:])
 	# display(NMFk.plotmatrix(Tn[:,a,:]))
 end
