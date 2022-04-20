@@ -91,3 +91,9 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 		<img src="logos/ntfk-logo.png" alt="ntfk" width=40%  max-width=125px;/>
 	</a>
 </div>
+## Publications
+### Peer reviewed
+- Rau, E., Ahmmed, B., Vesselinov, V.V, Mudunuru, M.K., and Karra, S. (in preparation): Geothermal play development using machine learning, geophysics, and reservoir simulation, Geothermics.
+- Ahmmed, B. and Vesselinov, V.V. (in review): Machine learning and shallow groundwater chemistry to identify geothermal resources, to be submitted to Renewable Energy, http://dx.doi.org/10.2139/ssrn.4072512. 
+- Vesselinov, V.V., Ahmmed, B., Mudunuru, M.K., Pepin, J. D., Burns, E.R., Siler, D.L., Karra, S., and Middleton, R.S. (in review): Discovering Hidden Geothermal Signatures using Unsupervised Machine Learning, Geothermics.
+- Siler, D.L., Pepin, J.D., Vesselinov, V.V., Mudunuru, M.K., and Ahmmed, B. (2021): Machine learning to identify geologic factors associated with production in geothermal  fields: A case-study using 3D geologic data, Brady geothermal field, Nevada, Geothermal Energy, https://doi.org/10.1186/s40517-021-00199-8.
