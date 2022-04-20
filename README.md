@@ -91,6 +91,7 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 		<img src="logos/ntfk-logo.png" alt="ntfk" width=40%  max-width=125px;/>
 	</a>
 </div>
+
 ## Publications
 
 ### Peer reviewed
