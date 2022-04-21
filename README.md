@@ -96,7 +96,7 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 
 ### Book chapter
 
-- Vesselinov, V.V., Mudunuru, M.K. Ahmmed, B., Karra, S., and O’Malley, D., (accepted): Machine Learning to Discover, Characterize, and Produce Geothermal Energy, CRS Press, Boca Raton, FL.
+- Vesselinov*, V.V., Mudunuru*, M.K. Ahmmed, B., Karra, S., and O’Malley, D., (accepted): Machine Learning to Discover, Characterize, and Produce Geothermal Energy, in Machine Learning Applications in Subsurface Energy Resource Management: State of the Art and Future Prognosis, CRC, Boca Raton, FL. (*equal contribution)
 
 ### Peer reviewed
 
