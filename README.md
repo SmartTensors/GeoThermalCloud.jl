@@ -107,7 +107,7 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 
 ### Conference papers
 
-- Ahmmed, B., Vesselinov, V.V., Rau, E., and Mudunuru, M.K., and Karra, S.: Machine learning and an analytical equation for a better characterization of hidden geothermal resources, Geothermal rising conference, Reno, NV, August 28-31, 2022.
+- Ahmmed, B., Vesselinov, V.V., Rau, E., and Mudunuru, M.K., and Karra, S.: Machine learning and a process model to better characterize  hidden geothermal resources, Geothermal rising conference, Reno, NV, August 28-31, 2022.
 - Vesselinov, V.V., Ahmmed, B., Frash, L., and Mudunuru, M.K.: GeoThermalCloud: Machine Learning for Discovery, Exploration, and Development of Hidden Geothermal Resources, 47th Annual Stanford Geothermal Workshop, Stanford, CA, February 7-9, 2022. 
 - Vesselinov, V.V., Frash, L., Ahmmed, B., and Mudunuru, M.K.: Machine Learning to Characterize the State of Stress and its Influence on Geothermal Production, Geothermal Rising Conference, San Diego, CA, October3-6, 2021. 
 - Ahmmed, B., Vesselinov, V.V.: Prospectivity Analyses of the Utah FORGE Site using Unsupervised Machine Learning, Geothermal Rising Conference, San Diego, CA, October 3-6, 2021. 
