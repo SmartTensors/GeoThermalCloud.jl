@@ -107,7 +107,7 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 
 ### Conference papers
 
-- Ahmmed, B., Vesselinov, V.V., Rau, E., and Mudunuru, M.K., and Karra, S.: Machine learning and an analytical equation for a better characterization of hidden geothermal resources, Geothermal rising conference, Reno, NV, August 28--31, 2022.
+- Ahmmed, B., Vesselinov, V.V., Rau, E., and Mudunuru, M.K., and Karra, S.: Machine learning and an analytical equation for a better characterization of hidden geothermal resources, Geothermal rising conference, Reno, NV, August 28-31, 2022.
 - Vesselinov, V.V., Ahmmed, B., Frash, L., and Mudunuru, M.K.: GeoThermalCloud: Machine Learning for Discovery, Exploration, and Development of Hidden Geothermal Resources, 47th Annual Stanford Geothermal Workshop, Stanford, CA, February 7-9, 2022. 
 - Vesselinov, V.V., Frash, L., Ahmmed, B., and Mudunuru, M.K.: Machine Learning to Characterize the State of Stress and its Influence on Geothermal Production, Geothermal Rising Conference, San Diego, CA, October3-6, 2021. 
 - Ahmmed, B., Vesselinov, V.V.: Prospectivity Analyses of the Utah FORGE Site using Unsupervised Machine Learning, Geothermal Rising Conference, San Diego, CA, October 3-6, 2021. 
@@ -120,7 +120,7 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 ### Presentations
 
 - Siler, D., Pepin, J., Vesselinov, V.V., Ahmmed, B., and Mudunuru, M.K.: A tale of two unsupervised machine learning techniques: What PCA and NMFk tell us about the geologic controls of hydrothermal processes, American Geophysical Union, New Orleans, LA,, December 13–17, 2021.
-- Siler, D., Pepin, J., Vesselinov, V.V., Ahmmed, B., and Mudunuru, M.K.: A tale of two unsupervised machine learning techniques: What PCA and NMFk tell us about the geologic controls of hydrothermal processes, Geothermal Rising Conference, San Diego, CA, October 3--6, 2021.
+- Siler, D., Pepin, J., Vesselinov, V.V., Ahmmed, B., and Mudunuru, M.K.: A tale of two unsupervised machine learning techniques: What PCA and NMFk tell us about the geologic controls of hydrothermal processes, Geothermal Rising Conference, San Diego, CA, October 3-6, 2021.
 - Ahmmed, B. Vesselinov, V. and Mudunuru, M.K., Integration of Data, Numerical Inversion,  and  Unsupervised Machine Learning to Identify Hidden Geothermal Resources in Southwest New Mexico, American Geophysical Union Fall Conference, San Francisco, CA, December 1-17, 2020.
 - Ahmmed, B., Vesselinov, V.V., and Mudunuru, M.K., Machine learning to characterize regional geothermal reservoirs in the western USA, Abstract T185-358249, Geological Society of America, October 26-29, 2020.
 - Ahmmed, B., Lautze, N., Vesselinov, V.V., Dores, D., and Mudunuru, M.K., Unsupervised Machine Learn- ing to Extract Dominant Geothermal Attributes in Hawaii Island Play Fairway Data, Geothermal Resources Council, Reno, NV, October 18-23, 2020.
