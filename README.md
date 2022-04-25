@@ -107,15 +107,15 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 
 ### Conference papers
 
-- Ahmmed, B., Vesselinov, V.V., and Mudunuru, M.K.: Physics-informed machine learning for a better characterization of hidden geothermal resources in the Tularosa Basin, New Mexico, Geothermal rising conference, Reno, NV, August 28--31, 2022. [Conference paper]
-- Vesselinov, V.V., Ahmmed, B., Frash, L., and Mudunuru, M.K.: GeoThermalCloud: Machine Learning for Discovery, Exploration, and Development of Hidden Geothermal Resources, 47th Annual Stanford Geothermal Workshop, Stanford, CA, February 7-9, 2022. [Conference paper]
-- Vesselinov, V.V., Frash, L., Ahmmed, B., and Mudunuru, M.K.: Machine Learning to Characterize the State of Stress and its Influence on Geothermal Production, Geothermal Rising Conference, San Diego, CA, October3-6, 2021. [Conference paper]
-- Ahmmed, B., Vesselinov, V.V.: Prospectivity Analyses of the Utah FORGE Site using Unsupervised Machine Learning, Geothermal Rising Conference, San Diego, CA, October 3-6, 2021. [Conference paper]
-- Ahmmed, B., Vesselinov, V.V., Mudunuru, M.K., Middleton, R.S., and Karra, S.: Geochemical characteristics of low-, medium-, and hot-temperature geothermal resources of the Great Basin, USA, World Geothermal Congress, Reykjavik, Iceland, May 21-26, 2021. [Conference paper]
-- Vesselinov, V.V., Ahmmed, B., Mudunuru, M.K., Karra, S., and Middleton, R.: Hidden geothermal signatures of the southwest New Mexico, World Geothermal Congress, Reykjavik, Iceland, May 21-26, 2021. [Conference paper]
+- Ahmmed, B., Vesselinov, V.V., and Mudunuru, M.K.: Physics-informed machine learning for a better characterization of hidden geothermal resources in the Tularosa Basin, New Mexico, Geothermal rising conference, Reno, NV, August 28--31, 2022.
+- Vesselinov, V.V., Ahmmed, B., Frash, L., and Mudunuru, M.K.: GeoThermalCloud: Machine Learning for Discovery, Exploration, and Development of Hidden Geothermal Resources, 47th Annual Stanford Geothermal Workshop, Stanford, CA, February 7-9, 2022. 
+- Vesselinov, V.V., Frash, L., Ahmmed, B., and Mudunuru, M.K.: Machine Learning to Characterize the State of Stress and its Influence on Geothermal Production, Geothermal Rising Conference, San Diego, CA, October3-6, 2021. 
+- Ahmmed, B., Vesselinov, V.V.: Prospectivity Analyses of the Utah FORGE Site using Unsupervised Machine Learning, Geothermal Rising Conference, San Diego, CA, October 3-6, 2021. 
+- Ahmmed, B., Vesselinov, V.V., Mudunuru, M.K., Middleton, R.S., and Karra, S.: Geochemical characteristics of low-, medium-, and hot-temperature geothermal resources of the Great Basin, USA, World Geothermal Congress, Reykjavik, Iceland, May 21-26, 2021. 
+- Vesselinov, V.V., Ahmmed, B., Mudunuru, M.K., Karra, S., and Middleton, R.: Hidden geothermal signatures of the southwest New Mexico, World Geothermal Congress, Reykjavik, Iceland, May 21-26, 2021. 
 - Mudunuru, M.K., Ahmmed, B., Vesselinov, V.V., Burns, E., Livingston, D.R., Karra, S., Middleton, R.S.: Machine learning for geothermal resource analysis and exploration, XXIII International Conference on Computational Methods in Water Resources (CMWR), Stanford, CA, December 13-15, 2020, no. 81. [Extended abstract]
-- Mudunuru, M.K., Ahmmed, B., Karra S., Vesselinov, V.V., Livingston D.R., and Middleton R.S.: Site-scale and regional-scale modeling for geothermal resource analysis and exploration, 45th Annual Stanford Geothermal Workshop, Stanford, CA, February 10-12, 2020. [Conference paper]
-- Vesselinov, V.V., Mudunuru, M.K., Ahmmed, B., Karra, S. and Middleton, R.S.: Discovering signatures of hidden geothermal resources based on unsupervised learning, 45th Annual Stanford Geothermal Workshop, Stanford, CA, February 10-12, 2020. [Conference paper]
+- Mudunuru, M.K., Ahmmed, B., Karra S., Vesselinov, V.V., Livingston D.R., and Middleton R.S.: Site-scale and regional-scale modeling for geothermal resource analysis and exploration, 45th Annual Stanford Geothermal Workshop, Stanford, CA, February 10-12, 2020. 
+- Vesselinov, V.V., Mudunuru, M.K., Ahmmed, B., Karra, S. and Middleton, R.S.: Discovering signatures of hidden geothermal resources based on unsupervised learning, 45th Annual Stanford Geothermal Workshop, Stanford, CA, February 10-12, 2020. 
 
 ### Presentations
 
