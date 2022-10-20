@@ -1,9 +1,9 @@
 import DelimitedFiles
 
-d, h = DelimitedFiles.readdlm("data/Pepin_PCA_Input_Data_LANL.csv", ','; header=true)
+d, h = DelimitedFiles.readdlm("../data/Pepin_PCA_Input_Data_LANL.csv", ','; header=true)
 
 attributes_col = vec(permutedims(h))
-attributes_short = ["Boron"; "Gravity"; "Magnetic"; "Dikes"; "Drainage"; "FaultInter"; "QuatFaults"; "Seismicity"; "NMFaults"; "Springs"; "Vents"; "Lithium"; "Precip"; "Air_Temp"; "Silica"; "Subcrop"; "WT_Gradient"; "WT_Elev"; "Heatflow"; "GS_Elev"; "DTW"; "Crst_Thick"; "Bsmt_Depth"]
+attributes_short = ["Boron"; "Gravity"; "Magnetic"; "Dikes"; "Drainage"; "FaultInter"; "QuatFaults"; "Seismicity"; "NMFaults"; "Springs"; "Vents"; "Lithium"; "Precip"; "Air_Temp"; "Silica"; "Subcrop"; "WT_Gradient"; "WT_Elev"; "Heatflow"; "GS_Elev"; "DTW"; "Crust_Thick"; "Bsmt_Depth"]
 attributes_long = uppercasefirst.(lowercase.(["Boron Concentration"; "Gravity Anomaly"; "Magnetic Intensity"; "Volcanic Dike Density"; "Drainage Density"; "Fault Intersection Density"; "Quaternary Fault Density"; "Seismicity"; "State Map Fault Density"; "Spring Density"; "Volcanic Vent Density"; "Lithium Concentration"; "Precipitation"; "Air Temperature"; "Silica Geothermometer"; "Subcrop Permeability"; "Hydraulic Gradient"; "Watertable Elevation"; "Heat flow"; "Groundsurface Elevation"; "Watertable Depth"; "Crustal Thickness"; "Depth to Basement"]))
 attributes_long_new = uppercasefirst.(lowercase.(["Boron"; "Gravity anomaly"; "Magnetic intensity"; "Volcanic dike density"; "Drainage density"; "Fault intersection density"; "Quaternary fault density"; "Seismicity"; "State map fault density"; "Spring density"; "Volcanic vent density"; "Lithium"; "Precipitation"; "Air temperature"; "Silica geothermometer"; "Subcrop permeability"; "Hydraulic gradient"; "Watertable elevation"; "Heat flow"; "Groundsurface elevation"; "Watertable depth"; "Crustal thickness"; "Depth to basement"]))
 
@@ -57,22 +57,22 @@ locations_short = ["Alamos spr";
 
 locations_long = ["Alamos Spring";
 "Allen Springs";
-"Apache Tejo Warm Springs well";
+"Apache Tejo Warm Springs Well";
 "Aragon Springs";
 "Ash Spring";
-"B. Iorio 1 well";
+"B. Iorio 1 Well";
 "Cliff Warm Spring";
-"Dent windmill well";
+"Dent windmill Well";
 "Derry Warm Springs";
 "Faywood Hot Springs";
-"Federal H 1 well";
+"Federal H 1 Well";
 "Freiborn Canyon Spring";
-"Garton well";
+"Garton Well";
 "Gila Hot Springs 1";
 "Gila Hot Springs 2";
 "Goat Camp Spring";
 "Jerry well";
-"Kennecott Warm Springs well";
+"Kennecott Warm Springs Well";
 "Laguna Pueblo";
 "Lightning Dock";
 "Los Alturas Estates";
@@ -81,17 +81,17 @@ locations_long = ["Alamos Spring";
 "Ojitos Springs";
 "Ojo Caliente";
 "Ojo De las Canas";
-"Pueblo windmill well";
+"Pueblo Windmill Well";
 "Radium Hot Springs";
 "Rainbow Spring";
-"Riverside Store well";
+"Riverside Store Well";
 "Sacred Spring";
 "Socorro Canyon";
 "Spring";
 "Spring Canyon Warm Spring";
-"Truth or Consequences spring";
+"Truth or Consequences Spring";
 "Turkey Creek Spring";
-"Victoria Land and Cattle Co. well";
+"Victoria Land and Cattle Co. Well";
 "Warm Springs";
 "Well 1";
 "Well 2";
@@ -104,7 +104,7 @@ dindex = d[:,end] .== 1
 rows = convert.(Int32, d[dindex,end-1])
 locations = locations_short[rows]
 
-lat = d[dindex, 2]
-lon = d[dindex, 3]
+lat = d[dindex, 3]
+lon = d[dindex, 2]
 
 :loaded
