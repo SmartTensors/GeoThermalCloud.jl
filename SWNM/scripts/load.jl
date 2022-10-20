@@ -65,7 +65,7 @@ locations_long = ["Alamos Spring";
 "Dent windmill Well";
 "Derry Warm Springs";
 "Faywood Hot Springs";
-"Federal H 1 Well";
+"Federal H1 Well";
 "Freiborn Canyon Spring";
 "Garton Well";
 "Gila Hot Springs 1";
