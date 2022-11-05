@@ -1,4 +1,4 @@
-Signal A (S2)
+Signal A (S1)
 Allen spr     	1.0
 Turkey spr    	0.891
 Ash spr       	0.86
@@ -15,7 +15,7 @@ Freiborn spr  	0.58
 Apache well   	0.57
 Kennecott well	0.547
 
-Signal B (S1)
+Signal B (S2)
 Fed H1 well   	1.0
 Well 4        	0.82
 Los Alturas   	0.774
@@ -30,7 +30,7 @@ Faywood spr   	0.379
 Goat spr      	0.331
 Derry spr     	0.325
 
-Signal C (S4)
+Signal C (S3)
 Jerry well    	1.0
 Pueblo well   	0.979
 Rainbow spr   	0.926
@@ -42,7 +42,7 @@ Well 1        	0.702
 Aragon spr    	0.679
 Ojo Caliente  	0.473
 
-Signal D (S3)
+Signal D (S4)
 Socorro Can   	1.0
 Ojitos spr    	0.898
 Ojo Canas     	0.726
