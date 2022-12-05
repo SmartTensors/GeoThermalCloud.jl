@@ -25,9 +25,9 @@ GMT.grdimage("maps/greatbasin-v3.nc", proj=:Mercator, shade=(azimuth=100, norm="
 	figsize=8, conf=(MAP_FRAME_TYPE="plain", MAP_GRID_PEN_PRIMARY="thinnest,gray,.",
 	MAP_GRID_CROSS_SIZE_SECONDARY=0.1, MAP_FRAME_PEN=0.5, MAP_TICK_PEN_PRIMARY=0.1,
 	MAP_TICK_LENGTH_PRIMARY=0.01), frame=(axis="lrtb"))
-GMT.plot!(xcoord, ycoord, fill=:cyan, marker=:c, markersize=0.075, coast=(proj=:Mercator, 
-    DCW=(country="US.UT,US.NV,US.CA,US.AZ,US.OR,US.ID", pen=(0.5,:black))),
-    fmt=:png, savefig="maps-data/locations", show=true);
+GMT.plot!(xcoord, ycoord, fill=:cyan, marker=:c, markersize=0.075, coast=(proj=:Mercator,
+	DCW=(country="US.UT,US.NV,US.CA,US.AZ,US.OR,US.ID", pen=(0.5,:black))),
+	fmt=:png, savefig="maps-data/locations", show=true);
 Mads.display("maps-data/locations.png")
 
 Xdat[Xdat .== ""] .= NaN
