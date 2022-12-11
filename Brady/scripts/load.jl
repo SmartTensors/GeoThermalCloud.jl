@@ -55,11 +55,11 @@ end
 T = Array{Float64}(undef, length(zi), length(ai), length(locations))
 T .= NaN
 
-for w = 1:length(locations)
+for w = eachindex(locations)
 	iw = d[:, 1] .== locations[w]
 	m = d[iw, ai]
 	zw = ii[iw]
-	for z = 1:length(zw)
+	for z = eachindex(zw)
 		a = vec(m[z, :])
 		s = length(a)
 		if s == 0
@@ -69,16 +69,16 @@ for w = 1:length(locations)
 	end
 end
 
-# for a = 1:length(ai)
+# for a = eachindex(ai)
 # 	display(findlast(sum(.!isnan.(T[:,a,:]); dims=2) .== 51)[1])
 # end
 
-# for a = 1:length(ai)
+# for a = eachindex(ai)
 # 	display(findlast(sum(.!isnan.(T[:,a,:]); dims=2) .== 25)[1])
 # end
 
 Tn = deepcopy(T[1:depth,:,:])
-for a = 1:length(ai)
+for a = eachindex(ai)
 	# display(NMFk.plotmatrix(T[1:607,a,:]))
 	Tn[:,a,:], _, _ = NMFk.normalize(Tn[:,a,:])
 	# display(NMFk.plotmatrix(Tn[:,a,:]))
