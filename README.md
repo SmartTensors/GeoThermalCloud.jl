@@ -101,12 +101,13 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 ### Peer reviewed
 
 - Rau, E., Ahmmed, B., Vesselinov, V.V, Mudunuru, M.K., and Karra, S. (in preparation): Geothermal play development using machine learning, geophysics, and reservoir simulation, Geothermics.
-- Ahmmed, B. and Vesselinov, V.V. (in review): Machine learning and shallow groundwater chemistry to identify geothermal resources, to be submitted to Renewable Energy, http://dx.doi.org/10.2139/ssrn.4072512. 
-- Vesselinov, V.V., Ahmmed, B., Mudunuru, M.K., Pepin, J. D., Burns, E.R., Siler, D.L., Karra, S., and Middleton, R.S. (in review): Discovering hidden geothermal signatures using unsupervised machine learning, Geothermics.
+- Mudunuru, M.K., Vesselinov, V.V., and Ahmmed, B. (2022): GeothermalCloud: Machine learning for geothermal resource exploration, Journal of Machine Learning for Modeling and Computing, 10.1615/JMachLearnModelComput.2022046445. 
+- Ahmmed, B. and Vesselinov, V.V. (2022): Machine learning and shallow groundwater chemistry to identify geothermal resources, Renewable Energy, https://doi.org/10.1016/j.renene.2022.08.024. 
+- Vesselinov, V.V., Ahmmed, B., Mudunuru, M.K., Pepin, J. D., Burns, E.R., Siler, D.L., Karra, S., and Middleton, R.S. (2022): Discovering hidden geothermal signatures using non-negative matrix factorization with customized k-means clustering, Geothermics, https://doi.org/10.1016/j.geothermics.2022.102576.
 - Siler, D.L., Pepin, J.D., Vesselinov, V.V., Mudunuru, M.K., and Ahmmed, B. (2021): Machine learning to identify geologic factors associated with production in geothermal  fields: A case-study using 3D geologic data, Brady geothermal field, Nevada, Geothermal Energy, https://doi.org/10.1186/s40517-021-00199-8.
 
 ### Conference papers
-
+- Ahmmed, B., Mudunuru, M.K., Frash, L., and Vesselinov, V.V.: A Progress Report on GeoThermalCloud Framework: An Open-Source Machine Learning Based Tool for Discovery, Exploration, and Development of Hidden Geothermal Resources, 48th Annual Stanford Geothermal Workshop, Stanford, CA, February 6-8, 2023.
 - Ahmmed, B., Vesselinov, V.V., Rau, E., and Mudunuru, M.K., and Karra, S.: Machine learning and a process model to better characterize  hidden geothermal resources, Geothermal rising conference, Reno, NV, August 28-31, 2022.
 - Vesselinov, V.V., Ahmmed, B., Frash, L., and Mudunuru, M.K.: GeoThermalCloud: Machine Learning for Discovery, Exploration, and Development of Hidden Geothermal Resources, 47th Annual Stanford Geothermal Workshop, Stanford, CA, February 7-9, 2022. 
 - Vesselinov, V.V., Frash, L., Ahmmed, B., and Mudunuru, M.K.: Machine Learning to Characterize the State of Stress and its Influence on Geothermal Production, Geothermal Rising Conference, San Diego, CA, October3-6, 2021. 
