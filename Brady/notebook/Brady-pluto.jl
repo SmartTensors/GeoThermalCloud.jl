@@ -207,11 +207,11 @@ begin
 	T = Array{Float64}(undef, length(zi), length(ai), length(locations))
 	T .= NaN
 
-	for w = eachindex(locations)
+	for w = 1:length(locations)
 		iw = d[:, 1] .== locations[w]
 		m = d[iw, ai]
 		zw = ii[iw]
-		for z = eachindex(zw)
+		for z = 1:length(zw)
 			a = vec(m[z, :])
 			s = length(a)
 			if s == 0
@@ -242,7 +242,7 @@ md"""
 # ╔═╡ 19587614-bec0-4db8-ad54-7543e887c233
 begin
 	Tn = deepcopy(T[1:depth,:,:])
-	for a = eachindex(ai)
+	for a = 1:length(ai)
 		Tn[:,a,:], _, _ = NMFk.normalize(Tn[:,a,:])
 	end
 end

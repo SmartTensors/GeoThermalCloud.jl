@@ -24,7 +24,7 @@ end
 # for k in NMFk.getks(nkrange, robustness[nkrange])[end]
 # 	Xe = reshape(W[k] * H[k], (depth, length(attributes_process), length(locations)))
 # 	Wa = reshape(NMFk.normalizematrix_col!(W[k])[1], (depth, length(attributes_process), k))
-# 	for a = eachindex(attributes_process)
+# 	for a = 1:length(attributes_process)
 # 		Mads.plotseries(Tn[:,a,:]; title=attributes_process[a])
 # 		Mads.plotseries(Wa[:,a,:]; title=attributes_process[a])
 # 		Mads.plotseries(Xe[:,a,:]; title=attributes_process[a])
@@ -39,14 +39,14 @@ if plotresults
 	NMFk.clusterresults(unique(sort(vcat([4], NMFk.getks(nkrange, robustness[nkrange])))), W, H, locations, attributes_process_long; loadassignements=true, lon=xcoord, lat=ycoord, Wsize=depth, Wcasefilename="locations", Hcasefilename="attributes", resultdir=resultdir * "-$(nruns)-dlan", figuredir=figuredir * "-$(nruns)-dlan", hover="Well: " .* locations .* "<br>" .* "WellType: " .* String.(welltype) .* "<br>" .* production, Wmatrix_font_size=4Gadfly.pt, biplotcolor=:WH, biplotlabel=:WH)
 end
 
-# for w = eachindex(locations)
+# for w = 1:length(locations)
 # 	Mads.plotseries(Tn[:,:,w]; names=attributes_process, title=locations[w])
 # end
 
 # for k in NMFk.getks(nkrange, robustness[nkrange])[end]
 # 	Xe = reshape(W[k] * H[k], (depth, length(attributes_process), length(locations)))
 # 	Wa = reshape(NMFk.normalizematrix_col!(W[k])[1], (depth, length(locations), k))
-# 	for w = eachindex(locations)
+# 	for w = 1:length(locations)
 # 		Mads.plotseries(Tn[:,:,w]; names=attributes_process, title=locations[w])
 # 		Mads.plotseries(Wa[:,w,:]; title=locations[w])
 # 		Mads.plotseries(Xe[:,:,w]; names=attributes_process, title=locations[w])

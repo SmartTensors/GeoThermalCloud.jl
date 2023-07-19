@@ -16,7 +16,7 @@ Derry spr     	0.578
 Mimbres spr   	0.565
 Goat spr      	0.37
 
-Signal B (S2)
+Signal B (S4)
 Fed H1 well   	1.0
 Well 4        	0.848
 Los Alturas   	0.815
@@ -28,7 +28,7 @@ Radium spr    	0.626
 Well 3        	0.593
 Victoria well 	0.38
 
-Signal C (S4)
+Signal C (S3)
 Jerry well    	1.0
 Pueblo well   	0.971
 Rainbow spr   	0.943
@@ -45,7 +45,7 @@ Ojo Canas     	0.708
 T or C spr    	0.411
 B.Iorio well  	0.409
 
-Signal E (S3)
+Signal E (S2)
 Freiborn spr  	1.0
 Gila spr 1    	0.78
 Gila spr 2    	0.696
