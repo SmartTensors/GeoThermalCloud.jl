@@ -1,4 +1,4 @@
-# GeoThermalCloud.jl: Machine Learning framework for Geothermal Exploration
+# GeoThermalCloud: A Machine Learning Framework for Geothermal Resources Exploration
 
 <div style="text-align: left; padding-bottom: 30px;">
 	<a href="https://github.com/SmartTensors/GeoThermalCloud.jl">
