@@ -100,22 +100,31 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 
 ### Peer reviewed
 
-- Rau, E., Ahmmed, B., Vesselinov, V.V, Mudunuru, M.K., and Karra, S. (in preparation): Geothermal play development using machine learning, geophysics, and reservoir simulation, Geothermics.
-- Ahmmed, B. and Vesselinov, V.V. (in review): Machine learning and shallow groundwater chemistry to identify geothermal resources, to be submitted to Renewable Energy, http://dx.doi.org/10.2139/ssrn.4072512. 
-- Vesselinov, V.V., Ahmmed, B., Mudunuru, M.K., Pepin, J. D., Burns, E.R., Siler, D.L., Karra, S., and Middleton, R.S. (in review): Discovering hidden geothermal signatures using unsupervised machine learning, Geothermics.
-- Siler, D.L., Pepin, J.D., Vesselinov, V.V., Mudunuru, M.K., and Ahmmed, B. (2021): Machine learning to identify geologic factors associated with production in geothermal  fields: A case-study using 3D geologic data, Brady geothermal field, Nevada, Geothermal Energy, https://doi.org/10.1186/s40517-021-00199-8.
+- Rau, E., Ahmmed, B., Vesselinov, V.V, Mudunuru, M.K., and Karra, S. (in review): Geothermal play development using machine learning, geophysics, and reservoir simulation, Renewable Energy.
+- Ahmmed, B., Mudunuru, M.K., Rau, E., Vesselinov, V.V., and Karra, S. (2023): Machine Learning for Geothermal Resource Exploration in the Tularosa Basin, New Mexico. Energies, 16(7), 3098
+- Mudunuru, M.K., Vesselinov, V.V. and Ahmmed, B., 2022. GeoThermalCloud: Machine Learning for Geothermal Resource Exploration. Journal of Machine Learning for Modeling and Computing.
+- Ahmmed, B. and Vesselinov, V.V., 2022. Machine learning and shallow groundwater chemistry to identify geothermal prospects in the Great Basin, USA. Renewable Energy, 197, pp.1034-1048.
+- Vesselinov, V.V., Ahmmed, B., Mudunuru, M.K., Pepin, J.D., Burns, E.R., Siler, D.L., Karra, S. and Middleton, R.S., 2022. Discovering hidden geothermal signatures using non-negative matrix factorization with customized k-means clustering. Geothermics, 106, p.102576.
+- Siler, D.L., Pepin, J.D., Vesselinov, V.V., Mudunuru, M.K., and Ahmmed, B. (2021): Machine learning to identify geologic factors associated with production in geothermal fields: A case-study using 3D geologic data, Brady geothermal field, Nevada, Geothermal Energy.
+
 
 ### Conference papers
 
-- Ahmmed, B., Vesselinov, V.V., Rau, E., and Mudunuru, M.K., and Karra, S.: Machine learning and a process model to better characterize  hidden geothermal resources, Geothermal rising conference, Reno, NV, August 28-31, 2022.
+- Mudunuru, M.K., Ahmmed, B., and Frash, L.: GeoThermalCloud for EGS -- An Open-source, User-friendly, Scalable AI Workflow for Modeling Enhanced Geothermal Systems, Geothermal Rising Conference, Reno, NV, October 1-5, 2023. 
+- Mudunuru, M.K., Ahmmed, B., and Frash, L.: Deep Learning for Modeling Enhanced Geothermal Systems, 48th Annual Stanford Geothermal Workshop, Stanford, CA, February 6-8, 2023.  
+- Frash, L. and Ahmmed, B.: A FORGE Datathon Case Study to Optimize Well Spacing and Flow Rate for Power Generation, 48th Annual Stanford Geothermal Workshop, Stanford, CA, February 6-8, 2023. 
+- Frash, L., Carey, J.W., Ahmmed, B., and others: A Proposal for Safe and Profitable Enhanced Geothermal Systems in Hot Dry Rock, 48th Annual Stanford Geothermal Workshop}, Stanford, CA, February 6-8, 2023.  
+- Ahmmed, B., Vesselinov, V.V., Mudunuru, M.K., and Frash, L.: A Progress Report on GeoThermalCloud Framework: An Open-source Machine Learning Based Tool for Discovery, Exploration, and Development of Hidden Geothermal Resources, 48th Annual Stanford Geothermal Workshop, Stanford, CA, February 6-8, 2023. 
+- Ahmmed, B., Vesselinov, V.V., Rau, E., and Mudunuru, M.K., and Karra, S.: Machine Learning and a Process Model to Better Characterize Hidden Geothermal Resources, GRC Transactions, v. 46, Reno, NV, August 28-31, 2022. 
 - Vesselinov, V.V., Ahmmed, B., Frash, L., and Mudunuru, M.K.: GeoThermalCloud: Machine Learning for Discovery, Exploration, and Development of Hidden Geothermal Resources, 47th Annual Stanford Geothermal Workshop, Stanford, CA, February 7-9, 2022. 
-- Vesselinov, V.V., Frash, L., Ahmmed, B., and Mudunuru, M.K.: Machine Learning to Characterize the State of Stress and its Influence on Geothermal Production, Geothermal Rising Conference, San Diego, CA, October3-6, 2021. 
+- Vesselinov, V.V., Frash, L., Ahmmed, B., and Mudunuru, M.K.: Machine Learning to Characterize the State of Stress and its Influence on Geothermal Production, Geothermal Rising Conference, San Diego, CA, October 3-6, 2021. 
 - Ahmmed, B., Vesselinov, V.V.: Prospectivity Analyses of the Utah FORGE Site using Unsupervised Machine Learning, Geothermal Rising Conference, San Diego, CA, October 3-6, 2021. 
-- Ahmmed, B., Vesselinov, V.V., Mudunuru, M.K., Middleton, R.S., and Karra, S.: Geochemical characteristics of low-, medium-, and hot-temperature geothermal resources of the Great Basin, USA, World Geothermal Congress, Reykjavik, Iceland, May 21-26, 2021. 
-- Vesselinov, V.V., Ahmmed, B., Mudunuru, M.K., Karra, S., and Middleton, R.: Hidden geothermal signatures of the southwest New Mexico, World Geothermal Congress, Reykjavik, Iceland, May 21-26, 2021. 
-- Mudunuru, M.K., Ahmmed, B., Vesselinov, V.V., Burns, E., Livingston, D.R., Karra, S., Middleton, R.S.: Machine learning for geothermal resource analysis and exploration, XXIII International Conference on Computational Methods in Water Resources (CMWR), Stanford, CA, December 13-15, 2020, no. 81. [Extended abstract]
-- Mudunuru, M.K., Ahmmed, B., Karra S., Vesselinov, V.V., Livingston D.R., and Middleton R.S.: Site-scale and regional-scale modeling for geothermal resource analysis and exploration, 45th Annual Stanford Geothermal Workshop, Stanford, CA, February 10-12, 2020. 
-- Vesselinov, V.V., Mudunuru, M.K., Ahmmed, B., Karra, S. and Middleton, R.S.: Discovering signatures of hidden geothermal resources based on unsupervised learning, 45th Annual Stanford Geothermal Workshop, Stanford, CA, February 10-12, 2020. 
+- Ahmmed, B., Vesselinov, V.V., Mudunuru, M.K., Middleton, R., and Karra, S.: Geochemical characteristics of Low-, Medium-, and Hot-temperature Geothermal Resources of the Great Basin, USA, World Geothermal Congress, Reykjavik, Iceland, May 21-26, 2021. 
+- Vesselinov, V.V., Ahmmed, B., Mudunuru, M.K., Karra, S., and Middleton, R.: Hidden Geothermal Signatures of the Southwest New Mexico, World Geothermal Congress, Reykjavik, Iceland, May 21-26, 2021. 
+- Mudunuru, M.K., Ahmmed, B., Vesselinov, V.V., Burns, E., Livingston, D.R., Karra, S., Middleton, R.S.: Machine Learning for Geothermal Resource Analysis and Exploration, XXIII International Conference on Computational Methods in Water Resources (CMWR), Stanford, CA, December 13-15, 2020, no. 81. 
+- Mudunuru, M.K., Ahmmed, B., Karra S., Vesselinov, V.V., Livingston D.R., and Middleton R.S.: Site-scale and Regional-scale Modeling for Geothermal Resource Analysis and Exploration, 45th Annual Stanford Geothermal Workshop, Stanford, CA, February 10-12, 2020. 
+- Vesselinov, V.V., Mudunuru, M.K., Ahmmed, B., Karra, S. and Middleton, R.S.: Discovering Signatures of Hidden Geothermal Resources Based on Unsupervised Learning, 45th Annual Stanford Geothermal Workshop, Stanford, CA, February 10-12, 2020. 
+ 
 
 ### Presentations
 
