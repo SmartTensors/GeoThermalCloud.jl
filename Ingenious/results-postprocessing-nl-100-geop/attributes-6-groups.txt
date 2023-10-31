@@ -1,0 +1,23 @@
+Signal A (S3)
+Gravity anomaly [mGal]   	1.0
+Two m temperature [C]    	0.547
+Magnetic anomaly [nT]    	0.332
+
+Signal B (S1)
+Depth to the basement [m]	1.0
+
+Signal C (S4)
+Strain rate [nS⁻¹]       	1.0
+Dilation rate [nS⁻¹]     	0.62
+
+Signal D (S5)
+Heat flow [W/m²]         	1.0
+
+Signal E (S6)
+Shear rate [nS⁻¹]        	1.0
+
+Signal F (S2)
+GTM Quartz [C]           	1.0
+Temperature [C]          	0.986
+GTM Chalcedony [C]       	0.95
+

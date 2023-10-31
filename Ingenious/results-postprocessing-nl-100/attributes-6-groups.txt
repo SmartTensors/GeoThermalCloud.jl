@@ -1,0 +1,35 @@
+Signal A (S3)
+Depth to the basement [m]	1.0
+Strain rate [nS⁻¹]       	0.704
+Dilation rate [nS⁻¹]     	0.432
+
+Signal B (S2)
+Heat flow [W/m²]         	1.0
+Temperature [C]          	0.716
+GTM Quartz [C]           	0.594
+GTM Chalcedony [C]       	0.554
+Magnetic anomaly [nT]    	0.495
+HCO3 [ppm]               	0.364
+
+Signal C (S6)
+Shear rate [nS⁻¹]        	1.0
+
+Signal D (S5)
+Na [ppm]                 	1.0
+Cl [ppm]                 	0.972
+K [ppm]                  	0.577
+Br [ppm]                 	0.313
+B [ppm]                  	0.243
+Li [ppm]                 	0.163
+Al [ppm]                 	0.0723
+Be [ppm]                 	0.0322
+Ba [ppm]                 	0.0258
+
+Signal E (S1)
+Two m temperature [C]    	1.0
+Gravity anomaly [mGal]   	0.33
+
+Signal F (S4)
+Ca [ppm]                 	1.0
+Mg [ppm]                 	0.679
+

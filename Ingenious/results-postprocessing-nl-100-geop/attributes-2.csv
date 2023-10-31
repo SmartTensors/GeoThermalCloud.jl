@@ -1,0 +1,12 @@
+Name,A,B,Signal
+Temperature [C],0.9948658,0.6426375,A
+GTM Quartz [C],0.60110456,0.4362772,A
+GTM Chalcedony [C],0.5510876,0.4031871,A
+Heat flow [W/m²],0.6115356,0.6750893,B
+Two m temperature [C],0.89562225,0.49523723,A
+Depth to the basement [m],1.0,0.4752288,A
+Gravity anomaly [mGal],0.97734374,0.27368167,A
+Magnetic anomaly [nT],0.59826744,0.3264703,A
+Strain rate [nS⁻¹],0.63781106,1.0,B
+Dilation rate [nS⁻¹],0.3200994,0.35484844,B
+Shear rate [nS⁻¹],0.0,0.7564096,B
