@@ -101,7 +101,7 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 ### Peer reviewed
 
 - Rau, E., Ahmmed, B., Vesselinov, V.V, Mudunuru, M.K., and Karra, S. (in review): Geothermal play development using machine learning, geophysics, and reservoir simulation, Renewable Energy.
-- Ahmmed, B., Mudunuru, M.K., Rau, E., Vesselinov, V.V., and Karra, S. (2023): Machine Learning for Geothermal Resource Exploration in the Tularosa Basin, New Mexico. Energies, 16(7), 3098
+- Mudunuru, M.K., Ahmmed, B., Rau, E., Vesselinov, V.V., and Karra, S. (2023): Machine Learning for Geothermal Resource Exploration in the Tularosa Basin, New Mexico. Energies, 16(7), 3098
 - Mudunuru, M.K., Vesselinov, V.V. and Ahmmed, B., 2022. GeoThermalCloud: Machine Learning for Geothermal Resource Exploration. Journal of Machine Learning for Modeling and Computing.
 - Ahmmed, B. and Vesselinov, V.V., 2022. Machine learning and shallow groundwater chemistry to identify geothermal prospects in the Great Basin, USA. Renewable Energy, 197, pp.1034-1048.
 - Vesselinov, V.V., Ahmmed, B., Mudunuru, M.K., Pepin, J.D., Burns, E.R., Siler, D.L., Karra, S. and Middleton, R.S., 2022. Discovering hidden geothermal signatures using non-negative matrix factorization with customized k-means clustering. Geothermics, 106, p.102576.
