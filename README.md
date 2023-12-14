@@ -1,4 +1,4 @@
-# GeoThermalCloud: A Machine Learning Framework for Geothermal Resources Exploration
+# GeoThermalCloud: A Physics-informed AI/ML Framework for Geothermal Resource Exploration, Development, and Monitoring
 
 <div style="text-align: left; padding-bottom: 30px;">
 	<a href="https://github.com/SmartTensors/GeoThermalCloud.jl">
@@ -6,7 +6,7 @@
 	</a>
 </div>
 
-**GeoThermalCloud.jl** is a repository containing all the data and codes required to demonstrate applications of machine learning methods for geothermal exploration.
+**GeoThermalCloud.jl** is a repository containing data and codes required to demonstrate applications of machine learning methods for geothermal exploration, development, and monitoring.
 
 **GeoThermalCloud.jl** includes:
 - site data
@@ -16,6 +16,8 @@
 - code outputs
 - summary figures
 - readme markdown files
+- Phase-I and Phase-II reports
+- peer-review presentation to DOE-GTO
 
 **GeoThermalCloud.jl** showcases the machine learning analyses performed for the following geothermal sites:
 
