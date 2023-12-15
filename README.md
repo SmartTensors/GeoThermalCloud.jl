@@ -25,7 +25,7 @@
 - **SWNM**: geothermal exploration of the Southwest New Mexico (SWNM) region
 - **GreatBasin**: geothermal exploration of the Great Basin region
 
-Reports, research papers, and presentations summarizing these machine learning analyses are also available and will be posted soon.
+Reports, research papers, and presentations summarizing these machine-learning analyses are also available and will be posted soon.
 
 ## Julia installation
 
@@ -35,7 +35,7 @@ To install the most recent version of Julia, follow the instructions at https://
 
 ## GeoThermalCloud installation
 
-To install all required the modules, execute in the Julia REPL:
+To install all required modules, execute in the Julia REPL:
 
 ```julia
 import Pkg
@@ -125,8 +125,7 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 - Vesselinov, V.V., Ahmmed, B., Mudunuru, M.K., Karra, S., and Middleton, R.: Hidden Geothermal Signatures of the Southwest New Mexico, World Geothermal Congress, Reykjavik, Iceland, May 21-26, 2021. 
 - Mudunuru, M.K., Ahmmed, B., Vesselinov, V.V., Burns, E., Livingston, D.R., Karra, S., Middleton, R.S.: Machine Learning for Geothermal Resource Analysis and Exploration, XXIII International Conference on Computational Methods in Water Resources (CMWR), Stanford, CA, December 13-15, 2020, no. 81. 
 - Mudunuru, M.K., Ahmmed, B., Karra S., Vesselinov, V.V., Livingston D.R., and Middleton R.S.: Site-scale and Regional-scale Modeling for Geothermal Resource Analysis and Exploration, 45th Annual Stanford Geothermal Workshop, Stanford, CA, February 10-12, 2020. 
-- Vesselinov, V.V., Mudunuru, M.K., Ahmmed, B., Karra, S. and Middleton, R.S.: Discovering Signatures of Hidden Geothermal Resources Based on Unsupervised Learning, 45th Annual Stanford Geothermal Workshop, Stanford, CA, February 10-12, 2020. 
- 
+- Vesselinov, V.V., Mudunuru, M.K., Ahmmed, B., Karra, S. and Middleton, R.S.: Discovering Signatures of Hidden Geothermal Resources Based on Unsupervised Learning, 45th Annual Stanford Geothermal Workshop, Stanford, CA, February 10-12, 2020.
 
 ### Presentations
 
@@ -138,5 +137,3 @@ More information about [**SmartTensors**](https://github.com/SmartTensors) can b
 - Vesselinov, V.V., Ahmmed, B., and Mudunuru, M.K., Unsupervised Machine Learning to discover attributes that characterize low, moderate, and high-temperature geothermal resources, Geothermal Resources Council, Reno, NV, October 18-23, 2020.
 - Ahmmed, B., Vesselinov, V., and Mudunuru, M.K., Non-negative Matrix Factorization to Discover Dominant Attributes in Utah FORGE Data, Geothermal Resources Council, Reno, NV, October 18-23, 2020.
 - Ahmmed, B., Vesselinov, V.V., and Mudunuru, M.K., Unsupervised machine learning to discover dominant attributes of mineral precipitation due to CO2 sequestration, LA-UR-20-20989, 3rd Machine Learning in Solid Earth Science Conference, Santa Fe, NM, March 16-20, 2020.
-
-
